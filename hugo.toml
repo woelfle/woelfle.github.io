@@ -1,46 +1,219 @@
+# =============================================================================
+# Hugo Site Configuration for LoveIt Theme
+# =============================================================================
+
 baseURL = 'https://thomaswoelfle.com'
 languageCode = 'en-us'
+languageName = 'English'
 title = 'Thinking in Systems - A System of Thoughts'
 theme = 'github.com/dillonzq/LoveIt'
 
-# Output formats
+# -----------------------------------------------------------------------------
+# Output Formats (HTML + RSS for feeds, JSON for search)
+# -----------------------------------------------------------------------------
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
 
+# -----------------------------------------------------------------------------
 # Taxonomies
+# -----------------------------------------------------------------------------
 [taxonomies]
   tag = "tags"
   category = "categories"
 
-# Theme config
+# -----------------------------------------------------------------------------
+# Markup Settings (required for proper syntax highlighting & HTML in markdown)
+# -----------------------------------------------------------------------------
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+# -----------------------------------------------------------------------------
+# Privacy Settings (disable all external analytics and tracking)
+# -----------------------------------------------------------------------------
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.x]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.disqus]
+    disable = true
+
+# -----------------------------------------------------------------------------
+# Menu Configuration
+# -----------------------------------------------------------------------------
+[[menus.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menus.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/posts/"
+  weight = 2
+
+[[menus.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[[menus.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 4
+
+[[menus.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 5
+
+# -----------------------------------------------------------------------------
+# Theme Parameters
+# -----------------------------------------------------------------------------
 [params]
-  # LoveIT theme parameters
+  # Site description for SEO
+  description = "Thinking in Systems - A System of Thoughts - A private software engineering blog exploring architecture, methodologies, and systems thinking."
+  
+  # Date format
+  dateFormat = "2006-01-02"
+  
+  # Theme mode: "auto", "light", "dark"
+  defaultTheme = "auto"
+  
+  # Enable/disable fingerprinting for assets
+  fingerprint = "sha256"
+  
+  # Author information
   [params.author]
     name = "Thomas Wölfle"
-    link = "https://example.org"
-  
-  description = "Thinking in Systems - A System of Thoughts"
-  
-  # Privacy settings
-  [params.privacy]
-    googleAnalytics = ""
-  
-  # Menu configuration
-  [[menus.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
-  
-  [[menus.main]]
-    identifier = "archive"
-    name = "Archive"
-    url = "/posts/"
-    weight = 2
-  
-  [[menus.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 3
+    link = ""
+
+  # -----------------------------------------------------------------------------
+  # Header Settings
+  # -----------------------------------------------------------------------------
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = "/images/logo.svg"
+      name = "Thinking in Systems"
+      typeit = false
+
+  # -----------------------------------------------------------------------------
+  # Footer Settings
+  # -----------------------------------------------------------------------------
+  [params.footer]
+    enable = true
+    hugo = true
+    copyright = true
+    author = true
+    since = 2026
+
+  # -----------------------------------------------------------------------------
+  # Home Page Settings
+  # -----------------------------------------------------------------------------
+  [params.home]
+    [params.home.profile]
+      enable = true
+      # avatarURL = "/images/avatar.png"
+      title = "Thinking in Systems"
+      subtitle = "A System of Thoughts"
+      typeit = true
+      social = false  # Disabled for privacy
+    [params.home.posts]
+      enable = true
+      paginate = 10
+
+  # -----------------------------------------------------------------------------
+  # Social Links (disabled for privacy - private blog)
+  # -----------------------------------------------------------------------------
+  [params.social]
+    RSS = true
+
+  # -----------------------------------------------------------------------------
+  # Search Configuration
+  # -----------------------------------------------------------------------------
+  [params.search]
+    enable = true
+    type = "lunr"
+    contentLength = 4000
+    placeholder = "Search..."
+    maxResultLength = 10
+    snippetLength = 50
+    highlightTag = "em"
+    absoluteURL = false
+
+  # -----------------------------------------------------------------------------
+  # Page Settings
+  # -----------------------------------------------------------------------------
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = false
+    lightgallery = true
+    ruby = true
+    fraction = true
+    fontawesome = true
+    linkToMarkdown = false
+    rssFullText = true
+    
+    # Table of Contents
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = true
+    
+    # Code block settings
+    [params.page.code]
+      copy = true
+      maxShownLines = 50
+    
+    # Math rendering (KaTeX)
+    [params.page.math]
+      enable = true
+      copyTex = true
+      mhchem = false
+    
+    # Share buttons (disabled for privacy)
+    [params.page.share]
+      enable = false
+    
+    # Comments (disabled for privacy)
+    [params.page.comment]
+      enable = false
+
+  # -----------------------------------------------------------------------------
+  # Analytics (disabled for privacy)
+  # -----------------------------------------------------------------------------
+  [params.analytics]
+    enable = false
+
+  # -----------------------------------------------------------------------------
+  # Cookie Consent (disabled - no tracking)
+  # -----------------------------------------------------------------------------
+  [params.cookieconsent]
+    enable = false
