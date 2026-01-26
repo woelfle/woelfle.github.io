@@ -5,7 +5,7 @@
 - Use the latest stable Hugo version.
 - Add a standard `.gitignore` that excludes generated files (`/public`, `/resources/_gen`).
 
-## 2. Template Selection
+## 2. Theme Installation
 - Install the **LoveIT** Theme as a Hugo module
 - Configture the **LoveIT** Theme
 

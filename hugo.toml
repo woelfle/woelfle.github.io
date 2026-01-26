@@ -1,3 +1,46 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://thomaswoelfle.com'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Thinking in Systems - A System of Thoughts'
+theme = 'github.com/dillonzq/LoveIt'
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Theme config
+[params]
+  # LoveIT theme parameters
+  [params.author]
+    name = "Thomas Wölfle"
+    link = "https://example.org"
+  
+  description = "Thinking in Systems - A System of Thoughts"
+  
+  # Privacy settings
+  [params.privacy]
+    googleAnalytics = ""
+  
+  # Menu configuration
+  [[menus.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menus.main]]
+    identifier = "archive"
+    name = "Archive"
+    url = "/posts/"
+    weight = 2
+  
+  [[menus.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
