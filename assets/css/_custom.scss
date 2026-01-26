@@ -1,0 +1,336 @@
+// =============================================================================
+// Custom Styles for Thinking in Systems Blog
+// =============================================================================
+// Mobile-first responsive design with enhanced readability
+
+// -----------------------------------------------------------------------------
+// Base Typography Enhancements
+// -----------------------------------------------------------------------------
+.single {
+  .content {
+    // Improve paragraph readability
+    p {
+      margin-bottom: 1.25rem;
+      text-align: justify;
+      hyphens: auto;
+      
+      @media screen and (max-width: 680px) {
+        text-align: left;
+        hyphens: none;
+      }
+    }
+
+    // Heading spacing
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-contrast-low);
+    }
+
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    // Lists
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Code Block Styling
+// -----------------------------------------------------------------------------
+.highlight {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    code {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Inline code
+code:not(.highlight code) {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+// -----------------------------------------------------------------------------
+// Image Styling
+// -----------------------------------------------------------------------------
+.single .content {
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  figure {
+    margin: 2rem 0;
+    
+    figcaption {
+      text-align: center;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Blockquote Enhancement
+// -----------------------------------------------------------------------------
+blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  background: var(--color-contrast-lower);
+  border-radius: 0 0.5rem 0.5rem 0;
+  
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Table Styling
+// -----------------------------------------------------------------------------
+.single .content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+  
+  @media screen and (min-width: 680px) {
+    display: table;
+  }
+  
+  thead {
+    background: var(--color-contrast-lower);
+    
+    th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--color-contrast-low);
+      
+      &:hover {
+        background: var(--color-contrast-lower);
+      }
+    }
+    
+    td {
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Navigation & Header
+// -----------------------------------------------------------------------------
+#header-desktop {
+  .header-wrapper {
+    max-width: $page-width;
+    margin: 0 auto;
+  }
+}
+
+// Mobile navigation improvements
+@media screen and (max-width: 680px) {
+  #header-mobile {
+    .header-container {
+      padding: 0 1rem;
+    }
+  }
+  
+  .menu-toggle {
+    padding: 0.5rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Home Page Enhancements
+// -----------------------------------------------------------------------------
+.home {
+  .home-profile {
+    .home-subtitle {
+      font-size: 1.125rem;
+      opacity: 0.85;
+    }
+  }
+  
+  .summary {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-contrast-low);
+    transition: box-shadow 0.2s ease;
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Tag Cloud Styling
+// -----------------------------------------------------------------------------
+.terms {
+  .terms-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    .terms-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      border: 1px solid var(--color-contrast-low);
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        border-color: var(--color-primary);
+        background: var(--color-primary);
+        color: white;
+      }
+      
+      sup {
+        margin-left: 0.25rem;
+        font-size: 0.75rem;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Admonition Enhancements
+// -----------------------------------------------------------------------------
+.admonition {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  
+  .admonition-title {
+    font-weight: 600;
+  }
+  
+  .admonition-content {
+    padding: 1rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer Styling
+// -----------------------------------------------------------------------------
+#footer {
+  .footer-container {
+    max-width: $page-width;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dark Mode Adjustments
+// -----------------------------------------------------------------------------
+[theme="dark"] {
+  .summary {
+    border-color: rgba(255, 255, 255, 0.1);
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .highlight {
+    box-shadow: none;
+  }
+  
+  blockquote {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  code:not(.highlight code) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .single .content img {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Print Styles
+// -----------------------------------------------------------------------------
+@media print {
+  #header-desktop,
+  #header-mobile,
+  #footer,
+  .toc,
+  .post-info-share,
+  .post-nav {
+    display: none !important;
+  }
+  
+  .single .content {
+    max-width: 100%;
+    
+    p {
+      text-align: left;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Accessibility Improvements
+// -----------------------------------------------------------------------------
+// Focus styles for keyboard navigation
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

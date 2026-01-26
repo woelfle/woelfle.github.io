@@ -1,22 +1,22 @@
 # Project Setup Plan – Private Hugo‑powered Software‑Engineering Blog
 
-## 1. Project Bootstrap
+## 1. Project Bootstrap - Done
 - Create a clean Hugo repo and initialise Git.
 - Use the latest stable Hugo version.
 - Add a standard `.gitignore` that excludes generated files (`/public`, `/resources/_gen`).
 
-## 2. Theme Installation
+## 2. Theme Installation - Done
 - Install the **LoveIT** Theme as a Hugo module
 - Configture the **LoveIT** Theme
 
-## 3. Site Configuration
+## 3. Site Configuration - Done
 - Create `config.yaml` (or `config.toml`) with:
   - `baseURL`: internal network or custom domain.
   - `title`, `theme`, `languageCode`.
   - `privacy` section to disable analytics and hide social icons.
   - `outputs: [HTML, RSS]` for feeds.
 
-## 4. Content Architecture
+## 4. Content Architecture - Done
 - Organise content under:
   - `content/posts/`
   - `content/tags/`
@@ -24,7 +24,7 @@
 - Define front‑matter fields: `title`, `date`, `draft`, `tags`, `categories`.
 - Enable taxonomies in config.
 
-## 5. Layout & UX
+## 5. Layout & UX - Done
 - Design navigation: top‑bar with logo + “About”, “Archive”.
 - Optional sidebar or tag cloud for discovery.
 - Ensure mobile‑first CSS (use theme’s built‑in SASS or Tailwind if available).
@@ -54,6 +54,7 @@
 
 ## 9. Testing & Quality
 - Run `markdownlint` with a `.mdlrc` config.
+- Add husky with lint-staged to run markdown/yaml linting before commits.
 - Use `hugo server --buildDrafts` for preview.
 
 ## 10. Documentation & Onboarding
@@ -100,7 +101,7 @@
 ### Suggested Enhancements
 1. **Pre‑commit Hooks** – Add husky with lint-staged to run markdown/yaml linting before commits.
 2. **Accessibility Checks** – Run axe-core or pa11y in CI to catch common issues.
-3. Module Version Pinning – Use go.mod for Hugo modules to avoid breaking changes.
+3. **Module Version Pinning** – Use go.mod for Hugo modules to avoid breaking changes.
 4. **TLS & HSTS** – Ensure the hosting environment enforces HTTPS and adds HSTS headers.
 5. **Content Validation** – Use hugo check in CI to verify markdown front‑matter and link integrity.
 6. **Release Notes** – Automate generation of a changelog using git log --pretty=format:"- %s" > CHANGELOG.md.

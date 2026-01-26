@@ -1,0 +1,30 @@
+// =============================================================================
+// LoveIt Theme Variable Overrides
+// =============================================================================
+// Override theme variables for consistent branding and improved readability.
+// See: https://hugoloveit.com/theme-documentation-basics/#style-customization
+
+// Typography
+$global-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$global-font-size: 16px;
+$global-line-height: 1.7;
+
+// Code Typography
+$code-font-family: 'Fira Code', 'JetBrains Mono', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+$code-font-size: 0.875rem;
+
+// Colors - Light Mode
+$global-link-color: #2563eb;
+$global-link-hover-color: #1d4ed8;
+
+// Header
+$header-height: 3.5rem;
+$header-title-font-size: 1.25rem;
+$header-title-font-weight: 600;
+
+// Content Width
+$page-width: 56rem;
+$toc-width: 15rem;
+
+// Spacing
+$content-padding: 2rem;
