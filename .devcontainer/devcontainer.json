@@ -4,12 +4,22 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
+    "containerEnv": {
+      /**
+       * The ZscalerRootCertificate has to be made available to the VSCode process inside of
+       * the Devcontainer. Otherwise it is not possible to install plugins. The base image
+       * this Devcontainer is built upon already has the ZscalerRootCertificate installed.
+       */
+      "NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
                 "EditorConfig.EditorConfig",
                 "esbenp.prettier-vscode",
-                "sst-dev.opencode"
+                "sst-dev.opencode",
+                "budparr.language-hugo-vscode",
+                "eliostruyf.vscode-front-matter"
             ]
         }
     },

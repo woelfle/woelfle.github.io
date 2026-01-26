@@ -6,12 +6,8 @@
 - Add a standard `.gitignore` that excludes generated files (`/public`, `/resources/_gen`).
 
 ## 2. Template Selection
-- Evaluate privacy‑first themes such as **Ananke** or **PaperMod**.
-- Fork/clone the chosen theme and add it as a Hugo module:
-  ```bash
-  hugo mod get github.com/<theme>
-  ```
-- Verify the license (MIT/Apache‑2.0) and ensure it supports responsive design.
+- Install the **LoveIT** Theme as a Hugo module
+- Configture the **LoveIT** Theme
 
 ## 3. Site Configuration
 - Create `config.yaml` (or `config.toml`) with:
