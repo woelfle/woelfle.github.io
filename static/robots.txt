@@ -1,8 +1,10 @@
-# Robots.txt for private blog
-# Disallow all search engine crawlers
+# Robots.txt for public blog
+# Allow search engines, block AI crawlers
 
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 # Block AI crawlers explicitly
 User-agent: GPTBot
@@ -20,4 +22,11 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
-# No sitemap exposed (private site)
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Sitemap for search engine discovery
+Sitemap: https://thomaswoelfle.com/sitemap.xml
