@@ -1,0 +1,22 @@
+{
+    "name": "opencode-devcontainer",    
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "esbenp.prettier-vscode",
+                "sst-dev.opencode"
+            ]
+        }
+    },
+    "mounts": [
+        "source=/Users/thomas.woelfle/work/tools/opencode/storage/config,target=/root/.config/opencode,type=bind,consistency=cached",
+        "source=/Users/thomas.woelfle/work/tools/opencode/storage/share,target=/root/.local/share/opencode,type=bind,consistency=cached",
+        "source=/Users/thomas.woelfle/work/brain/admin/ai/skills,target=/root/.claude/skills,type=bind,consistency=cached",
+        "source=/Users/thomas.woelfle/work/brain/admin/ai/commands,target=/root/.config/opencode/commands,type=bind,consistency=cached"
+    ]
+}
