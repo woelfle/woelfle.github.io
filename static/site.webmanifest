@@ -1,0 +1,19 @@
+{
+  "name": "Thinking in Systems - A System of Thoughts",
+  "short_name": "Thinking in Systems",
+  "description": "A blog about systems thinking, software design, and engineering",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5bbad5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
