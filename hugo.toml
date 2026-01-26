@@ -108,6 +108,12 @@ theme = 'github.com/dillonzq/LoveIt'
   # Site description for SEO
   description = "Thinking in Systems - A System of Thoughts - A private software engineering blog exploring architecture, methodologies, and systems thinking."
   
+  # Keywords for SEO
+  keywords = ["software engineering", "systems thinking", "architecture", "design patterns", "software design"]
+  
+  # Default images for OpenGraph/Twitter cards
+  images = ["/images/logo.svg"]
+  
   # Date format
   dateFormat = "2006-01-02"
   

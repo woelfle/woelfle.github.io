@@ -29,7 +29,7 @@
 - Optional sidebar or tag cloud for discovery.
 - Ensure mobile‑first CSS (use theme’s built‑in SASS or Tailwind if available).
 
-## 6. SEO Setup
+## 6. SEO Setup - Done
 - Create `static/robots.txt` with:
   ```txt
   User-agent: *

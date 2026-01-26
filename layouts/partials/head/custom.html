@@ -1,0 +1,32 @@
+{{- /* Custom head additions for SEO and privacy */ -}}
+
+{{- /* Additional meta tags for SEO */ -}}
+<meta name="author" content="{{ .Site.Params.author.name | default .Site.Title }}">
+<meta name="generator" content="Hugo {{ hugo.Version }}">
+
+{{- /* Keywords meta tag */ -}}
+{{- with .Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{- else }}
+{{- with .Site.Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{- end }}
+{{- end }}
+
+{{- /* Prevent indexing for private blog */ -}}
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+
+{{- /* Canonical URL (Hugo's built-in helper) */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- /* OpenGraph enhancements */ -}}
+{{- with .Site.Params.images }}
+{{- range first 1 . }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{- end }}
+{{- end }}
+
+{{- /* Additional security headers via meta tags */ -}}
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
