@@ -1,17 +1,22 @@
-+++
-title = "About"
-date = 2026-01-26T10:00:00Z
-draft = false
-hiddenFromSearch = false
-
-[page]
-  lightgallery = false
-  toc = false
-  [page.share]
-    enable = false
-  [page.comment]
-    enable = false
-+++
+---
+title: "About"
+date: 2026-01-26T10:00:00Z
+lastmod: 2026-01-26T10:00:00Z
+draft: false
+description: "About Thomas Wölfle - Software Engineer and Systems Thinker"
+hiddenFromSearch: false
+toc:
+  enable: false
+code:
+  copy: false
+math:
+  enable: false
+share:
+  enable: false
+comment:
+  enable: false
+lightgallery: false
+---
 
 ## About This Blog
 

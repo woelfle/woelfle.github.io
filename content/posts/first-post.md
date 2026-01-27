@@ -1,12 +1,27 @@
-+++
-title = 'First Post'
-date = 2026-01-26T10:24:36Z
-draft = false
-tags = ["systems-thinking", "engineering", "architecture"]
-categories = ["software-design"]
-+++
+---
+title: "First Post"
+date: 2026-01-26T10:24:36Z
+lastmod: 2026-01-26T10:24:36Z
+draft: false
+author: "Thomas Wölfle"
+description: "Exploring how systems thinking applies to software architecture and design patterns in software engineering"
+tags: ["systems-thinking", "engineering", "architecture"]
+categories: ["software-design"]
+hiddenFromHomePage: false
+hiddenFromSearch: false
+toc:
+  enable: true
+  auto: true
+code:
+  copy: true
+  maxShownLines: 50
+math:
+  enable: false
+---
 
 Welcome to "Thinking in Systems" — a blog dedicated to exploring software engineering through the lens of systems thinking.
+
+<!--more-->
 
 ## Why Systems Thinking Matters
 

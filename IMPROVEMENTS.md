@@ -5,43 +5,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-## 🎯 Critical Improvements
-
-
-## 📝 Content & Front Matter Improvements
-
-### 4. **Standardize Front Matter Format**
-**Current State:** Mixed TOML format in post; about.md uses table syntax which is non-standard  
-**Issue:** TOML and YAML work in Hugo, but inconsistency can cause issues  
-**Recommendation:**
-- Standardize all posts to use YAML front matter (more common in Hugo ecosystem)
-- Update `first-post.md` from `+++` (TOML) to `---` (YAML)
-- Ensure `about.md` uses proper front matter syntax without table notation
-- Template example:
-  ```yaml
-  ---
-  title: "Post Title"
-  date: 2026-01-26T10:24:36Z
-  lastmod: 2026-01-26T10:24:36Z
-  draft: false
-  author: "Thomas Wölfle"
-  description: "SEO description (120-160 characters)"
-  images: ["/images/featured-image.jpg"]
-  tags: ["tag1", "tag2"]
-  categories: ["category"]
-  hiddenFromHomePage: false
-  hiddenFromSearch: false
-  toc:
-    enable: true
-    auto: true
-  code:
-    copy: true
-    maxShownLines: 50
-  math:
-    enable: false
-  ---
-  ```
-
 ### 5. **Add Featured Images to Posts**
 **Current State:** Posts don't have featured images configured  
 **Recommendation:**
