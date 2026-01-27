@@ -32,38 +32,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 📐 Layout & Customization
 
-### 19. **Review Custom Template Overrides**
-**Current State:** Custom layouts exist: `baseof.html`, `term.html`  
-**Recommendation:**
-- Review `/layouts/_default/baseof.html` for:
-  - Proper hook placement
-  - No theme variable overwrites
-  - Clean inheritance from theme base
-- Ensure `term.html` properly handles taxonomy pages
-- Document customizations in comments
-
-### 20. **Enhance CSS Customization**
-**Current State:** Both `_custom.scss` and `_override.scss` exist (337 lines in custom)  
-**Recommendation:**
-- **`_override.scss`:** Should contain only variable overrides (✅ correctly done)
-- **`_custom.scss`:** Should contain only new styles, not overrides
-- Audit custom styles for:
-  - Unused selectors
-  - CSS variables usage (dark mode support)
-  - Mobile responsiveness
-  - Accessibility (contrast ratios, focus states)
-- Example dark mode compatibility:
-  ```scss
-  .custom-element {
-    color: var(--color-contrast-high);
-    background: var(--color-background);
-    
-    [theme=dark] & {
-      // Dark-specific styles if needed
-    }
-  }
-  ```
-
 ### 21. **Add Custom Partials**
 **Current State:** Minimal custom partials structure  
 **Recommendation:**
