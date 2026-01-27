@@ -5,37 +5,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-### 9. **Configure Social Links Properly**
-**Current State:** Social links disabled for privacy; RSS only  
-**Current Code:**
-  ```toml
-  [params.social]
-    RSS = true
-  ```
-**Recommendation:**
-- Keep privacy-first approach (good decision!)
-- If adding selective social links, follow best practice format:
-  ```toml
-  [params.social]
-    RSS = true
-    # GitHub = "username"  # Only add if desired
-    # Email = "your@email.com"
-  ```
-
-### 10. **Enable Page-Level Math Settings**
-**Current State:** Math is globally enabled with `copyTex = true`  
-**Issue:** May add bundle size for non-math posts  
-**Recommendation:**
-- Keep global setting (simplifies authoring)
-- Or disable globally and enable per-post:
-  ```yaml
-  ---
-  math:
-    enable: true
-    copyTex: true
-  ---
-  ```
-
 ### 11. **Optimize Search Configuration**
 **Current State:** Lunr search enabled with reasonable defaults  
 **Recommendation:**

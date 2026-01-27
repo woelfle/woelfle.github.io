@@ -228,8 +228,13 @@ theme = 'github.com/dillonzq/LoveIt'
       maxShownLines = 50
     
     # Math rendering (KaTeX)
+    # Disabled globally to optimize bundle size
+    # Enable per-post by adding to front matter:
+    #   [math]
+    #     enable = true
+    #     copyTex = true
     [params.page.math]
-      enable = true
+      enable = false
       copyTex = true
       mhchem = false
     

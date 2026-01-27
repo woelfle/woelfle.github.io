@@ -17,4 +17,5 @@ code:
   maxShownLines: 50
 math:
   enable: false
+  copyTex: true
 ---
