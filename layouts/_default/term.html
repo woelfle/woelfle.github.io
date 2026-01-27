@@ -1,3 +1,23 @@
+{{- /*
+  Custom Taxonomy (Tag/Category) Template
+  
+  This template provides a custom archive view for taxonomy pages
+  (tags and categories) with enhanced UX and proper theme integration.
+  
+  Features:
+  - Icon differentiation for categories (folder) vs tags (tag)
+  - Date-grouped archive organization (grouped by year)
+  - Pagination support respecting theme pagination parameters
+  - Animation effects using LoveIt's animate.css integration
+  - Proper context scoping for nested range loops
+  
+  Template Variables:
+  - .Title: The taxonomy term name (e.g., "golang", "architecture")
+  - .Data.Singular: Taxonomy type ("tag", "category", etc.)
+  - .Pages: All pages associated with this taxonomy term
+  
+  See: https://hugoloveit.com/theme-documentation-content/#taxonomies
+*/ -}}
 {{- define "title" -}}
     {{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
 {{- end -}}
