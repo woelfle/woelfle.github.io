@@ -5,6 +5,8 @@ lastmod: 2026-01-26T10:24:36Z
 draft: false
 author: "Thomas Wölfle"
 description: "Exploring how systems thinking applies to software architecture and design patterns in software engineering"
+featuredImage: "/images/featured-systems-thinking.svg"
+featuredImagePreview: "/images/featured-systems-thinking.svg"
 tags: ["systems-thinking", "engineering", "architecture"]
 categories: ["software-design"]
 hiddenFromHomePage: false
