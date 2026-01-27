@@ -5,26 +5,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-### 15. **Configure OpenGraph Images**
-**Current State:** Default images configured globally  
-**Recommendation:**
-- Add per-post OpenGraph images in front matter:
-  ```yaml
-  images: ["/images/posts/first-post/og-image.jpg"]
-  ```
-- Create optimized OG images (1200x630px) for better sharing
-- Fallback to logo configured in params.images (already set to `/images/logo.svg`)
-
----
-
 ## 🚀 Performance Optimization
-
-### 16. **Verify Asset Fingerprinting**
-**Current State:** `fingerprint = "sha256"` configured  
-**Status:** ✅ Good practice for cache busting  
-**Recommendation:**
-- Monitor minified output: `hugo --minify`
-- Verify CSS/JS have hash suffixes in generated files
 
 ### 17. **Optimize Images**
 **Current State:** No image optimization strategy documented  
@@ -46,20 +27,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 - Use WebP format with fallbacks
 - Lazy loading enabled by default in LoveIt
 
-### 18. **Enable Minification for Production**
-**Current State:** `--minify` flag recommended in README  
-**Recommendation:**
-- Verify minification works: `hugo --minify`
-- Add build script to `package.json`:
-  ```json
-  {
-    "scripts": {
-      "build": "hugo --minify",
-      "serve": "hugo server --disableFastRender -D",
-      "test": "hugo test"
-    }
-  }
-  ```
 
 ---
 
