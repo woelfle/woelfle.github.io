@@ -2,11 +2,23 @@
 
 This repository hosts a static site built with [Hugo](https://gohugo.io/). It follows the conventions and tooling outlined in `AGENTS.md` and adheres to the project’s coding standards.
 
+## Prerequisites
+
+- **Hugo Extended ≥ 0.128.0** - Required for SCSS processing and LoveIt theme compatibility
+  - Verify your version: `hugo version`
+  - Current environment: Hugo v0.154.5 Extended
+
 ## Getting Started
 
 ```bash
-# Install Hugo
+# Install Hugo (with Extended support)
 brew install hugo
+
+# Verify Hugo version
+hugo version
+
+# Download theme dependencies
+hugo mod get -u
 
 # Build the site for production
 hugo --minify
