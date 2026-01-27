@@ -30,14 +30,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-## 🛠️ Development Workflow
-
-### 23. **Add Git Hooks**
-**Current State:** No pre-commit hooks mentioned  
-**Recommendation:**
-- Use Husky for Git hook management
-
-
 ## 📊 Analytics & Monitoring
 
 ### 25. **Plan for Future Analytics (Without Tracking)**
@@ -53,51 +45,6 @@ This document outlines recommended improvements to align the Hugo site with Love
     enable = false
     # [params.analytics.plausible]
     #   dataDomain = "example.com"
-  ```
-
----
-
-## 🧪 Testing & Validation
-
-### 26. **Implement Markdown Linting**
-**Current State:** Markdownlint mentioned in AGENTS.md  
-**Recommendation:**
-- Install and configure markdownlint-cli2:
-  ```bash
-  npm install -D markdownlint-cli2
-  ```
-- Create `.mdlrc.json`:
-  ```json
-  {
-    "extends": "default",
-    "no-multiple-blanks": { "maximum": 1 },
-    "line-length": false,
-    "no-inline-html": false,
-    "MD024": false
-  }
-  ```
-
-### 27. **Add Hugo Test Suite**
-**Current State:** `hugo test` placeholder exists  
-**Recommendation:**
-- Create test content pages
-- Validate build output regularly
-- Add CI/CD pipeline verification:
-  ```bash
-  hugo test
-  hugo --minify
-  # Check for build errors
-  ```
-
-### 28. **Implement Build Validation**
-**Current State:** No build validation process documented  
-**Recommendation:**
-- Add post-build validation script:
-  ```bash
-  #!/bin/bash
-  hugo --minify
-  test -f public/index.html || exit 1
-  test -f public/index.json || exit 1
   ```
 
 ---
