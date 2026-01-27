@@ -5,20 +5,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-
-## 🔍 SEO & Meta Improvements
-
-### 13. **Add Site Verification Tags (Optional)**
-**Current State:** All verification tags disabled  
-**Recommendation:**
-- Leave disabled for private blog (good choice)
-- If making public later:
-  ```toml
-  [params.siteVerification]
-    google = "verification-code"
-    bing = "verification-code"
-  ```
-
 ### 14. **Optimize Meta Descriptions**
 **Current State:** Global description set; individual pages may lack descriptions  
 **Issue:** Each post should have its own SEO description  

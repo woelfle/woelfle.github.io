@@ -275,7 +275,45 @@ theme = 'github.com/dillonzq/LoveIt'
     rss = 10
 
   # -----------------------------------------------------------------------------
-  # Site Verification (disabled)
+  # Site Verification (disabled - for private blog)
+  # Search engine verification meta tags. Leave empty for private blogs.
+  # 
+  # To enable when making the site public:
+  # 1. Submit your site to each search engine's webmaster tools
+  # 2. Copy the verification code provided by each service
+  # 3. Paste the code in the corresponding field below
+  # 
+  # Supported services:
+  # - google: Google Search Console (meta tag verification)
+  # - bing: Bing Webmaster Tools
+  # - yandex: Yandex Webmaster
+  # - pinterest: Pinterest Site Verification
+  # - baidu: Baidu Webmaster Tools (for Chinese SEO)
+  # 
+  # Example (DO NOT use - for reference only):
+  # [params.siteVerification]
+  #   google = "abcdef123456789xyz"
+  #   bing = "987654321zyxwvu"
+  #
+  # LoveIt theme automatically generates:
+  # <meta name="google-site-verification" content="..." />
+  # <meta name="msvalidate.01" content="..." />
+  # <meta name="yandex-verification" content="..." />
+  # etc.
+  # 
+  # Privacy note: Enabling verification requires submitting your site to
+  # search engines, which may affect your privacy preferences.
+  # Keep disabled if you want to maintain a completely private blog.
+  # 
+  # Status: ✅ Correctly disabled for privacy-first approach
+  # Last updated: 2026-01-27
+  # Reference: https://hugoloveit.com/theme-documentation-basics/
+  # 
+  # Format: Always use plain verification codes without "google-site-verification=" prefix
+  # The LoveIt theme handles the proper meta tag formatting.
+  # 
+  # Maintenance note: Search engines periodically renew verification codes.
+  # Plan to check and update these values annually if enabled.
   # -----------------------------------------------------------------------------
   [params.siteVerification]
     google = ""
