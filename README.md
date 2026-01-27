@@ -11,8 +11,8 @@ brew install hugo
 # Build the site for production
 hugo --minify
 
-# Serve locally with drafts included
-hugo server -D
+# Serve locally with drafts included. Disable fast render when using LoveIT Theme (https://hugoloveit.com/theme-documentation-basics/)
+hugo server --disableFastRender -D
 ```
 
 ## Development Workflow
