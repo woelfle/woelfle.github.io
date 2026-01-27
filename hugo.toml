@@ -8,8 +8,21 @@ languageName = 'English'
 title = 'Thinking in Systems - A System of Thoughts'
 theme = 'github.com/dillonzq/LoveIt'
 
+# Minification configuration (Hugo v0.150+)
+# Reduces file sizes for production deployments
+[minify]
+  minifyOutput = true
+  [minify.tdewolff.css]
+    version = 4  # CSS 4 allows modern features
+  [minify.tdewolff.js]
+    keepVars = false  # Optimize JS variable names
+  [minify.tdewolff.json]
+    keepNumbers = false  # Reduce JSON file size
+
 # -----------------------------------------------------------------------------
 # Output Formats (HTML + RSS for feeds, JSON for search)
+# Minification applied globally reduces JSON index size for faster search
+# See: https://gohugo.io/getting-started/configuration/#output-formats
 # -----------------------------------------------------------------------------
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -17,6 +30,12 @@ theme = 'github.com/dillonzq/LoveIt'
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
+
+# Custom output format configuration for JSON search index
+[outputFormats.JSON]
+  isPlainText = true
+  mediaType = "application/json"
+  # Note: minification is handled by global 'minify = true' setting
 
 # -----------------------------------------------------------------------------
 # Taxonomies

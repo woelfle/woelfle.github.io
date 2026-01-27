@@ -7,37 +7,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 🎯 Critical Improvements
 
-### 1. **Theme Installation Method**
-**Current State:** Theme is referenced as a GitHub module reference  
-**Issue:** Empty `/themes/` directory suggests the theme may not be properly installed  
-**Recommendation:**
-- Install the LoveIt theme properly using Hugo modules:
-  ```bash
-  hugo mod get -u
-  ```
-- Or use Git submodule as fallback:
-  ```bash
-  git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-  ```
-- Verify theme installation by checking if theme files appear in `themes/`
-
-### 2. **Hugo Version Verification**
-**Current State:** No Hugo version specified in project documentation  
-**Issue:** LoveIt requires Hugo Extended ≥ 0.128.0 for SCSS processing  
-**Recommendation:**
-- Document the required Hugo version in README.md
-- Verify local Hugo version: `hugo version`
-- Add version check to CI/CD pipeline
-- Consider using `.hugo-version` file for consistency
-
-### 3. **Output Format Configuration - Missing Search Index**
-**Current State:** JSON output configured for search, but may need verification  
-**Recommendation:**
-- Ensure `search.enable = true` is working properly
-- Verify the JSON index is being generated in `public/index.json`
-- Consider adding `minify = true` for the JSON output if it's bloated
-
----
 
 ## 📝 Content & Front Matter Improvements
 
