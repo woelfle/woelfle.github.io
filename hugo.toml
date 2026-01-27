@@ -174,7 +174,7 @@ theme = 'github.com/dillonzq/LoveIt'
   [params.home]
     [params.home.profile]
       enable = true
-      # avatarURL = "/images/avatar.png"
+      avatarURL = "/images/avatar.svg"
       title = "Thinking in Systems"
       subtitle = "A System of Thoughts"
       typeit = true
