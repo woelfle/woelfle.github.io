@@ -3,7 +3,7 @@ title: "About"
 date: 2026-01-26T10:00:00Z
 lastmod: 2026-01-26T10:00:00Z
 draft: false
-description: "About Thomas Wölfle - Software Engineer and Systems Thinker"
+description: "Learn about Thomas Wölfle, a software engineer passionate about systems thinking, architecture design, and building elegant solutions."
 hiddenFromSearch: false
 toc:
   enable: false

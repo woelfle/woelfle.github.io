@@ -5,16 +5,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-### 14. **Optimize Meta Descriptions**
-**Current State:** Global description set; individual pages may lack descriptions  
-**Issue:** Each post should have its own SEO description  
-**Recommendation:**
-- Add `description` to every post front matter (120-160 characters)
-- Example:
-  ```yaml
-  description: "Exploring how systems thinking applies to software architecture and design patterns"
-  ```
-
 ### 15. **Configure OpenGraph Images**
 **Current State:** Default images configured globally  
 **Recommendation:**

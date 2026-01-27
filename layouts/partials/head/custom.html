@@ -21,6 +21,11 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{- /* OpenGraph enhancements */ -}}
+{{- with .Params.description }}
+<meta property="og:description" content="{{ . }}">
+{{- else }}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+{{- end }}
 {{- with .Site.Params.images }}
 {{- range first 1 . }}
 <meta property="og:image" content="{{ . | absURL }}">
