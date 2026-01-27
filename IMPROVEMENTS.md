@@ -30,83 +30,13 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-## 📐 Layout & Customization
-
-### 21. **Add Custom Partials**
-**Current State:** Minimal custom partials structure  
-**Recommendation:**
-- Create custom partials in `/layouts/partials/`:
-  - `custom-head.html` - For custom meta tags
-  - `custom-header.html` - For custom header content
-  - `custom-footer.html` - For custom footer content
-  - `custom-social.html` - For social link customization
-- Check theme documentation for available hooks
-
----
-
 ## 🛠️ Development Workflow
-
-### 22. **Establish Development Standards**
-**Current State:** Guidelines exist in AGENTS.md  
-**Recommendation:**
-- Create `.editorconfig` for consistent formatting across editors
-- Standardize line endings and indentation
-- Example:
-  ```ini
-  root = true
-  [*]
-  charset = utf-8
-  end_of_line = lf
-  insert_final_newline = true
-  [*.md]
-  trim_trailing_whitespace = false
-  [*.{toml,yml,yaml}]
-  indent_style = space
-  indent_size = 2
-  ```
 
 ### 23. **Add Git Hooks**
 **Current State:** No pre-commit hooks mentioned  
 **Recommendation:**
-- Add pre-commit hooks for linting:
-  ```bash
-  # .git/hooks/pre-commit
-  markdownlint '**/*.md'
-  yamllint '**/*.yml'
-  ```
-- Or use tool like Husky for better management
+- Use Husky for Git hook management
 
-### 24. **Set Up Content Archetype**
-**Current State:** Default archetype exists  
-**Recommendation:**
-- Review `/archetypes/default.md`
-- Ensure it includes all necessary front matter fields:
-  ```markdown
-  +++
-  title = "{{ replace .Name "-" " " | title }}"
-  date = {{ .Date }}
-  lastmod = {{ .Date }}
-  draft = true
-  author = "Thomas Wölfle"
-  description = ""
-  tags = []
-  categories = []
-  
-  [toc]
-  enable = true
-  
-  [code]
-  copy = true
-  
-  [math]
-  enable = false
-  
-  [share]
-  enable = false
-  +++
-  ```
-
----
 
 ## 📊 Analytics & Monitoring
 
@@ -261,47 +191,6 @@ This document outlines recommended improvements to align the Hugo site with Love
   - SEO best practices
   - Markdown style guide
   - Example posts
-
----
-
-## 🎯 Summary by Priority
-
-### High Priority (Impact & Effort)
-1. Verify theme installation (Critical)
-2. Standardize front matter format (Content quality)
-3. Add featured images to posts (UX/SEO)
-4. Generate proper favicons (Professionalism)
-5. Enhance image optimization strategy (Performance)
-
-### Medium Priority (Improvement & Effort)
-6. Configure page-level summaries (Homepage UX)
-7. Add Markdown linting to workflow (Quality)
-8. Create content guidelines (Maintainability)
-9. Audit and document CSS customizations (Maintainability)
-10. Verify mobile responsiveness (UX)
-
-### Low Priority (Polish & Nice-to-Have)
-11. Add analytics tooling configuration (Future-proofing)
-12. Enhance accessibility features (Compliance)
-13. Create deployment documentation (DevOps)
-14. Set up CI/CD validation (Engineering)
-15. Add git hooks for automation (DX)
-
----
-
-## 🚀 Quick Win Checklist
-
-Quick wins you can implement immediately:
-
-- [ ] Verify Hugo version: `hugo version`
-- [ ] Test theme installation: `hugo server --disableFastRender -D`
-- [ ] Add featured image to first-post
-- [ ] Convert post front matter from TOML to YAML
-- [ ] Add `description` field to all posts
-- [ ] Create avatar image at `/static/images/avatar.png`
-- [ ] Generate favicons
-- [ ] Test in mobile view
-- [ ] Run build and verify no errors: `hugo --minify`
 
 ---
 

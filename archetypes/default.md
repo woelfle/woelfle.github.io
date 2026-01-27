@@ -9,13 +9,19 @@ tags: []
 categories: []
 hiddenFromHomePage: false
 hiddenFromSearch: false
+
 toc:
   enable: true
   auto: true
+
 code:
   copy: true
   maxShownLines: 50
+
 math:
   enable: false
   copyTex: true
+
+share:
+  enable: false
 ---
