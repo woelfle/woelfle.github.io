@@ -1,16 +1,85 @@
 {
   "name": "Thinking in Systems - A System of Thoughts",
   "short_name": "Thinking in Systems",
-  "description": "A blog about systems thinking, software design, and engineering",
+  "description": "A private software engineering blog exploring architecture, methodologies, and systems thinking.",
+  "categories": ["blog"],
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#5bbad5",
-  "orientation": "portrait-primary",
+  "shortcuts": [
+    {
+      "name": "Latest Posts",
+      "short_name": "Posts",
+      "description": "View all blog posts",
+      "url": "/posts/",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Tags",
+      "short_name": "Tags",
+      "description": "Browse posts by tags",
+      "url": "/tags/",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/images/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "form_factor": "narrow"
+    }
+  ],
   "icons": [
     {
-      "src": "/logo.svg",
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

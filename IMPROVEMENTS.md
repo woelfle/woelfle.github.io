@@ -5,30 +5,6 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-### 11. **Optimize Search Configuration**
-**Current State:** Lunr search enabled with reasonable defaults  
-**Recommendation:**
-- Test search functionality locally: `hugo server --disableFastRender -D`
-- Verify JSON index in browser DevTools
-- Consider `contentLength = 4000` is good balance
-- Monitor index size with large post counts
-
-### 12. **Configure Favicon & PWA**
-**Current State:** `site.webmanifest` exists but may be incomplete  
-**Issue:** Multiple favicon formats needed for modern browsers  
-**Recommendation:**
-- Generate complete favicon set at https://realfavicongenerator.net/
-- Place in `/static/`:
-  - `favicon.ico` (classic)
-  - `favicon-16x16.png`
-  - `favicon-32x32.png`
-  - `apple-touch-icon.png` (180x180)
-  - `android-chrome-192x192.png`
-  - `android-chrome-512x512.png`
-  - `browserconfig.xml`
-  - Update `site.webmanifest`
-
----
 
 ## 🔍 SEO & Meta Improvements
 
