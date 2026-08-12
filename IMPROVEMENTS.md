@@ -1,6 +1,7 @@
 # Hugo Site Improvements - LoveIt Theme Best Practices
 
 ## Overview
+
 This document outlines recommended improvements to align the Hugo site with LoveIt theme best practices and enhance user experience, SEO, performance, and maintainability.
 
 ---
@@ -8,9 +9,12 @@ This document outlines recommended improvements to align the Hugo site with Love
 ## 🚀 Performance Optimization
 
 ### 17. **Optimize Images**
+
 **Current State:** No image optimization strategy documented  
 **Recommendation:**
+
 - Use image shortcode instead of raw markdown:
+
   ```markdown
   {{< image src="/images/photo.jpg" 
       caption="Caption with **markdown**" 
@@ -20,6 +24,7 @@ This document outlines recommended improvements to align the Hugo site with Love
       src_s="/images/photo-small.jpg"
       src_l="/images/photo-large.jpg" >}}
   ```
+
 - Create responsive image variants:
   - Small: 600px width
   - Medium: 1000px width
@@ -27,19 +32,21 @@ This document outlines recommended improvements to align the Hugo site with Love
 - Use WebP format with fallbacks
 - Lazy loading enabled by default in LoveIt
 
-
 ---
 
 ## 📊 Analytics & Monitoring
 
 ### 25. **Plan for Future Analytics (Without Tracking)**
+
 **Current State:** Analytics disabled (✅ privacy-first approach)  
 **Recommendation:**
+
 - If analytics needed later, use privacy-respecting options:
   - Plausible Analytics (privacy-focused)
   - Fathom Analytics
   - Simple Analytics
 - LoveIt supports these with config:
+
   ```toml
   [params.analytics]
     enable = false
@@ -52,8 +59,10 @@ This document outlines recommended improvements to align the Hugo site with Love
 ## 📱 Mobile & Accessibility
 
 ### 29. **Verify Mobile Responsiveness**
+
 **Current State:** Custom CSS includes media queries  
 **Recommendation:**
+
 - Test on actual devices/browsers:
   - Chrome DevTools mobile view
   - Safari on iOS
@@ -65,8 +74,10 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Navigation menu
 
 ### 30. **Enhance Accessibility**
+
 **Current State:** LoveIt provides base accessibility  
 **Recommendation:**
+
 - Audit using WAVE or Axe DevTools
 - Ensure:
   - All images have alt text
@@ -81,21 +92,27 @@ This document outlines recommended improvements to align the Hugo site with Love
 ## 🔐 Security & Privacy
 
 ### 31. **Verify Privacy Settings**
+
 **Current State:** Privacy-first configuration (✅ excellent)  
+
 - Analytics disabled
 - Cookies disabled
 - Comments disabled
 - Sharing disabled
 
 **Recommendation:**
+
 - Keep current privacy-first approach
 - No tracking code or external services
 - Host content privately or self-host
 
 ### 32. **Configure CSP Headers (if self-hosted)**
+
 **Recommendation:**
+
 - If deploying to own server, add Content Security Policy headers
 - Example nginx config:
+
   ```nginx
   add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'" always;
   ```
@@ -105,8 +122,10 @@ This document outlines recommended improvements to align the Hugo site with Love
 ## 📚 Documentation
 
 ### 33. **Enhance Project Documentation**
+
 **Current State:** README.md and AGENTS.md exist  
 **Recommendation:**
+
 - Add `CONTRIBUTING.md` with:
   - How to write new posts
   - Front matter template
@@ -118,8 +137,10 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Rollback procedures
 
 ### 34. **Document Custom Features**
+
 **Current State:** Custom SCSS exists but lacks documentation  
 **Recommendation:**
+
 - Add comments to custom styles explaining:
   - Purpose of each rule
   - Mobile breakpoints used
@@ -130,8 +151,10 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Custom partial usage
 
 ### 35. **Create Content Guidelines**
+
 **Current State:** No content guidelines documented  
 **Recommendation:**
+
 - Create `/docs/CONTENT_GUIDE.md`:
   - Post structure and conventions
   - When to use admonitions, images, code blocks

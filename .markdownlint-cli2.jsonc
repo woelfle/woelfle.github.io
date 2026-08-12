@@ -1,4 +1,6 @@
 {
+  // Respect .gitignore (excludes node_modules/, public/, ...) when enumerating files
+  "gitignore": true,
   "config": {
     // Line length: not enforced for prose-heavy blog content
     "MD013": false,

@@ -28,9 +28,11 @@ hugo server --disableFastRender -D
 ```
 
 ## Development Workflow
+
 - Use the scripts in `package.json` for linting and testing.
 - Follow the style guidelines defined in the repository.
 - Contributions should include tests where applicable and pass `hugo test`.
 
 ## Contributing
+
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines.

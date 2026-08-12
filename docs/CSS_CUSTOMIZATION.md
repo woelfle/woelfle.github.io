@@ -5,6 +5,7 @@ This guide explains the custom CSS strategy for the Thinking in Systems blog, bu
 ## File Structure
 
 ### `assets/css/_override.scss`
+
 Contains **only theme variable overrides**. This file should never contain custom styles.
 
 ```scss
@@ -17,6 +18,7 @@ $header-height: 3.5rem;
 ```
 
 ### `assets/css/_custom.scss`
+
 Contains **only new custom styles**, not overrides of existing theme styles.
 
 ## CSS Variables Reference
@@ -24,6 +26,7 @@ Contains **only new custom styles**, not overrides of existing theme styles.
 The LoveIt theme exposes CSS custom properties for theming. Always use these variables for consistent light/dark mode support:
 
 ### Color Variables
+
 - `--color-primary`: Main brand color (blue #2563eb in light mode)
 - `--color-contrast-high`: High contrast text (dark gray in light, white in dark)
 - `--color-contrast-low`: Subtle borders and text (light gray in light, dim in dark)
@@ -31,6 +34,7 @@ The LoveIt theme exposes CSS custom properties for theming. Always use these var
 - `--color-background`: Page background
 
 ### Usage Example
+
 ```scss
 // ✅ GOOD: Uses CSS variables for automatic dark mode support
 blockquote {
@@ -70,6 +74,7 @@ The custom styles follow a mobile-first approach with breakpoints at **680px**:
 ## Accessibility Standards (WCAG 2.1 AA)
 
 ### Focus States
+
 All interactive elements have explicit focus styles:
 
 ```scss
@@ -81,6 +86,7 @@ a:focus {
 ```
 
 ### Touch Target Size
+
 Interactive elements maintain minimum 44x44px click areas:
 
 ```scss
@@ -91,9 +97,11 @@ button, a[role="button"] {
 ```
 
 ### Color Contrast
+
 Always use CSS variables to ensure adequate contrast in both themes. The LoveIt theme is designed to meet WCAG AA standards.
 
 ### Reduced Motion
+
 Respects user preferences with `prefers-reduced-motion`:
 
 ```scss
@@ -137,6 +145,7 @@ The theme automatically switches between light and dark modes. Use the `[theme="
 ## Code Block Styling
 
 ### Syntax Highlighting
+
 The `.highlight` class wraps code blocks:
 
 ```scss
@@ -153,6 +162,7 @@ The `.highlight` class wraps code blocks:
 ```
 
 ### Inline Code
+
 Inline code (not in blocks) uses `code:not(.highlight code)`:
 
 ```scss
@@ -167,6 +177,7 @@ code:not(.highlight code) {
 ## Image Optimization
 
 ### Lazy Loading
+
 Images are marked for lazy loading:
 
 ```scss
@@ -178,6 +189,7 @@ img {
 ```
 
 ### Responsive Images
+
 Use Hugo's image shortcode for responsive variants:
 
 ```markdown
@@ -210,6 +222,7 @@ The CSS includes `@media print` rules to optimize output:
 ## Common Customization Patterns
 
 ### Custom Color Scheme
+
 Override in `_override.scss`:
 
 ```scss
@@ -218,6 +231,7 @@ $global-link-hover-color: #your-hover-color;
 ```
 
 ### Custom Fonts
+
 Override in `_override.scss`:
 
 ```scss
@@ -226,6 +240,7 @@ $code-font-family: 'Your Mono Font', monospace;
 ```
 
 ### Custom Spacing
+
 Override in `_override.scss`:
 
 ```scss
@@ -234,6 +249,7 @@ $content-padding: 2rem;
 ```
 
 ### Add New Component Style
+
 Add to `_custom.scss`:
 
 ```scss
@@ -256,23 +272,27 @@ Add to `_custom.scss`:
 ## Testing Your Changes
 
 ### Build and Serve
+
 ```bash
 hugo server --disableFastRender -D
 ```
 
 Visit `http://localhost:1313` and test:
+
 - All pages render correctly
 - Light and dark modes switch smoothly
 - Mobile view (Chrome DevTools)
 - Print view (Ctrl+P / Cmd+P)
 
 ### Lint Your CSS
+
 ```bash
 # If you add CSS validation (future):
 # stylelint 'assets/css/*.scss'
 ```
 
 ### Accessibility Audit
+
 - Use WAVE or Axe DevTools browser extension
 - Check focus states with Tab key navigation
 - Test with screen readers (NVDA, JAWS, VoiceOver)
@@ -297,6 +317,7 @@ Visit `http://localhost:1313` and test:
 ## Need Help?
 
 When modifying CSS:
+
 1. Always check if a CSS variable exists before using hard-coded colors
 2. Test changes in both light and dark modes
 3. Verify mobile responsiveness at 680px breakpoint
