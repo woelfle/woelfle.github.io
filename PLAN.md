@@ -62,11 +62,11 @@
   4. Deploy (S3 sync, Netlify deploy hook).
 - Store workflow in `.github/workflows/ci.yml`.
 
-## 9. Testing & Quality
+## 9. Testing & Quality - Done
 
-- Run `markdownlint` with a `.mdlrc` config.
+- Run `markdownlint` with a `.mdlrc` config (implemented via `markdownlint-cli2` + `.markdownlint-cli2.jsonc`).
 - Add husky with lint-staged to run markdown/yaml linting before commits.
-- Use `hugo server --buildDrafts` for preview.
+- Use `hugo server --buildDrafts` for preview (`npm run serve`).
 
 ## 10. Documentation & Onboarding
 
@@ -116,7 +116,7 @@
 
 ### Suggested Enhancements
 
-1. **Pre‑commit Hooks** – Add husky with lint-staged to run markdown/yaml linting before commits.
+1. **Pre‑commit Hooks** – Add husky with lint-staged to run markdown/yaml linting before commits. ✔ Done
 2. **Accessibility Checks** – Run axe-core or pa11y in CI to catch common issues.
 3. **Module Version Pinning** – Use go.mod for Hugo modules to avoid breaking changes.
 4. **TLS & HSTS** – Ensure the hosting environment enforces HTTPS and adds HSTS headers.
