@@ -1,0 +1,12 @@
+{
+  "config": {
+    // Line length: not enforced for prose-heavy blog content
+    "MD013": false,
+    // Allow headings ending in '?' which are common in blog titles
+    "MD026": {
+      "punctuation": ".,;:!。，；：！"
+    },
+    // Hugo content often starts with prose after the front matter block
+    "MD041": false
+  }
+}

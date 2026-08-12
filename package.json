@@ -5,8 +5,8 @@
   "scripts": {
     "build": "hugo --minify",
     "serve": "hugo server --disableFastRender -D",
-    "lint:md": "markdownlint '**/*.md'",
-    "lint:yml": "yamllint '**/*.yml'",
+    "lint:md": "markdownlint-cli2 '**/*.md'",
+    "lint:yml": "yamllint .",
     "test": "hugo test"
   },
   "keywords": [

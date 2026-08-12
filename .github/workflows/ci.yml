@@ -1,0 +1,100 @@
+# =============================================================================
+# CI/CD Pipeline for the Hugo blog (GitHub Actions)
+#
+# Triggers:
+#   - push to main          -> lint, build, deploy to GitHub Pages
+#   - pull requests         -> lint + build (no deploy)
+#
+# One-time setup required in GitHub repo settings (Settings > Pages):
+#   - Source: "GitHub Actions"
+#   - Custom domain: thomaswoelfle.com (or let the committed static/CNAME
+#     file configure it automatically on first deploy)
+#   - Enforce HTTPS: ON
+#
+# DNS (root domain thomaswoelfle.com -> GitHub Pages):
+#   - A records: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+#   - (or a CNAME to woelfle.github.io for a www subdomain)
+#
+# Privacy note: GitHub Pages serves private repositories only with a paid
+# GitHub plan. For a fully private blog without that, deploy elsewhere (S3,
+# Netlify, or self-hosted behind auth) and swap the deploy job below.
+# =============================================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Serialize GitHub Pages deployments so concurrent pushes never race.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Node dependencies
+        # npm install (no lockfile is committed yet; switch to `npm ci`
+        # once a package-lock.json exists for reproducible installs).
+        run: npm install --no-audit --no-fund
+
+      - name: Lint Markdown
+        run: npm run lint:md
+
+      - name: Lint YAML
+        run: |
+          pip3 install --user yamllint
+          "$HOME/.local/bin/yamllint" .
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          # Keep in sync with the version in .hugo-version
+          hugo-version: "0.154.5"
+          extended: true
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
