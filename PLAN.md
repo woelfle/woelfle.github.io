@@ -1,5 +1,7 @@
 # Project Setup Plan – Private Hugo‑powered Software‑Engineering Blog
 
+> **Status: superseded (2026-08-13).** The site was set up as planned below, but the theme is now **Hugo Theme Blowfish v2** (installed as a Hugo module, config under `config/_default/`), replacing the originally planned LoveIt/PaperMod themes. See `README.md` and `config/_default/` for the current setup. The rest of this file is kept as a historical record of the original plan.
+
 ## 1. Project Bootstrap - Done
 
 - Create a clean Hugo repo and initialise Git.

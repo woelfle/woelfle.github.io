@@ -1,10 +1,10 @@
 {
-  "name": "hugo-loveit-blog",
+  "name": "thinking-in-systems",
   "version": "1.0.0",
-  "description": "A static blog built with Hugo and the LoveIt theme",
+  "description": "A static blog built with Hugo and the Blowfish theme",
   "scripts": {
     "build": "hugo --minify",
-    "serve": "hugo server --disableFastRender -D",
+    "serve": "hugo server -D",
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:yml": "yamllint .",
     "test": "hugo test",
@@ -13,7 +13,7 @@
   "keywords": [
     "hugo",
     "blog",
-    "loveit-theme"
+    "blowfish-theme"
   ],
   "author": "Thomas Wölfle",
   "license": "MIT",

@@ -49,7 +49,7 @@ providers when the website is loaded.
 ## 5. Search function
 
 The built-in search works entirely in the visitor's browser (client-side,
-lunr.js). No search queries are transmitted to a server.
+Fuse.js). No search queries are transmitted to a server.
 
 ## 6. Local storage (localStorage)
 

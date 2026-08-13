@@ -50,7 +50,7 @@ an Dritt-Anbieter beim Laden der Website statt.
 ## 5. Suchfunktion
 
 Die integrierte Suchfunktion arbeitet vollständig im Browser des Besuchers
-(Client-seitig, lunr.js). Es werden keine Suchanfragen an einen Server
+(Client-seitig, Fuse.js). Es werden keine Suchanfragen an einen Server
 übermittelt.
 
 ## 6. Lokale Speicherung (localStorage)

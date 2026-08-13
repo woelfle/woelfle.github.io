@@ -1,8 +1,8 @@
-# Hugo Site Improvements - LoveIt Theme Best Practices
+# Hugo Site Improvements - Blowfish Theme
 
 ## Overview
 
-This document outlines recommended improvements to align the Hugo site with LoveIt theme best practices and enhance user experience, SEO, performance, and maintainability.
+This document outlines recommended improvements to align the Hugo site with Blowfish theme best practices and enhance user experience, SEO, performance, and maintainability.
 
 ---
 
@@ -30,7 +30,7 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Medium: 1000px width
   - Large: 1400px width
 - Use WebP format with fallbacks
-- Lazy loading enabled by default in LoveIt
+- Lazy loading enabled by default in Blowfish
 
 ---
 
@@ -45,7 +45,7 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Plausible Analytics (privacy-focused)
   - Fathom Analytics
   - Simple Analytics
-- LoveIt supports these with config:
+- Blowfish supports these with config:
 
   ```toml
   [params.analytics]
@@ -68,14 +68,14 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Safari on iOS
   - Android browser
 - Focus on:
-  - Header behavior (`desktopMode = "fixed"`, `mobileMode = "auto"`)
+  - Header layout (`params.header.layout` = `"fixed"` / `"basic"`)
   - Code block scrolling
   - Image sizing
   - Navigation menu
 
 ### 4. **Enhance Accessibility**
 
-**Current State:** LoveIt provides base accessibility  
+**Current State:** Blowfish provides base accessibility  
 **Recommendation:**
 
 - Audit using WAVE or Axe DevTools
@@ -121,14 +121,14 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 🎨 Visual Design & Branding
 
-**Current State:** The site runs the stock LoveIt theme with minor CSS overrides and looks generic. The core concept ("system nodes, order, precision") is not yet expressed visually.
+**Current State:** The site runs the stock Blowfish theme with default styling. The core concept ("system nodes, order, precision") is not yet expressed visually.
 
 ### 9. **Typography: Add Self-Hosted Fonts**
 
-**Current State:** All text renders in `system-ui`; the `_override.scss` references "Fira Code" but no font file is bundled, so code silently falls back to a generic monospace. No visual character.  
+**Current State:** All text renders in a self-hosted system stack; code falls back to a generic monospace. No visual character.  
 **Recommendation:**
 
-- Self-host two typefaces via `@font-face` in `assets/css/_override.scss` (privacy-first: no Google Fonts CDN):
+- Self-host two typefaces via `@font-face` in `assets/css/custom.css` (privacy-first: no Google Fonts CDN):
   - Display/headings: e.g. **Space Grotesk** (or "Sora")
   - Body: e.g. **Inter**
   - Code: e.g. **JetBrains Mono** (replaces the dangling "Fira Code" reference)
@@ -136,12 +136,12 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ### 10. **Establish a Cohesive Color Palette**
 
-**Current State:** Default LoveIt palette — near-black text, gray borders, default blue (`#2d96bd`) links; `_override.scss` sets a single blue (`#2563eb`). No brand accent, no semantic colors, flat surfaces.  
+**Current State:** Blowfish default palette — neutral grays (Tailwind) with a blue accent. No brand accent, no semantic colors, flat surfaces.  
 **Recommendation:**
 
-- Define a primary/accent + semantic color set for **light and dark** modes, applied via theme variables (`assets/css/_override.scss`) and CSS custom properties in `assets/css/_custom.scss`.
+- Define a primary/accent + semantic color set for **light and dark** modes, applied via `assets/css/custom.css`.
 - Use the accent deliberately (links, headings accents, hover states, highlights) rather than as a lone link color.
-- Refine the dark palette beyond the default gray (`#292a2d`) to match the new brand.
+- Refine the dark palette beyond Tailwind neutrals to match the new brand.
 
 ### 11. **Redesign Brand Assets (Logo, Avatar, Featured Images)**
 
@@ -153,7 +153,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ### 12. **Add a Home Page Hero**
 
-**Current State:** The home page shows a small 6rem avatar + title, then drops straight into a wall of full-width stacked post cards. No value proposition, no visual anchor, no hierarchy.  
+**Current State:** The home page uses the stock Blowfish profile layout (avatar, name, short description) followed by a recent-posts list. No value proposition, no visual anchor, no hierarchy beyond the defaults.  
 **Recommendation:**
 
 - Replace the plain profile block with a proper hero: larger typography, subtle system-node background motif, value proposition, and a category/topic pill row.
@@ -161,7 +161,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ### 13. **Refine Post Cards & List Pages**
 
-**Current State:** Full-bleed images at an awkward ~30% aspect ratio, cluttered meta line, minimal hover treatment.  
+**Current State:** Posts use the default background hero (`heroStyle = "background"`, blurred full-bleed) with stock meta styling and no custom card treatment.  
 **Recommendation:**
 
 - Consistent image aspect ratio (e.g. 16:9), rounded corners, hover zoom/tint.
@@ -170,7 +170,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ### 14. **Refine Header & Navigation**
 
-**Current State:** Flat light-gray bar with plain text nav; default active/hover states.  
+**Current State:** Fixed header with default Blowfish nav styling; stock active/hover states.  
 **Recommendation:**
 
 - Subtle border + blur (glass effect) on the fixed header.
@@ -178,12 +178,12 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ### 15. **Polish Post Pages**
 
-**Current State:** Default theme output: title, meta, featured image, side TOC. Code, tables, admonitions, and blockquotes are partly styled in `_custom.scss`.  
+**Current State:** Blowfish default output: title, meta, hero image, smart TOC. Code, tables, alerts, and blockquotes are styled by Tailwind prose.  
 **Recommendation:**
 
 - Styled featured-image treatment (rounded, shadow, subtle border).
 - Reading-progress indicator; refined TOC, meta, and related-posts sections.
-- Consistent styling for code blocks, tables, admonitions, and blockquotes in both themes.
+- Consistent styling for code blocks, tables, alerts, and blockquotes in light and dark modes.
 
 ### 16. **Footer & Micro-Interactions**
 
@@ -241,4 +241,4 @@ This document outlines recommended improvements to align the Hugo site with Love
 ---
 
 **Last Updated:** 2026-08-13  
-**Framework:** Hugo + LoveIt Theme
+**Framework:** Hugo + Blowfish Theme (v2.105.0, Hugo module)

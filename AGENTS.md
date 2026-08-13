@@ -5,7 +5,7 @@
 | Action | Command | Notes |
 | --- | --- | --- |
 | **Build** | `hugo --minify` | Generates the static site in `public/`. The `--minify` flag removes whitespace and minifies CSS/JS for production. |
-| **Serve (dev)** | `hugo server -D` | Starts a live‑reloading local server on `http://localhost:1313`. The `-D` flag includes draft content. Disable fast render when using LoveIT Theme (<https://hugoloveit.com/theme-documentation-basics/>) |
+| **Serve (dev)** | `hugo server -D` | Starts a live‑reloading local server on `http://localhost:1313`. The `-D` flag includes draft content. |
 | **Lint Markdown** | `markdownlint '**/*.md'` | Uses the [markdownlint-cli2](https://github.com/igorshubovych/markdownlint-cli2) package. Add a `.mdlrc.json` to customise rules. |
 | **Lint YAML** | `yamllint '**/*.yml'` | Validates all YAML files (e.g., front‑matter, config). |
 | **Lint Hugo Templates** | `hugo --templateMetrics` | Reports unused variables and template performance. |
@@ -20,7 +20,7 @@
 > {
 >   "scripts": {
 >     "build": "hugo --minify",
->     "serve": "hugo server --disableFastRender -D",
+>     "serve": "hugo server -D",
 >     "lint:md": "markdownlint '**/*.md'",
 >     "lint:yml": "yamllint '**/*.yml'",
 >     "test": "hugo test"
@@ -36,7 +36,7 @@
 - **Content**: `content/posts/`, `content/tags/`, `content/categories/`
 - **Layouts**: `layouts/_default/` for `single.html`, `list.html`; `layouts/partials/` for reusable snippets.
 - **Static**: CSS, JS, images. Use `static/` for assets that Hugo copies verbatim.
-- **Themes**: Stored in `themes/`. Use Hugo modules (`hugo mod get …`) to manage themes.
+- **Themes**: Managed via Hugo modules (`hugo mod get …`); the active theme is Blowfish (`github.com/nunocoracao/blowfish/v2`). No vendored `themes/` directory.
 
 ### Imports & Dependencies
 

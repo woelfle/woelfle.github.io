@@ -1,330 +1,88 @@
-# CSS Customization Guide
+# CSS Customization Guide (Blowfish)
 
-This guide explains the custom CSS strategy for the Thinking in Systems blog, built with Hugo and the LoveIt theme.
+This guide explains how to style the **Thinking in Systems** blog, built with Hugo and the [Blowfish](https://blowfish.page/) theme.
 
-## File Structure
+Blowfish is **Tailwind-based**: layout and components are styled with utility classes, and article prose is handled by Tailwind's `prose` plugin. Custom styling hooks into the theme through two mechanisms described below.
 
-### `assets/css/_override.scss`
+## Theme Palette
 
-Contains **only theme variable overrides**. This file should never contain custom styles.
+Blowfish ships pre-built color schemes selected via `colorScheme` in `config/_default/params.toml`:
 
-```scss
-// Good: Variable override
-$global-font-size: 16px;
-$header-height: 3.5rem;
-
-// Bad: Don't add custom styles here!
-// .my-custom-class { ... }
+```toml
+colorScheme = "blowfish"
 ```
 
-### `assets/css/_custom.scss`
+Available schemes: `autumn`, `avocado`, `bloody`, `blowfish`, `congo`, `fire`, `forest`, `github`, `marvel`, `neon`, `noir`, `ocean`, `one-light`, `princess`, `slate`, `terminal`.
 
-Contains **only new custom styles**, not overrides of existing theme styles.
+Light/dark appearance is controlled by:
 
-## CSS Variables Reference
+```toml
+defaultAppearance = "light"   # valid options: light or dark
+autoSwitchAppearance = true   # follow the OS preference by default
+```
 
-The LoveIt theme exposes CSS custom properties for theming. Always use these variables for consistent light/dark mode support:
+### Dark Mode Selector
 
-### Color Variables
+Blowfish toggles light/dark by adding/removing the `dark` class on `<html>`. In custom CSS, scope dark-mode overrides like this:
 
-- `--color-primary`: Main brand color (blue #2563eb in light mode)
-- `--color-contrast-high`: High contrast text (dark gray in light, white in dark)
-- `--color-contrast-low`: Subtle borders and text (light gray in light, dim in dark)
-- `--color-contrast-lower`: Light backgrounds (very light gray in light, dark overlay in dark)
-- `--color-background`: Page background
+```css
+html.dark .my-component {
+  /* dark-mode styling */
+}
+```
 
-### Usage Example
+## Custom Styles (`assets/css/custom.css`)
 
-```scss
-// ✅ GOOD: Uses CSS variables for automatic dark mode support
+Create `assets/css/custom.css` and it is **automatically included by the theme** (via `layouts/partials/head.html` in the theme module) — no layout override needed.
+
+Example:
+
+```css
+/* Self-hosted display font (privacy-first: no Google Fonts CDN) */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* Accent override */
+.site-title {
+  color: #2563eb;
+}
+
+/* Light/dark aware overrides */
 blockquote {
-  background: var(--color-contrast-lower);
-  color: var(--color-contrast-high);
-  border-left-color: var(--color-primary);
+  border-color: #cbd5e1;
 }
-
-// ❌ BAD: Hard-coded colors won't adapt to dark mode
-blockquote {
-  background: #f0f0f0;
-  color: #333;
+html.dark blockquote {
+  border-color: #475569;
 }
 ```
 
-## Responsive Design
+Rules of thumb:
 
-The custom styles follow a mobile-first approach with breakpoints at **680px**:
+- **Never inline styles in Markdown**; keep everything in `assets/css/custom.css`.
+- Prefer **CSS custom properties / Tailwind tokens** when the theme exposes them.
+- Test every override in **both light and dark mode**.
+- Keep privacy-first: no remote fonts, no external stylesheets.
 
-```scss
-.element {
-  // Mobile: default styles
-  padding: 1rem;
-  
-  // Tablet & Desktop
-  @media screen and (min-width: 680px) {
-    padding: 2rem;
-  }
-  
-  // Large Desktop
-  @media screen and (min-width: 1024px) {
-    max-width: 1200px;
-  }
-}
-```
+## Configuration Shortcuts
 
-## Accessibility Standards (WCAG 2.1 AA)
+Many visual tweaks need no CSS at all — they are `params.toml` settings:
 
-### Focus States
+| Setting | Effect |
+| --- | --- |
+| `homepage.layout` | Home page layout: `page`, `profile`, `hero`, `card`, `background`, `custom` |
+| `article.heroStyle` | Post hero: `basic`, `big`, `background`, `thumbAndBackground` |
+| `article.layoutBackgroundBlur` | Blur the full-bleed hero backdrop (`background` style) |
+| `list.cardView` / `list.showCards` | Card grid vs. plain list on section/taxonomy pages |
+| `footer.showThemeAttribution` | Show/hide the "powered by Blowfish" attribution |
 
-All interactive elements have explicit focus styles:
+## Further Reading
 
-```scss
-button:focus,
-a:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-```
-
-### Touch Target Size
-
-Interactive elements maintain minimum 44x44px click areas:
-
-```scss
-button, a[role="button"] {
-  min-height: 44px;
-  min-width: 44px;
-}
-```
-
-### Color Contrast
-
-Always use CSS variables to ensure adequate contrast in both themes. The LoveIt theme is designed to meet WCAG AA standards.
-
-### Reduced Motion
-
-Respects user preferences with `prefers-reduced-motion`:
-
-```scss
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-```
-
-## Dark Mode Implementation
-
-The theme automatically switches between light and dark modes. Use the `[theme="dark"]` selector for dark-specific styles:
-
-```scss
-.card {
-  background: var(--color-contrast-lower);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
-  transition: box-shadow 0.3s ease;
-}
-
-[theme="dark"] .card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-```
-
-**Or** use CSS variables (preferred):
-
-```scss
-.card {
-  background: var(--color-contrast-lower);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  
-  // No additional code needed - CSS variables adapt automatically!
-}
-```
-
-## Code Block Styling
-
-### Syntax Highlighting
-
-The `.highlight` class wraps code blocks:
-
-```scss
-.highlight {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  
-  pre {
-    padding: 1rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; // Smooth mobile scrolling
-  }
-}
-```
-
-### Inline Code
-
-Inline code (not in blocks) uses `code:not(.highlight code)`:
-
-```scss
-code:not(.highlight code) {
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.25rem;
-  background: var(--color-contrast-lower);
-  color: var(--color-contrast-high);
-}
-```
-
-## Image Optimization
-
-### Lazy Loading
-
-Images are marked for lazy loading:
-
-```scss
-img {
-  loading: lazy;
-  max-width: 100%;
-  height: auto;
-}
-```
-
-### Responsive Images
-
-Use Hugo's image shortcode for responsive variants:
-
-```markdown
-{{< image src="/images/photo.jpg" 
-    alt="Descriptive alt text"
-    caption="Optional caption" 
-    height="400"
-    width="600" >}}
-```
-
-## Print Styles
-
-The CSS includes `@media print` rules to optimize output:
-
-- Hides navigation, footer, and interactive elements
-- Prevents page breaks inside figures, code blocks, headings
-- Removes backgrounds from code blocks
-- Preserves readability with black text
-
-## Mobile Responsiveness Checklist
-
-- [ ] Images scale appropriately on small screens
-- [ ] Code blocks have horizontal scroll on mobile (no content overflow)
-- [ ] Touch targets are at least 44x44 pixels
-- [ ] Navigation menu is accessible on mobile
-- [ ] Tables wrap or scroll on screens < 680px
-- [ ] Headings and body text remain readable
-- [ ] Line lengths don't exceed ~65 characters on mobile
-
-## Common Customization Patterns
-
-### Custom Color Scheme
-
-Override in `_override.scss`:
-
-```scss
-$global-link-color: #your-color;
-$global-link-hover-color: #your-hover-color;
-```
-
-### Custom Fonts
-
-Override in `_override.scss`:
-
-```scss
-$global-font-family: 'Your Font', sans-serif;
-$code-font-family: 'Your Mono Font', monospace;
-```
-
-### Custom Spacing
-
-Override in `_override.scss`:
-
-```scss
-$page-width: 56rem;
-$content-padding: 2rem;
-```
-
-### Add New Component Style
-
-Add to `_custom.scss`:
-
-```scss
-// ✅ DO: New component styles go in _custom.scss
-.my-component {
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: var(--color-contrast-lower);
-  
-  // Accessibility: focus state
-  &:focus-within {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-  }
-  
-  // Dark mode: CSS variables adapt automatically
-}
-```
-
-## Testing Your Changes
-
-### Build and Serve
-
-```bash
-hugo server --disableFastRender -D
-```
-
-Visit `http://localhost:1313` and test:
-
-- All pages render correctly
-- Light and dark modes switch smoothly
-- Mobile view (Chrome DevTools)
-- Print view (Ctrl+P / Cmd+P)
-
-### Lint Your CSS
-
-```bash
-# If you add CSS validation (future):
-# stylelint 'assets/css/*.scss'
-```
-
-### Accessibility Audit
-
-- Use WAVE or Axe DevTools browser extension
-- Check focus states with Tab key navigation
-- Test with screen readers (NVDA, JAWS, VoiceOver)
-- Verify color contrast with WebAIM Contrast Checker
-
-## Performance Best Practices
-
-1. **Minimize HTTP Requests**: All CSS is compiled into a single file
-2. **Use CSS Variables**: Better than custom properties for theming
-3. **Avoid Inline Styles**: Use classes instead
-4. **Lazy Load Images**: Use `loading="lazy"` attribute
-5. **Minify Output**: Hugo automatically minifies on `hugo --minify`
-
-## Resources
-
-- [LoveIt Theme Documentation](https://hugoloveit.com/theme-documentation-basics/#style-customization)
-- [WCAG 2.1 Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [CSS Variables (Custom Properties)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
-- [Responsive Design Best Practices](https://web.dev/responsive-web-design-basics/)
-- [Dark Mode Best Practices](https://web.dev/prefers-color-scheme/)
-
-## Need Help?
-
-When modifying CSS:
-
-1. Always check if a CSS variable exists before using hard-coded colors
-2. Test changes in both light and dark modes
-3. Verify mobile responsiveness at 680px breakpoint
-4. Ensure keyboard navigation works (Tab key)
-5. Run `hugo --minify` to check for build errors
+- Blowfish configuration: <https://blowfish.page/theme-documentation/>
+- Blowfish customization docs: <https://blowfish.page/docs/configuration/#custom-css>
 
 ---
 
-**Last Updated**: January 27, 2026  
-**Framework**: Hugo + LoveIt Theme
+**Framework**: Hugo + Blowfish Theme (v2.105.0, Hugo module)

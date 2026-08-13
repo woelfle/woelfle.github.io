@@ -56,7 +56,7 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           # Keep in sync with the version in .hugo-version and build.sh
-          hugo-version: "0.154.5"
+          hugo-version: "0.165.0"
           extended: true
 
       - name: Build site
