@@ -5,7 +5,7 @@ description: 'The few formulas that matter for performance engineers: Little''s 
   latency, and why averages mislead.'
 date: 2026-05-10 09:00:00+00:00
 lastmod: 2026-05-10 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - performance
 - reliability

@@ -5,7 +5,7 @@ description: Microservices promise independence but ship with complexity. Compar
   monoliths and learn when each architecture actually wins.
 date: 2026-02-16 09:00:00+00:00
 lastmod: 2026-02-16 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - architecture
 - microservices

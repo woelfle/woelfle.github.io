@@ -5,7 +5,7 @@ description: Learning is a system, not an event. Build feedback loops, spaced re
   practice into how you stay current.
 date: 2026-06-15 09:00:00+00:00
 lastmod: 2026-06-15 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - learning
 - career

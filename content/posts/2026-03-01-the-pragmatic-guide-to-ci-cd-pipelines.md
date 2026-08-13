@@ -5,7 +5,7 @@ description: A practical look at designing continuous integration and delivery p
   reliable, and actually get deployed.
 date: 2026-03-01 09:00:00+00:00
 lastmod: 2026-03-01 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - ci-cd
 - devops

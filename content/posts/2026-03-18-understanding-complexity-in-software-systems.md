@@ -5,7 +5,7 @@ description: 'Essential versus accidental complexity: learn to separate the comp
   from the complexity we add ourselves.'
 date: 2026-03-18 09:00:00+00:00
 lastmod: 2026-03-18 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - systems-thinking
 - complexity

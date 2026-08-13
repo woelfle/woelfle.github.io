@@ -5,7 +5,7 @@ description: Legacy code is code without tests. Learn to add seams, write charac
   refactor in small safe steps.
 date: 2026-07-01 09:00:00+00:00
 lastmod: 2026-07-01 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - refactoring
 - legacy

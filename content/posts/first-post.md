@@ -5,7 +5,7 @@ description: Discover how systems thinking transforms software architecture and 
   holistic approaches to solving complex engineering challenges.
 date: 2026-01-26 10:24:36+00:00
 lastmod: 2026-01-26 10:24:36+00:00
-draft: false
+draft: true
 tags:
 - systems-thinking
 - engineering

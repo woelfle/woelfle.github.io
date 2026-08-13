@@ -5,7 +5,7 @@ description: 'Beyond the Gang of Four catalog: the small set of design patterns 
   real production code, with honest examples.'
 date: 2026-04-05 09:00:00+00:00
 lastmod: 2026-04-05 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - design-patterns
 - architecture

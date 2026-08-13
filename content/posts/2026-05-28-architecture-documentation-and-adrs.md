@@ -5,7 +5,7 @@ description: 'How to document architecture without drowning in diagrams: lightwe
   and docs that stay truthful as the code changes.'
 date: 2026-05-28 09:00:00+00:00
 lastmod: 2026-05-28 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - documentation
 - architecture

@@ -5,7 +5,7 @@ description: Understand balancing and reinforcing feedback loops, the invisible 
   software systems behave under load, and how to design for them.
 date: 2026-02-02 09:00:00+00:00
 lastmod: 2026-02-02 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - systems-thinking
 - architecture

@@ -5,7 +5,7 @@ description: A beginner-friendly introduction to the three pillars of observabil
   each one answers when a system misbehaves.
 date: 2026-04-22 09:00:00+00:00
 lastmod: 2026-04-22 09:00:00+00:00
-draft: false
+draft: true
 tags:
 - observability
 - monitoring
