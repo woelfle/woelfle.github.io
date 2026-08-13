@@ -1,28 +1,19 @@
 ---
-title: "Microservices vs. Modular Monoliths"
-date: 2026-02-16T09:00:00Z
-lastmod: 2026-02-16T09:00:00Z
+title: Microservices vs. Modular Monoliths
+slug: microservices-vs-modular-monoliths
+description: Microservices promise independence but ship with complexity. Compare them against modular
+  monoliths and learn when each architecture actually wins.
+date: 2026-02-16 09:00:00+00:00
+lastmod: 2026-02-16 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Microservices promise independence but ship with complexity. Compare them against modular monoliths and learn when each architecture actually wins."
-featuredImage: "/images/featured-architecture.svg"
-featuredImagePreview: "/images/featured-architecture.svg"
-tags: ["architecture", "microservices", "monolith"]
-categories: ["architecture"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- architecture
+- microservices
+- monolith
+categories:
+- architecture
+author: Thomas Wölfle
+featureimage: /images/featured-architecture.svg
 ---
 
 Few architecture debates generate as much heat as microservices versus monoliths. The uncomfortable truth is that most teams do not have a microservices problem or a monolith problem — they have a *modularity* problem. The shape of the deployment does not fix boundaries that were never drawn.
@@ -53,9 +44,11 @@ Distributed systems are not just slower monoliths. They introduce failure modes 
 - Observability gaps between services
 - Version skew across deploys
 
-{{< admonition warning "Caveat" >}}
+{{< alert >}}
+**Caveat.**
+
 If two services cannot be deployed, scaled, or owned independently in practice, they are one service wearing a costume. You get all of the distributed-systems taxes and none of the benefits.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Why Modularity Comes First
 

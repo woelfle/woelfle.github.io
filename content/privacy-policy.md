@@ -1,23 +1,9 @@
 ---
-title: "Privacy Policy"
-date: 2026-08-13T00:00:00Z
-lastmod: 2026-08-13T00:00:00Z
+title: Privacy Policy
+date: 2026-08-13 00:00:00+00:00
+lastmod: 2026-08-13 00:00:00+00:00
 draft: false
-description: "Privacy policy (GDPR)"
-hiddenFromHomePage: true
-hiddenFromSearch: true
-toc:
-  enable: true
-  auto: true
-code:
-  copy: false
-math:
-  enable: false
-share:
-  enable: false
-comment:
-  enable: false
-lightgallery: false
+description: Privacy policy (GDPR)
 ---
 
 ## 1. Controller
@@ -27,13 +13,15 @@ lightgallery: false
 
 ### Responsible person
 
-{{< admonition warning "PLACEHOLDER" >}}
+{{< alert >}}
+**PLACEHOLDER.**
+
 First name, Last name
 Street, House number
 Postal code, City
 Country
 Email: [your@email.com](mailto:your@email.com)
-{{< /admonition >}}
+{{< /alert >}}
 
 ## 2. General information on data processing
 

@@ -1,28 +1,19 @@
 ---
-title: "Staying Current: A Systems Approach to Learning"
-date: 2026-06-15T09:00:00Z
-lastmod: 2026-06-15T09:00:00Z
+title: 'Staying Current: A Systems Approach to Learning'
+slug: staying-current-a-systems-approach-to-learning
+description: Learning is a system, not an event. Build feedback loops, spaced repetition, and deliberate
+  practice into how you stay current.
+date: 2026-06-15 09:00:00+00:00
+lastmod: 2026-06-15 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Learning is a system, not an event. Build feedback loops, spaced repetition, and deliberate practice into how you stay current."
-featuredImage: "/images/featured-learning.svg"
-featuredImagePreview: "/images/featured-learning.svg"
-tags: ["learning", "career", "engineering"]
-categories: ["learning"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- learning
+- career
+- engineering
+categories:
+- learning
+author: Thomas Wölfle
+featureimage: /images/featured-learning.svg
 ---
 
 Software engineering changes fast, and "staying current" feels like an endless race. But treating learning as a *system* — with inputs, feedback loops, and maintenance — turns it from a panic-driven scramble into something sustainable. This post is my playbook.
@@ -38,9 +29,11 @@ The internet will happily deliver unlimited content. A learning system starts wi
 - Read books instead of blog posts for foundational topics; books still carry the depth.
 - Keep a reading queue with a **cap** — when it overflows, trim it.
 
-{{< admonition info "My rule of thirds" >}}
+{{< alert >}}
+**My rule of thirds.**
+
 Spend roughly a third of learning time on fundamentals (still stable after ten years), a third on the stack you use daily, and a third on adjacent or unfamiliar territory. The third is what keeps you current without making you shallow.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## The Feedback Loop: Learn by Doing
 

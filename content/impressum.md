@@ -1,22 +1,9 @@
 ---
-title: "Impressum"
-date: 2026-08-13T00:00:00Z
-lastmod: 2026-08-13T00:00:00Z
+title: Impressum
+date: 2026-08-13 00:00:00+00:00
+lastmod: 2026-08-13 00:00:00+00:00
 draft: false
-description: "Impressum gemäß § 5 DDG"
-hiddenFromHomePage: true
-hiddenFromSearch: true
-toc:
-  enable: false
-code:
-  copy: false
-math:
-  enable: false
-share:
-  enable: false
-comment:
-  enable: false
-lightgallery: false
+description: Impressum gemäß § 5 DDG
 ---
 
 ## Angaben gemäß § 5 DDG
@@ -26,26 +13,32 @@ lightgallery: false
 
 ### Name und Anschrift
 
-{{< admonition warning "PLATZHALTER" >}}
+{{< alert >}}
+**PLATZHALTER.**
+
 Vorname Nachname
 Straße Hausnummer
 PLZ Ort
 Land
-{{< /admonition >}}
+{{< /alert >}}
 
 ### Kontakt
 
-{{< admonition warning "PLATZHALTER" >}}
+{{< alert >}}
+**PLATZHALTER.**
+
 E-Mail: [deine@email.de](mailto:deine@email.de)
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
-{{< admonition warning "PLATZHALTER" >}}
+{{< alert >}}
+**PLATZHALTER.**
+
 Vorname Nachname
 Straße Hausnummer
 PLZ Ort
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Haftung für Inhalte
 

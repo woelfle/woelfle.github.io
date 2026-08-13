@@ -1,21 +1,10 @@
 ---
-title: "About"
-date: 2026-01-26T10:00:00Z
-lastmod: 2026-01-26T10:00:00Z
+title: About
+date: 2026-01-26 10:00:00+00:00
+lastmod: 2026-01-26 10:00:00+00:00
 draft: false
-description: "Learn about Thomas Wölfle, a software engineer passionate about systems thinking, architecture design, and building elegant solutions."
-hiddenFromSearch: false
-toc:
-  enable: false
-code:
-  copy: false
-math:
-  enable: false
-share:
-  enable: false
-comment:
-  enable: false
-lightgallery: false
+description: Learn about Thomas Wölfle, a software engineer passionate about systems thinking, architecture
+  design, and building elegant solutions.
 ---
 
 ## About This Blog
@@ -44,12 +33,10 @@ I'm a software engineer passionate about building robust systems and sharing kno
 This site is built with:
 
 - **[Hugo](https://gohugo.io/)** — A fast and flexible static site generator
-- **[LoveIt Theme](https://github.com/dillonzq/LoveIt)** — A clean, elegant Hugo theme
+- **[Hugo Theme Blowfish](https://github.com/nunocoracao/blowfish)** — A modern Hugo theme (prototype branch)
 - **Hosted privately** — For personal use and internal sharing
 
 ---
 
-{{< admonition quote "Systems Thinking" >}}
-*"A system is a set of things—people, cells, molecules, or whatever—interconnected in such a way that they produce their own pattern of behavior over time."*
-— Donella H. Meadows
-{{< /admonition >}}
+> *"A system is a set of things—people, cells, molecules, or whatever—interconnected in such a way that they produce their own pattern of behavior over time."*
+> — Donella H. Meadows

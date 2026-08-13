@@ -1,28 +1,19 @@
 ---
-title: "Refactoring Legacy Code Without Fear"
-date: 2026-07-01T09:00:00Z
-lastmod: 2026-07-01T09:00:00Z
+title: Refactoring Legacy Code Without Fear
+slug: refactoring-legacy-code-without-fear
+description: Legacy code is code without tests. Learn to add seams, write characterization tests, and
+  refactor in small safe steps.
+date: 2026-07-01 09:00:00+00:00
+lastmod: 2026-07-01 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Legacy code is code without tests. Learn to add seams, write characterization tests, and refactor in small safe steps."
-featuredImage: "/images/featured-engineering.svg"
-featuredImagePreview: "/images/featured-engineering.svg"
-tags: ["refactoring", "legacy", "engineering"]
-categories: ["engineering-practices"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- refactoring
+- legacy
+- engineering
+categories:
+- engineering-practices
+author: Thomas Wölfle
+featureimage: /images/featured-engineering.svg
 ---
 
 Michael Feathers defined legacy code simply: *code without tests.* The fear of changing it is rational — without tests, a change is a bet against the whole system. The cure is not courage. It is a sequence of small, reversible steps that put tests around the code before you touch its behavior.
@@ -81,9 +72,11 @@ Refactoring is a sequence of tiny transformations, each followed by a test run:
 
 Never mix refactoring and feature work. A refactor that changes behavior is not a refactor; it is a bug waiting to happen. Keep the two in separate commits so `git bisect` can still find the truth.
 
-{{< admonition warning "Stop-the-world refactors fail" >}}
+{{< alert >}}
+**Stop-the-world refactors fail.**
+
 Big-bang rewrites are how legacy systems die. The **strangler fig** pattern — routing traffic to a new implementation piece by piece while the old one shrinks — keeps the system running and shippable at every step.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## The Ladder of Confidence
 

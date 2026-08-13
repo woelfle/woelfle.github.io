@@ -1,28 +1,19 @@
 ---
-title: "Measuring System Performance with Math"
-date: 2026-05-10T09:00:00Z
-lastmod: 2026-05-10T09:00:00Z
+title: Measuring System Performance with Math
+slug: measuring-system-performance-with-math
+description: 'The few formulas that matter for performance engineers: Little''s law, availability, percentile
+  latency, and why averages mislead.'
+date: 2026-05-10 09:00:00+00:00
+lastmod: 2026-05-10 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "The few formulas that matter for performance engineers: Little's law, availability, percentile latency, and why averages mislead."
-featuredImage: "/images/featured-performance.svg"
-featuredImagePreview: "/images/featured-performance.svg"
-tags: ["performance", "reliability", "engineering"]
-categories: ["engineering-practices"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: true
-  copyTex: true
+tags:
+- performance
+- reliability
+- engineering
+categories:
+- engineering-practices
+author: Thomas Wölfle
+featureimage: /images/featured-performance.svg
 ---
 
 Performance engineering is where systems thinking gets quantitative. A handful of formulas from queueing theory and probability explain most of what you will observe in a production system — if you know what to look for. This post builds up the math that matters, one concept at a time.
@@ -67,9 +58,11 @@ $$W = W_0 \cdot \frac{1}{1 - \rho}$$
 
 As utilization rises from 50% to 90%, the wait factor grows from 2 to 10 — latency inflates long before throughput drops. This is the math behind the "suddenly slow" systems: nothing changed in the code, only $\rho$ crept up.
 
-{{< admonition warning "Average latency lies" >}}
+{{< alert >}}
+**Average latency lies.**
+
 With $N$ requests and response times $r_i$, the average is $\frac{1}{N}\sum_i r_i$. Because outliers are rare but extreme, a single straggler can dominate the mean while leaving the median and p99 untouched. Optimize the percentiles your users actually feel.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## The Utilization Wall
 
@@ -86,3 +79,5 @@ You do not need a PhD in queueing theory to be a better performance engineer. Yo
 ---
 
 **Reflections:** Which of these formulas changed how you think about your systems? Share your favorite performance insight below.
+
+{{< katex >}}

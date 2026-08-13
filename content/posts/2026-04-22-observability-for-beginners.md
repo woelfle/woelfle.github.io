@@ -1,28 +1,19 @@
 ---
-title: "Observability for Beginners: Logs, Metrics, Traces"
-date: 2026-04-22T09:00:00Z
-lastmod: 2026-04-22T09:00:00Z
+title: 'Observability for Beginners: Logs, Metrics, Traces'
+slug: observability-for-beginners
+description: A beginner-friendly introduction to the three pillars of observability and the questions
+  each one answers when a system misbehaves.
+date: 2026-04-22 09:00:00+00:00
+lastmod: 2026-04-22 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "A beginner-friendly introduction to the three pillars of observability and the questions each one answers when a system misbehaves."
-featuredImage: "/images/featured-engineering.svg"
-featuredImagePreview: "/images/featured-engineering.svg"
-tags: ["observability", "monitoring", "devops"]
-categories: ["engineering-practices"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- observability
+- monitoring
+- devops
+categories:
+- engineering-practices
+author: Thomas Wölfle
+featureimage: /images/featured-engineering.svg
 ---
 
 Monitoring tells you something is wrong. Observability tells you *why*. The difference is the difference between an alert at 3 a.m. and an answer at 3 a.m. Observability rests on three pillars, and each answers a different question.
@@ -81,9 +72,11 @@ A trace follows one request across every service, database call, and queue it to
 
 Start small: instrument the critical path — the endpoints and dependencies that matter most — before instrumenting everything. A trace with gaps is better than no trace at all.
 
-{{< admonition info "Correlation" >}}
+{{< alert >}}
+**Correlation.**
+
 Use a single **correlation ID** per request everywhere: in logs, in trace headers, and in error responses. The three pillars become one system the moment everything shares the same identifier.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## From Signals to Action
 

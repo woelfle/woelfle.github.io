@@ -1,28 +1,19 @@
 ---
-title: "The Pragmatic Guide to CI/CD Pipelines"
-date: 2026-03-01T09:00:00Z
-lastmod: 2026-03-01T09:00:00Z
+title: The Pragmatic Guide to CI/CD Pipelines
+slug: the-pragmatic-guide-to-ci-cd-pipelines
+description: A practical look at designing continuous integration and delivery pipelines that are fast,
+  reliable, and actually get deployed.
+date: 2026-03-01 09:00:00+00:00
+lastmod: 2026-03-01 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "A practical look at designing continuous integration and delivery pipelines that are fast, reliable, and actually get deployed."
-featuredImage: "/images/featured-engineering.svg"
-featuredImagePreview: "/images/featured-engineering.svg"
-tags: ["ci-cd", "devops", "automation"]
-categories: ["engineering-practices"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- ci-cd
+- devops
+- automation
+categories:
+- engineering-practices
+author: Thomas Wölfle
+featureimage: /images/featured-engineering.svg
 ---
 
 A CI/CD pipeline is a system like any other, and like any other system it rewards good feedback design. The goal is not a wall of green checkmarks. It is a pipeline so trustworthy that a merge is never blocked by *the pipeline itself* being flaky or slow.
@@ -91,9 +82,11 @@ The longer a pipeline takes, the more work in flight piles up behind it. Treat f
 - Fail fast: fail the pipeline at the first meaningful stage.
 - Let developers run the same checks locally, so feedback starts before the push.
 
-{{< admonition tip "Rule of thumb" >}}
+{{< alert >}}
+**Rule of thumb.**
+
 If your pipeline cannot give useful feedback in under ten minutes for a typical change, spend your next sprint on speed, not features. Slow CI is expensive, deferred feedback.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Deployment Strategies That Fit Your Risk
 

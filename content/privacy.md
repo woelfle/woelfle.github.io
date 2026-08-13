@@ -1,23 +1,9 @@
 ---
-title: "Datenschutzerklärung"
-date: 2026-08-13T00:00:00Z
-lastmod: 2026-08-13T00:00:00Z
+title: Datenschutzerklärung
+date: 2026-08-13 00:00:00+00:00
+lastmod: 2026-08-13 00:00:00+00:00
 draft: false
-description: "Datenschutzerklärung (DSGVO)"
-hiddenFromHomePage: true
-hiddenFromSearch: true
-toc:
-  enable: true
-  auto: true
-code:
-  copy: false
-math:
-  enable: false
-share:
-  enable: false
-comment:
-  enable: false
-lightgallery: false
+description: Datenschutzerklärung (DSGVO)
 ---
 
 ## 1. Verantwortlicher
@@ -27,13 +13,15 @@ lightgallery: false
 
 ### Verantwortliche Person
 
-{{< admonition warning "PLATZHALTER" >}}
+{{< alert >}}
+**PLATZHALTER.**
+
 Vorname Nachname
 Straße Hausnummer
 PLZ Ort
 Land
 E-Mail: [deine@email.de](mailto:deine@email.de)
-{{< /admonition >}}
+{{< /alert >}}
 
 ## 2. Allgemeines zur Datenverarbeitung
 

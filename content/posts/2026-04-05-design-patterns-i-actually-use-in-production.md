@@ -1,28 +1,19 @@
 ---
-title: "Design Patterns I Actually Use in Production"
-date: 2026-04-05T09:00:00Z
-lastmod: 2026-04-05T09:00:00Z
+title: Design Patterns I Actually Use in Production
+slug: design-patterns-i-actually-use-in-production
+description: 'Beyond the Gang of Four catalog: the small set of design patterns that earn their keep in
+  real production code, with honest examples.'
+date: 2026-04-05 09:00:00+00:00
+lastmod: 2026-04-05 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Beyond the Gang of Four catalog: the small set of design patterns that earn their keep in real production code, with honest examples."
-featuredImage: "/images/featured-architecture.svg"
-featuredImagePreview: "/images/featured-architecture.svg"
-tags: ["design-patterns", "architecture", "golang"]
-categories: ["architecture"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- design-patterns
+- architecture
+- golang
+categories:
+- architecture
+author: Thomas Wölfle
+featureimage: /images/featured-architecture.svg
 ---
 
 The Gang of Four catalog is a reference library, not a shopping list. In years of production code I keep reaching for the same handful of patterns, and I skip most of the rest. Here is the short list that actually earns its keep.
@@ -85,9 +76,11 @@ client := NewClient().
     Build()
 ```
 
-{{< admonition tip "When NOT to use it" >}}
+{{< alert >}}
+**When NOT to use it.**
+
 If your constructor has three arguments and no defaults to speak of, a builder is ceremony. Reserve it for genuinely complicated construction where the named steps make the code *easier* to read, not longer.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Adapter: Speaking the Local Language
 

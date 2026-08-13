@@ -1,28 +1,19 @@
 ---
-title: "Understanding Complexity in Software Systems"
-date: 2026-03-18T09:00:00Z
-lastmod: 2026-03-18T09:00:00Z
+title: Understanding Complexity in Software Systems
+slug: understanding-complexity-in-software-systems
+description: 'Essential versus accidental complexity: learn to separate the complexity inherent to a problem
+  from the complexity we add ourselves.'
+date: 2026-03-18 09:00:00+00:00
+lastmod: 2026-03-18 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Essential versus accidental complexity: learn to separate the complexity inherent to a problem from the complexity we add ourselves."
-featuredImage: "/images/featured-systems-thinking.svg"
-featuredImagePreview: "/images/featured-systems-thinking.svg"
-tags: ["systems-thinking", "complexity", "software-design"]
-categories: ["systems-thinking"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- systems-thinking
+- complexity
+- software-design
+categories:
+- systems-thinking
+author: Thomas Wölfle
+featureimage: /images/featured-systems-thinking.svg
 ---
 
 Fred Brooks observed in *The Mythical Man-Month* that software has two kinds of complexity: **essential** complexity, which is intrinsic to the problem itself, and **accidental** complexity, which we introduce through our tools and choices. Most maintenance pain in a codebase comes not from hard problems but from complexity we created ourselves.
@@ -77,9 +68,11 @@ Fighting accidental complexity takes deliberate effort, not just good intentions
 3. **Delete what you can** — the most maintainable code is code that does not exist.
 4. **Prefer explicit over clever** — every idiom saves typing today and costs reading every day after.
 
-{{< admonition info "Note" >}}
+{{< alert >}}
+**Note.**
+
 Simplify where the complexity is accidental, and *invest* where it is essential. Simplifying essential complexity is where teams go wrong — they compress it, hide it, and pay for it in production incidents.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## A Complexity Budget
 

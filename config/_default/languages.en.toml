@@ -1,0 +1,13 @@
+locale = "en-us"
+title = "Thinking in Systems"
+
+[params]
+  dateFormat = "2006-01-02"
+  description = "A System of Thoughts — software engineering through the lens of systems thinking."
+  logo = "images/avatar.svg"
+
+[params.author]
+  name = "Thomas Wölfle"
+  image = "images/avatar.svg"
+  headline = "Software Engineer & Systems Thinker"
+  bio = "Writing about systems thinking, architecture, and engineering practice."

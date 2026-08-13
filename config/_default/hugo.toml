@@ -1,0 +1,56 @@
+# -- Site Configuration --
+# Hugo Theme Blowfish v2 (prototype)
+# Docs: https://blowfish.page/docs/getting-started/
+
+theme = "github.com/nunocoracao/blowfish/v2"
+baseURL = "https://thomaswoelfle.com"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+summaryLength = 30
+hasCJKLanguage = false
+buildDrafts = false
+buildFuture = false
+enableEmoji = true
+
+[minify]
+  minifyOutput = true
+  [minify.tdewolff.css]
+    version = 4
+  [minify.tdewolff.js]
+    keepVars = false
+  [minify.tdewolff.json]
+    keepNumbers = false
+
+[pagination]
+  pagerSize = 10
+
+[imaging]
+  anchor = "Center"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 0
+  toLower = false
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+
+  [[related.indices]]
+    name = "date"
+    weight = 10

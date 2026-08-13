@@ -1,24 +1,19 @@
 ---
-title: "First Post"
-date: 2026-01-26T10:24:36Z
-lastmod: 2026-01-26T10:24:36Z
+title: First Post
+slug: first-post
+description: Discover how systems thinking transforms software architecture and design patterns. Explore
+  holistic approaches to solving complex engineering challenges.
+date: 2026-01-26 10:24:36+00:00
+lastmod: 2026-01-26 10:24:36+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "Discover how systems thinking transforms software architecture and design patterns. Explore holistic approaches to solving complex engineering challenges."
-featuredImage: "/images/featured-systems-thinking.svg"
-featuredImagePreview: "/images/featured-systems-thinking.svg"
-tags: ["systems-thinking", "engineering", "architecture"]
-categories: ["software-design"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-toc:
-  enable: true
-  auto: true
-code:
-  copy: true
-  maxShownLines: 50
-math:
-  enable: false
+tags:
+- systems-thinking
+- engineering
+- architecture
+categories:
+- software-design
+author: Thomas Wölfle
+featureimage: /images/featured-systems-thinking.svg
 ---
 
 Welcome to "Thinking in Systems" — a blog dedicated to exploring software engineering through the lens of systems thinking.

@@ -1,22 +1,9 @@
 ---
-title: "Imprint"
-date: 2026-08-13T00:00:00Z
-lastmod: 2026-08-13T00:00:00Z
+title: Imprint
+date: 2026-08-13 00:00:00+00:00
+lastmod: 2026-08-13 00:00:00+00:00
 draft: false
-description: "Legal notice in accordance with Section 5 DDG"
-hiddenFromHomePage: true
-hiddenFromSearch: true
-toc:
-  enable: false
-code:
-  copy: false
-math:
-  enable: false
-share:
-  enable: false
-comment:
-  enable: false
-lightgallery: false
+description: Legal notice in accordance with Section 5 DDG
 ---
 
 ## Information in accordance with Section 5 DDG
@@ -26,26 +13,32 @@ lightgallery: false
 
 ### Name and Address
 
-{{< admonition warning "PLACEHOLDER" >}}
+{{< alert >}}
+**PLACEHOLDER.**
+
 First name, Last name
 Street, House number
 Postal code, City
 Country
-{{< /admonition >}}
+{{< /alert >}}
 
 ### Contact
 
-{{< admonition warning "PLACEHOLDER" >}}
+{{< alert >}}
+**PLACEHOLDER.**
+
 Email: [your@email.com](mailto:your@email.com)
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Responsible for content according to Section 18 (2) MStV
 
-{{< admonition warning "PLACEHOLDER" >}}
+{{< alert >}}
+**PLACEHOLDER.**
+
 First name, Last name
 Street, House number
 Postal code, City
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Liability for content
 

@@ -1,28 +1,19 @@
 ---
-title: "Architecture Documentation and ADRs"
-date: 2026-05-28T09:00:00Z
-lastmod: 2026-05-28T09:00:00Z
+title: Architecture Documentation and ADRs
+slug: architecture-documentation-and-adrs
+description: 'How to document architecture without drowning in diagrams: lightweight ADRs, decision capture,
+  and docs that stay truthful as the code changes.'
+date: 2026-05-28 09:00:00+00:00
+lastmod: 2026-05-28 09:00:00+00:00
 draft: false
-author: "Thomas Wölfle"
-description: "How to document architecture without drowning in diagrams: lightweight ADRs, decision capture, and docs that stay truthful as the code changes."
-featuredImage: "/images/featured-architecture.svg"
-featuredImagePreview: "/images/featured-architecture.svg"
-tags: ["documentation", "architecture", "adr"]
-categories: ["architecture"]
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-toc:
-  enable: true
-  auto: true
-
-code:
-  copy: true
-  maxShownLines: 50
-
-math:
-  enable: false
-  copyTex: true
+tags:
+- documentation
+- architecture
+- adr
+categories:
+- architecture
+author: Thomas Wölfle
+featureimage: /images/featured-architecture.svg
 ---
 
 Most architecture documentation dies the day it is written: it describes a system that used to exist, sits next to a codebase that moved on, and is quietly ignored. The cure is not more documents. It is fewer, smaller documents that answer real questions — and a habit of capturing decisions when they are made.
@@ -63,9 +54,11 @@ prototype store.
   and careful index design as data grows.
 ```
 
-{{< admonition tip "Keep ADRs tiny" >}}
+{{< alert >}}
+**Keep ADRs tiny.**
+
 A good ADR fits on one screen. If it needs diagrams and appendices, the decision is probably too big — split it into smaller decisions, each with its own record.
-{{< /admonition >}}
+{{< /alert >}}
 
 ## Structuring the Rest Sparingly
 
