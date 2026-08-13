@@ -1,24 +1,14 @@
 ---
 # =============================================================================
-# CI/CD Pipeline for the Hugo blog (GitHub Actions)
+# CI Pipeline for the Hugo blog (GitHub Actions)
 #
 # Triggers:
-#   - push to main          -> lint, build, deploy to GitHub Pages
-#   - pull requests         -> lint + build (no deploy)
+#   - push to main          -> lint + build (validation only)
+#   - pull requests         -> lint + build (validation only)
 #
-# One-time setup required in GitHub repo settings (Settings > Pages):
-#   - Source: "GitHub Actions"
-#   - Custom domain: thomaswoelfle.com (or let the committed static/CNAME
-#     file configure it automatically on first deploy)
-#   - Enforce HTTPS: ON
-#
-# DNS (root domain thomaswoelfle.com -> GitHub Pages):
-#   - A records: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-#   - (or a CNAME to woelfle.github.io for a www subdomain)
-#
-# Privacy note: GitHub Pages serves private repositories only with a paid
-# GitHub plan. For a fully private blog without that, deploy elsewhere (S3,
-# Netlify, or self-hosted behind auth) and swap the deploy job below.
+# Hosting: the site is deployed by IONOS Deploy Now, which runs ./build.sh
+# on every push to the connected repository. This workflow only validates
+# the code; it no longer deploys to GitHub Pages.
 # =============================================================================
 
 name: CI
@@ -28,16 +18,6 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-
-# Serialize GitHub Pages deployments so concurrent pushes never race.
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   lint:
@@ -75,27 +55,9 @@ jobs:
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          # Keep in sync with the version in .hugo-version
+          # Keep in sync with the version in .hugo-version and build.sh
           hugo-version: "0.154.5"
           extended: true
 
       - name: Build site
         run: hugo --minify
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-
-  deploy:
-    name: Deploy to GitHub Pages
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [lint, build]
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4

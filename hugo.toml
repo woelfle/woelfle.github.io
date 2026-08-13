@@ -167,6 +167,15 @@ theme = 'github.com/dillonzq/LoveIt'
     copyright = true
     author = true
     since = 2026
+    # Legal links required for Germany/EU (Impressum & Datenschutzerklärung,
+    # each in German and English)
+    custom = '''<a href="/impressum/">Impressum</a>&nbsp;|&nbsp;<a href="/privacy/">Datenschutzerklärung</a>&nbsp;|&nbsp;<a href="/imprint/">Imprint</a>&nbsp;|&nbsp;<a href="/privacy-policy/">Privacy Policy</a>'''
+
+  # -----------------------------------------------------------------------------
+  # App Settings (title shown when added to a home screen)
+  # -----------------------------------------------------------------------------
+  [params.app]
+    title = "Thinking in Systems"
 
   # -----------------------------------------------------------------------------
   # Home Page Settings
@@ -251,6 +260,18 @@ theme = 'github.com/dillonzq/LoveIt'
   # -----------------------------------------------------------------------------
   [params.analytics]
     enable = false
+
+  # -----------------------------------------------------------------------------
+  # CDN (disabled - self-hosted assets for privacy)
+  # -----------------------------------------------------------------------------
+  # The LoveIt theme enables a jsdelivr CDN by default for third-party libraries
+  # (FontAwesome, lightgallery, lunr, ...). Loading those from cdn.jsdelivr.net
+  # would transfer every visitor's IP address to Cloudflare/jsdelivr.
+  # By overriding "data" with an empty value, the theme falls back to the
+  # libraries bundled locally in the theme module (assets/lib/), so no external
+  # requests are made at all.
+  [params.cdn]
+    data = ""
 
   # -----------------------------------------------------------------------------
   # Cookie Consent (disabled - no tracking)
