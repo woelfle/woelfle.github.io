@@ -1,0 +1,37 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+{{ $recentPosts := where site.RegularPages "Type" "posts" | first 1 }}
+<article class="flex flex-col items-center">
+  <header class="hero-section">
+    <div class="hero-bg-decoration" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Thinking in Systems
+        </h1>
+        <p class="hero-subtitle">
+          A System of Thoughts — software engineering through the lens of systems thinking.
+        </p>
+      </div>
+
+      <div class="hero-category-pills">
+        {{ range site.Taxonomies.categories }}
+          {{ with .Page }}
+            <a href="{{ .RelPermalink }}" class="hero-category-pill">
+              {{ .LinkTitle }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  {{ if $recentPosts }}
+    <section class="hero-featured-post">
+      {{ partial "article-link/card.html" (index $recentPosts 0) }}
+    </section>
+  {{ end }}
+
+  <section class="hero-post-list">
+    {{ partial "recent-articles/main.html" . }}
+  </section>
+</article>
