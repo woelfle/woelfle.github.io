@@ -52,7 +52,7 @@
 - Use HTTP Basic Auth (NGINX `auth_basic`) or reverse‑proxy with OAuth.
 - For static hosting, consider S3 + CloudFront signed URLs or Netlify Identity.
 
-## 8. CI/CD Pipeline
+## 8. CI/CD Pipeline - Done
 
 - Use GitHub Actions (or GitLab CI).
 - Workflow steps:
@@ -68,7 +68,7 @@
 - Add husky with lint-staged to run markdown/yaml linting before commits.
 - Use `hugo server --buildDrafts` for preview (`npm run serve`).
 
-## 10. Documentation & Onboarding
+## 10. Documentation & Onboarding - Done
 
 - Add `docs/CONTRIBUTING.md` (how to write posts, lint rules).
 - Provide a `README.md` with repo overview.

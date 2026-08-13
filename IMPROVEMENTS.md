@@ -8,7 +8,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 🚀 Performance Optimization
 
-### 17. **Optimize Images**
+### 1. **Optimize Images**
 
 **Current State:** No image optimization strategy documented  
 **Recommendation:**
@@ -36,7 +36,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 📊 Analytics & Monitoring
 
-### 25. **Plan for Future Analytics (Without Tracking)**
+### 2. **Plan for Future Analytics (Without Tracking)**
 
 **Current State:** Analytics disabled (✅ privacy-first approach)  
 **Recommendation:**
@@ -58,7 +58,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 📱 Mobile & Accessibility
 
-### 29. **Verify Mobile Responsiveness**
+### 3. **Verify Mobile Responsiveness**
 
 **Current State:** Custom CSS includes media queries  
 **Recommendation:**
@@ -73,7 +73,7 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Image sizing
   - Navigation menu
 
-### 30. **Enhance Accessibility**
+### 4. **Enhance Accessibility**
 
 **Current State:** LoveIt provides base accessibility  
 **Recommendation:**
@@ -91,7 +91,7 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ## 🔐 Security & Privacy
 
-### 31. **Verify Privacy Settings**
+### 5. **Verify Privacy Settings**
 
 **Current State:** Privacy-first configuration (✅ excellent)  
 
@@ -119,9 +119,85 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
+## 🎨 Visual Design & Branding
+
+**Current State:** The site runs the stock LoveIt theme with minor CSS overrides and looks generic. The core concept ("system nodes, order, precision") is not yet expressed visually.
+
+### 9. **Typography: Add Self-Hosted Fonts**
+
+**Current State:** All text renders in `system-ui`; the `_override.scss` references "Fira Code" but no font file is bundled, so code silently falls back to a generic monospace. No visual character.  
+**Recommendation:**
+
+- Self-host two typefaces via `@font-face` in `assets/css/_override.scss` (privacy-first: no Google Fonts CDN):
+  - Display/headings: e.g. **Space Grotesk** (or "Sora")
+  - Body: e.g. **Inter**
+  - Code: e.g. **JetBrains Mono** (replaces the dangling "Fira Code" reference)
+- Define a type scale (sizes, weights, line-heights, letter-spacing) for headings, body, captions, and code.
+
+### 10. **Establish a Cohesive Color Palette**
+
+**Current State:** Default LoveIt palette — near-black text, gray borders, default blue (`#2d96bd`) links; `_override.scss` sets a single blue (`#2563eb`). No brand accent, no semantic colors, flat surfaces.  
+**Recommendation:**
+
+- Define a primary/accent + semantic color set for **light and dark** modes, applied via theme variables (`assets/css/_override.scss`) and CSS custom properties in `assets/css/_custom.scss`.
+- Use the accent deliberately (links, headings accents, hover states, highlights) rather than as a lone link color.
+- Refine the dark palette beyond the default gray (`#292a2d`) to match the new brand.
+
+### 11. **Redesign Brand Assets (Logo, Avatar, Featured Images)**
+
+**Current State:** Logo is a blue mandala SVG; avatar is a generic flat "person on a gradient" icon; featured images are `1200×630` SVGs that read as "gradient + centered text" placeholders.  
+**Recommendation:**
+
+- Redesign logo and avatar around one consistent "system" motif (nodes + edges) using the new palette.
+- Redesign the 5 category featured SVGs (`featured-{systems-thinking,architecture,engineering,performance,learning}.svg`) so they look designed and cohesive instead of like default OG placeholders.
+
+### 12. **Add a Home Page Hero**
+
+**Current State:** The home page shows a small 6rem avatar + title, then drops straight into a wall of full-width stacked post cards. No value proposition, no visual anchor, no hierarchy.  
+**Recommendation:**
+
+- Replace the plain profile block with a proper hero: larger typography, subtle system-node background motif, value proposition, and a category/topic pill row.
+- Feature the latest post as a highlighted hero card; present the rest in a refined grid.
+
+### 13. **Refine Post Cards & List Pages**
+
+**Current State:** Full-bleed images at an awkward ~30% aspect ratio, cluttered meta line, minimal hover treatment.  
+**Recommendation:**
+
+- Consistent image aspect ratio (e.g. 16:9), rounded corners, hover zoom/tint.
+- Cleaner meta (author/date/category), tags as pills.
+- Apply the same card treatment to archive, tags, and categories pages.
+
+### 14. **Refine Header & Navigation**
+
+**Current State:** Flat light-gray bar with plain text nav; default active/hover states.  
+**Recommendation:**
+
+- Subtle border + blur (glass effect) on the fixed header.
+- Refined active link state (e.g. animated underline), better spacing, polished theme-toggle/search buttons.
+
+### 15. **Polish Post Pages**
+
+**Current State:** Default theme output: title, meta, featured image, side TOC. Code, tables, admonitions, and blockquotes are partly styled in `_custom.scss`.  
+**Recommendation:**
+
+- Styled featured-image treatment (rounded, shadow, subtle border).
+- Reading-progress indicator; refined TOC, meta, and related-posts sections.
+- Consistent styling for code blocks, tables, admonitions, and blockquotes in both themes.
+
+### 16. **Footer & Micro-Interactions**
+
+**Current State:** Minimal footer; default focus states and transitions.  
+**Recommendation:**
+
+- Structured footer (about, quick links, legal, RSS).
+- Custom scrollbar/selection colors, refined `:focus-visible` states, smooth transitions and hover states site-wide.
+
+---
+
 ## 📚 Documentation
 
-### 33. **Enhance Project Documentation**
+### 6. **Enhance Project Documentation**
 
 **Current State:** README.md and AGENTS.md exist  
 **Recommendation:**
@@ -136,7 +212,7 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Environment-specific configs
   - Rollback procedures
 
-### 34. **Document Custom Features**
+### 7. **Document Custom Features**
 
 **Current State:** Custom SCSS exists but lacks documentation  
 **Recommendation:**
@@ -150,7 +226,7 @@ This document outlines recommended improvements to align the Hugo site with Love
   - Available CSS variables
   - Custom partial usage
 
-### 35. **Create Content Guidelines**
+### 8. **Create Content Guidelines**
 
 **Current State:** No content guidelines documented  
 **Recommendation:**
@@ -164,5 +240,5 @@ This document outlines recommended improvements to align the Hugo site with Love
 
 ---
 
-**Last Updated:** 2026-01-27  
+**Last Updated:** 2026-08-13  
 **Framework:** Hugo + LoveIt Theme
