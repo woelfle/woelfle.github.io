@@ -1,0 +1,196 @@
+/* -- Custom Typography & Color Palette --
+     Thinking in Systems — Thomas Wölfle
+     Aligned with IMPROVEMENTS.md items 9 & 10
+*/
+
+/* --- Self-Hosted Fonts ---
+     Fonts should be placed in static/fonts/ and downloaded from their respective sources.
+     - Space Grotesk: https://github.com/floriankarsten/spaces-grotesk
+     - Inter: https://rsms.me/inter/
+     - JetBrains Mono: https://www.jetbrains.com/lp/mono/
+*/
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/spaces-grotesk/SpaceGrotesk-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/spaces-grotesk/SpaceGrotesk-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/spaces-grotesk/SpaceGrotesk-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/inter/Inter-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/inter/Inter-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/jetbrains-mono/JetBrainsMono-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* --- Font application --- */
+
+:root {
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+code, pre {
+  font-family: var(--font-code);
+}
+
+/* --- Type Scale (modular: 1.25 ratio) --- */
+
+:root {
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.563rem;
+  --font-size-3xl: 1.953rem;
+  --font-size-4xl: 2.441rem;
+  --font-size-5xl: 3.052rem;
+  --font-size-6xl: 3.815rem;
+}
+
+/* --- Color Palette (light mode) --- */
+
+:root {
+  /* Primary & Accent (built from existing logo blue) */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #bfdbfe;
+
+  /* Semantic colors */
+  --color-success: #059669;
+  --color-success-bg: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-error: #dc2626;
+  --color-error-bg: #fee2e2;
+  --color-info: #0891b2;
+  --color-info-bg: #cffaffe;
+
+  /* Light mode surface & neutrals */
+  --color-bg: #f8fafc;
+  --color-bg-subtle: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-dim: #faf0e6;
+  --color-border: #e2e8f0;
+  --color-border-soft: #cbd5e1;
+
+  /* Foreground */
+  --color-fg: #1e293b;
+  --color-fg-muted: #64748b;
+  --color-fg-dim: #94a3b8;
+
+  /* Accent usages */
+  --color-accent: #ea580c;
+  --color-accent-soft: #fed7aa;
+}
+
+/* --- Dark mode color palette --- */
+
+[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-bg-subtle: #1e293b;
+  --color-surface: #1e293b;
+  --color-surface-dim: #334155;
+  --color-border: #334155;
+  --color-border-soft: #475569;
+
+  --color-fg: #f1f5f9;
+  --color-fg-muted: #94a3b8;
+  --color-fg-dim: #64748b;
+
+  --color-primary: #60a5fa;
+  --color-primary-dark: #3b82f6;
+  --color-primary-light: #3b82f6;
+
+  --color-success: #10b981;
+  --color-success-bg: #064e3b;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #78350f;
+  --color-error: #f87171;
+  --color-error-bg: #7f1d1d;
+  --color-info: #67e8f9;
+  --color-info-bg: #083344;
+}
+
+/* --- Color application helpers --- */
+
+.has-primary-color { color: var(--color-primary); }
+.has-primary-bg { background-color: var(--color-primary); }
+.has-primary-light { background-color: var(--color-primary-light); }
+.has-accent-color { color: var(--color-accent); }
+.has-accent-bg { background-color: var(--color-accent); }
+.has-accent-soft { background-color: var(--color-accent-soft); }
+
+/* --- Focus-visible improvements --- */
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Reduced motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

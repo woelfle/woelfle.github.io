@@ -1,36 +1,47 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <!-- Background gradient -->
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
-    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bgGradient)"/>
 
-  <!-- Pipeline stages -->
-  <circle cx="330" cy="315" r="55" fill="url(#accentGradient)" stroke="#ecf0f1" stroke-width="2"/>
-  <text x="330" y="320" text-anchor="middle" font-size="18" fill="#ecf0f1">Build</text>
+  <!-- Pipeline as connected system nodes -->
+  <!-- Stage 1: Build -->
+  <circle cx="300" cy="315" r="50" fill="url(#nodeGradient)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Stage 2: Test -->
+  <circle cx="600" cy="315" r="50" fill="#d97706" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+  <!-- Stage 3: Deploy -->
+  <circle cx="900" cy="315" r="50" fill="#d97706" opacity="0.6" stroke="#ffffff" stroke-width="2"/>
 
-  <circle cx="600" cy="315" r="55" fill="url(#accentGradient)" stroke="#ecf0f1" stroke-width="2"/>
-  <text x="600" y="320" text-anchor="middle" font-size="18" fill="#ecf0f1">Test</text>
+  <!-- Data flow edges (arrows as lines) -->
+  <line x1="350" y1="315" x2="550" y2="315" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+  <polygon points="550,315 538,310 538,320" fill="#ffffff" opacity="0.5"/>
 
-  <circle cx="870" cy="315" r="55" fill="url(#accentGradient)" stroke="#ecf0f1" stroke-width="2"/>
-  <text x="870" y="320" text-anchor="middle" font-size="18" fill="#ecf0f1">Deploy</text>
+  <line x1="650" y1="315" x2="850" y2="315" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+  <polygon points="850,315 838,310 838,320" fill="#ffffff" opacity="0.5"/>
 
-  <!-- Connecting arrows -->
-  <line x1="390" y1="315" x2="535" y2="315" stroke="#ecf0f1" stroke-width="3" opacity="0.6"/>
-  <polygon points="540,315 525,308 525,322" fill="#ecf0f1" opacity="0.6"/>
-  <line x1="660" y1="315" x2="805" y2="315" stroke="#ecf0f1" stroke-width="3" opacity="0.6"/>
-  <polygon points="810,315 795,308 795,322" fill="#ecf0f1" opacity="0.6"/>
+  <!-- Feedback loop -->
+  <path d="M300 280 Q200 280 200 315 Q200 350 300 350"
+        fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-dasharray="6,4"/>
+  <polygon points="200,315 206,310 206,320" fill="#f59e0b" opacity="0.4"/>
 
-  <!-- Title and subtitle -->
-  <text x="600" y="60" text-anchor="middle" font-size="48" font-weight="bold" fill="#ecf0f1">Thinking in Systems</text>
-  <text x="600" y="105" text-anchor="middle" font-size="28" fill="#3498db">Engineering Practices: Pipelines, Observability &amp; Refactoring</text>
+  <!-- Monitoring nodes -->
+  <circle cx="450" cy="240" r="6" fill="#fbbf24"/>
+  <circle cx="750" cy="240" r="6" fill="#fbbf24"/>
+  <circle cx="450" cy="390" r="6" fill="#fbbf24"/>
+  <circle cx="750" cy="390" r="6" fill="#fbbf24"/>
+
+  <!-- Outer system ring -->
+  <circle cx="600" cy="315" r="160" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.15"/>
+  <circle cx="600" cy="315" r="180" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.08"/>
+
+  <text x="600" y="55" text-anchor="middle" font-size="44" font-weight="700" fill="#ffffff">Thinking in Systems</text>
+  <text x="600" y="100" text-anchor="middle" font-size="26" fill="#f59e0b">Engineering Practices: Pipelines, Observability &amp; Refactoring</text>
 </svg>
