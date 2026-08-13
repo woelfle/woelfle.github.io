@@ -1,0 +1,31 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Growing spiral of nodes (learning journey) -->
+  <circle cx="280" cy="440" r="14" fill="#27ae60" stroke="#ecf0f1" stroke-width="2"/>
+  <circle cx="350" cy="370" r="16" fill="#27ae60" stroke="#ecf0f1" stroke-width="2"/>
+  <circle cx="450" cy="325" r="19" fill="#27ae60" stroke="#ecf0f1" stroke-width="2"/>
+  <circle cx="560" cy="300" r="22" fill="#27ae60" stroke="#ecf0f1" stroke-width="2"/>
+  <circle cx="680" cy="285" r="25" fill="url(#accentGradient)" stroke="#ecf0f1" stroke-width="2"/>
+  <circle cx="800" cy="280" r="28" fill="url(#accentGradient)" stroke="#ecf0f1" stroke-width="2"/>
+
+  <path d="M280 440 Q315 380 350 370 Q400 340 450 325 Q505 305 560 300 Q620 290 680 285 Q740 280 800 280"
+        fill="none" stroke="#27ae60" stroke-width="2" opacity="0.7"/>
+
+  <!-- Title and subtitle -->
+  <text x="600" y="60" text-anchor="middle" font-size="48" font-weight="bold" fill="#ecf0f1">Thinking in Systems</text>
+  <text x="600" y="105" text-anchor="middle" font-size="28" fill="#27ae60">Continuous Learning: A Systems Approach to Growth</text>
+</svg>
