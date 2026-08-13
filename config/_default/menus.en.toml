@@ -43,3 +43,23 @@
   name = "About"
   pageRef = "about"
   weight = 30
+
+[[footer]]
+  name = "Impressum"
+  pageRef = "impressum"
+  weight = 40
+
+[[footer]]
+  name = "Datenschutzerklärung"
+  pageRef = "privacy"
+  weight = 50
+
+[[footer]]
+  name = "Imprint"
+  pageRef = "imprint"
+  weight = 60
+
+[[footer]]
+  name = "Privacy Policy"
+  pageRef = "privacy-policy"
+  weight = 70
