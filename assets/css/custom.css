@@ -565,7 +565,25 @@ div.flex.md\:hidden > div > label[for="mobile-menu-toggle"]:hover {
   gap: 2.5rem;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 2.5rem 0 2rem;
+  padding: 2.5rem 1rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .site-footer-grid {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer-grid {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer-grid {
+    padding-inline: 3rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -738,8 +756,26 @@ div.flex.md\:hidden > div > label[for="mobile-menu-toggle"]:hover {
   justify-content: space-between;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 1.25rem 0;
+  padding: 1.25rem 1rem;
   border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .site-footer-bottom {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer-bottom {
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer-bottom {
+    padding-inline: 4rem;
+  }
 }
 
 .site-footer-copyright,
