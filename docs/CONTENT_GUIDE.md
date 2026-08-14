@@ -190,5 +190,79 @@ This is an important warning.
 
 ---
 
+## Example Post
+
+The following is a complete example post demonstrating all the conventions documented in this guide:
+
+```markdown
+---
+title: "An Example Post About Systems Thinking"
+slug: example-post-systems-thinking
+description: "A brief summary of an example post about systems thinking for SEO and feed previews."
+date: 2026-02-10T10:00:00Z
+lastmod: 2026-02-10T10:00:00Z
+draft: false
+author: "Thomas Wölfle"
+tags: ["systems-thinking", "engineering"]
+categories: ["software-design"]
+featureimage: "/images/featured-software-design.svg"
+featureimageAlt: "Diagram showing system components and connections"
+---
+
+The opening paragraph that introduces the topic. This text may appear in
+list previews and RSS feeds.
+
+<!--more-->
+
+## First Major Section
+
+Content for the first section. Here you can discuss key points, use formatting, and include elements documented in this guide.
+
+### Sub-section
+
+Content for a sub-section using `###`. Remember to maintain proper heading hierarchy.
+
+## Second Major Section
+
+More content discussing another aspect of the topic. You can use:
+
+- **Bold** and *italic* text for emphasis
+- Inline `` `code` `` and fenced code blocks:
+
+  ```go
+  func main() {
+      // example code
+  }
+  ```
+
+- Lists:
+
+  1. First item
+  2. Second item
+  3. Third item
+
+- Horizontal rule `---` to separate content sections.
+
+## Footer
+
+Optional closing remarks, references, or further reading.
+
+---
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `title` | Yes | Short, descriptive; may end with `?` (allowed by lint config). |
+| `slug` | Yes | URL path segment; used for clean `/posts/<slug>/` permalinks. |
+| `description` | Yes | Fills the meta description; keep it to one sentence. |
+| `date` | Yes | ISO 8601; controls archive ordering. |
+| `lastmod` | No | Update when the content changes materially. |
+| `draft` | Yes | `true` hides the post from production. |
+| `author` | Yes | Set to the site author by default. |
+| `tags` | No | Free-form; lowercase. |
+| `categories` | No | Lowercase; group posts into sections. |
+| `featureimage` | No | Path under `assets/images/`; shown as the post hero and card image. |
+| `featureimageAlt` | No | Descriptive alt text for the featured image. |
+
+---
 **Last Updated:** August 14, 2026  
 **Framework:** Hugo + Blowfish Theme (v2.105.0, Hugo module)
