@@ -1,0 +1,124 @@
+{{/* Structured footer override (IMPROVEMENTS.md item 16).
+     Columns: About / Explore / Legal / Subscribe. Styling lives in
+     assets/css/custom.css under "Footer". Preserves the theme's image-zoom
+     script and the extend-footer hook. */}}
+<footer id="site-footer" class="site-footer py-12 print:hidden">
+  <div class="site-footer-grid">
+
+    {{/* About column */}}
+    <div class="site-footer-col site-footer-about">
+      {{ $logo := resources.Get (.Site.Params.logo | default "") }}
+      <a href="{{ "" | relLangURL }}" class="site-footer-brand">
+        {{ with $logo }}
+          {{ if eq .MediaType.SubType "svg" }}
+            <span class="site-footer-logo nozoom" aria-hidden="true">{{ .Content | safeHTML }}</span>
+          {{ else }}
+            <img src="{{ .RelPermalink }}" alt="" class="site-footer-logo nozoom">
+          {{ end }}
+        {{ end }}
+        <span class="site-footer-title">{{ .Site.Title | markdownify }}</span>
+      </a>
+      <p class="site-footer-tagline">
+        {{ with .Site.Params.description }}{{ . | markdownify }}{{ end }}
+      </p>
+      {{ with .Site.Params.author.bio }}
+        <p class="site-footer-bio">{{ . }}</p>
+      {{ end }}
+      {{ with .Site.GetPage "/about" }}
+        <a href="{{ .RelPermalink }}" class="site-footer-more">
+          <span>More about me</span>
+          <span class="site-footer-more-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {{ end }}
+    </div>
+
+    {{/* Explore column */}}
+    {{ if and (.Site.Params.footer.showMenu | default true) (.Site.Menus.footer) }}
+      <nav class="site-footer-col" aria-label="Explore">
+        <h2 class="site-footer-heading">Explore</h2>
+        <ul class="site-footer-links">
+          {{ range .Site.Menus.footer }}
+            <li>
+              <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+
+    {{/* Legal column */}}
+    {{ if .Site.Menus.legal }}
+      <nav class="site-footer-col" aria-label="Legal">
+        <h2 class="site-footer-heading">Legal</h2>
+        <ul class="site-footer-links">
+          {{ range .Site.Menus.legal }}
+            <li>
+              <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+
+    {{/* Subscribe column */}}
+    {{ with .Site.Home.OutputFormats.Get "RSS" }}
+      <div class="site-footer-col site-footer-feed">
+        <h2 class="site-footer-heading">Subscribe</h2>
+        <p class="site-footer-feed-copy">
+          Follow along via the RSS feed and never miss a post.
+        </p>
+        <a
+          class="site-footer-rss"
+          href="{{ .RelPermalink }}"
+          type="application/rss+xml"
+          title="RSS feed"
+          aria-label="RSS feed">
+          {{ partial "icon.html" "rss" }}
+          <span>RSS Feed</span>
+        </a>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="site-footer-bottom">
+    {{/* Copyright */}}
+    {{ if .Site.Params.footer.showCopyright | default true }}
+      <p class="site-footer-copyright">
+        {{- with replace .Site.Params.copyright "{ year }" now.Year }}
+          {{ . | markdownify }}
+        {{- else }}
+          &copy;
+          {{ now.Format "2006" }}
+          {{ .Site.Params.author.name | markdownify }}
+        {{- end }}
+      </p>
+    {{ end }}
+
+    {{/* Theme attribution */}}
+    {{ if .Site.Params.footer.showThemeAttribution | default true }}
+      <p class="site-footer-attribution">
+        {{ $hugo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>`
+        }}
+        {{ $blowfish := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>`
+        }}
+        {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
+      </p>
+    {{ end }}
+  </div>
+
+  {{ if not .Site.Params.disableImageZoom | default true }}
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  {{ end }}
+  {{/* Extend footer - eg. for extra scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-footer.html" }}
+    {{ partialCached "extend-footer.html" . }}
+  {{ end }}
+</footer>

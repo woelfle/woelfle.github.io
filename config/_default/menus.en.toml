@@ -26,40 +26,48 @@
   pageRef = "about"
   weight = 50
 
-# -- Footer Menu --
-# Displayed at the bottom of the page, just before the copyright notice.
+# -- Footer Menu: Explore links --
+# Displayed in the footer "Explore" column.
+
+[[footer]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 10
 
 [[footer]]
   name = "Tags"
   pageRef = "tags"
-  weight = 10
+  weight = 20
 
 [[footer]]
   name = "Categories"
   pageRef = "categories"
-  weight = 20
+  weight = 30
 
 [[footer]]
   name = "About"
   pageRef = "about"
-  weight = 30
-
-[[footer]]
-  name = "Impressum"
-  pageRef = "impressum"
   weight = 40
 
-[[footer]]
+# -- Legal Menu --
+# Displayed in the footer "Legal" column.
+
+[[legal]]
+  name = "Impressum"
+  pageRef = "impressum"
+  weight = 10
+
+[[legal]]
   name = "Datenschutzerklärung"
   pageRef = "privacy"
-  weight = 50
+  weight = 20
 
-[[footer]]
+[[legal]]
   name = "Imprint"
   pageRef = "imprint"
-  weight = 60
+  weight = 30
 
-[[footer]]
+[[legal]]
   name = "Privacy Policy"
   pageRef = "privacy-policy"
-  weight = 70
+  weight = 40
