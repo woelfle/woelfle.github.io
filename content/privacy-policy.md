@@ -13,15 +13,11 @@ description: Privacy policy (GDPR)
 
 ### Responsible person
 
-{{< alert >}}
-**PLACEHOLDER.**
-
-First name, Last name
-Street, House number
-Postal code, City
-Country
-Email: [your@email.com](mailto:your@email.com)
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
+E-Mail: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## 2. General information on data processing
 
@@ -32,12 +28,10 @@ actively collect, process or store any personal data.
 
 ## 3. Hosting
 
-This website is hosted on **GitHub Pages**, a service provided by GitHub Inc.,
-88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you visit the
-website, GitHub processes technically necessary data as a data processor, such
-as your IP address, the time of access and the amount of data transferred
-(server log files). GitHub is certified under the EU-US Data Privacy Framework
-(DPF). For more information, see: <https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement>
+This website is provided via **IONOS Deploy Now**. When you visit the website,
+technically necessary data such as your IP address, the time of access and the
+amount of data transferred are processed. No personal data is actively
+collected, processed or stored.
 
 ## 4. External content
 

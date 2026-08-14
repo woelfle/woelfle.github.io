@@ -8,37 +8,23 @@ description: Legal notice in accordance with Section 5 DDG
 
 ## Information in accordance with Section 5 DDG
 
-> **TODO:** Replace the placeholders with your actual details before
-> publishing the website.
-
 ### Name and Address
 
-{{< alert >}}
-**PLACEHOLDER.**
-
-First name, Last name
-Street, House number
-Postal code, City
-Country
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
 
 ### Contact
 
-{{< alert >}}
-**PLACEHOLDER.**
-
-Email: [your@email.com](mailto:your@email.com)
-{{< /alert >}}
+Email: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## Responsible for content according to Section 18 (2) MStV
 
-{{< alert >}}
-**PLACEHOLDER.**
-
-First name, Last name
-Street, House number
-Postal code, City
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
 
 ## Liability for content
 

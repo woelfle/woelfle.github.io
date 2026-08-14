@@ -8,37 +8,23 @@ description: Impressum gemäß § 5 DDG
 
 ## Angaben gemäß § 5 DDG
 
-> **TODO:** Ersetze die Platzhalter durch deine tatsächlichen Daten, bevor die
-> Website veröffentlicht wird.
-
 ### Name und Anschrift
 
-{{< alert >}}
-**PLATZHALTER.**
-
-Vorname Nachname
-Straße Hausnummer
-PLZ Ort
-Land
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
 
 ### Kontakt
 
-{{< alert >}}
-**PLATZHALTER.**
-
-E-Mail: [deine@email.de](mailto:deine@email.de)
-{{< /alert >}}
+E-Mail: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
-{{< alert >}}
-**PLATZHALTER.**
-
-Vorname Nachname
-Straße Hausnummer
-PLZ Ort
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
 
 ## Haftung für Inhalte
 

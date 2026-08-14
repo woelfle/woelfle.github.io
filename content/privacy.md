@@ -13,15 +13,11 @@ description: Datenschutzerklärung (DSGVO)
 
 ### Verantwortliche Person
 
-{{< alert >}}
-**PLATZHALTER.**
-
-Vorname Nachname
-Straße Hausnummer
-PLZ Ort
-Land
-E-Mail: [deine@email.de](mailto:deine@email.de)
-{{< /alert >}}
+Thomas Wölfle</br>
+Dekan-Seiler-Str. 10</br>
+79297 Winden,</br>
+Germany</br>
+E-Mail: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## 2. Allgemeines zur Datenverarbeitung
 
@@ -33,12 +29,10 @@ oder gespeichert.
 
 ## 3. Hosting
 
-Diese Website wird bei **GitHub Pages** gehostet, einem Dienst der GitHub Inc.,
-88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der
-Website verarbeitet GitHub als Auftragsverarbeiter technisch notwendige Daten
-wie IP-Adresse, Zeitpunkt des Zugriffs und übertragene Datenmengen
-(Server-Log-Dateien). GitHub ist nach dem EU-US Data Privacy Framework (DPF)
-zertifiziert. Weitere Informationen: <https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement>
+Diese Website wird über **IONOS Deploy Now** bereitgestellt. Beim Aufruf der
+Website werden technisch notwendige Daten wie IP-Adresse, Zeitpunkt des
+Zugriffs und übertragene Datenmengen verarbeitet. Es werden keine
+personenbezogenen Daten aktiv erhoben, verarbeitet oder gespeichert.
 
 ## 4. Externe Inhalte
 
