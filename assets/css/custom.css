@@ -406,6 +406,262 @@ code, pre {
   color: var(--color-primary-light);
 }
 
+/* --- Post Cards ---
+     Refined post/term cards (IMPROVEMENTS.md item 13): 16:9 media with hover
+     zoom + tint, cleaner meta, category chip and tag pills. Applied to archive,
+     tags, categories, and home page cards via article-link/card.html and
+     term-link/card.html.
+*/
+
+.article-link--card {
+  border-radius: 0.9rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.dark .article-link--card {
+  background-color: color-mix(in srgb, var(--color-surface) 55%, transparent);
+}
+
+.article-link--card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+  box-shadow: 0 20px 44px -20px rgba(2, 6, 23, 0.4);
+}
+
+/* 16:9 media area: rounded top corners, hover zoom + bottom tint */
+.card-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--thumbnail-aspect-ratio, 16 / 9);
+  background-color: var(--color-bg-subtle);
+}
+
+.card-media-img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.article-link--card:hover .card-media-img,
+.term-link--card:hover .card-media-img {
+  transform: scale(1.06);
+}
+
+.card-media-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.22), rgba(2, 6, 23, 0) 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.article-link--card:hover .card-media-tint,
+.term-link--card:hover .card-media-tint {
+  opacity: 1;
+}
+
+/* Title */
+.card-title-link {
+  color: var(--color-fg);
+  text-decoration: none;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--color-fg);
+  transition: color 0.2s ease;
+}
+
+.article-link--card:hover .card-title {
+  color: var(--color-primary);
+}
+
+.dark .article-link--card:hover .card-title {
+  color: var(--color-primary-light);
+}
+
+/* Meta line: author · date · reading time */
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0;
+  margin-top: 0.5rem;
+  color: var(--color-fg-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.card-meta-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.card-meta-item + .card-meta-item::before {
+  content: "·";
+  margin-inline: 0.55rem;
+  color: var(--color-fg-dim);
+}
+
+.card-summary {
+  color: var(--color-fg-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+/* Taxonomy pills */
+.card-taxonomies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.card-taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Category chip: outlined, brand-tinted */
+.card-category {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+  background-color: color-mix(in srgb, var(--color-primary-light) 30%, transparent);
+  color: var(--color-primary-dark);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-category:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.dark .card-category {
+  background-color: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.35);
+  color: var(--color-primary-light);
+}
+
+.dark .card-category:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Tag pill: neutral chip */
+.card-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-tag:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dark .card-tag {
+  background-color: color-mix(in srgb, var(--color-bg-subtle) 70%, transparent);
+}
+
+.dark .card-tag:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+/* Term cards (tags/categories index pages) */
+.term-link--card {
+  border-radius: 0.9rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.dark .term-link--card {
+  background-color: color-mix(in srgb, var(--color-surface) 55%, transparent);
+}
+
+.term-link--card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+  box-shadow: 0 20px 44px -20px rgba(2, 6, 23, 0.4);
+}
+
+.term-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.term-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-fg);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.term-link--card:hover .term-card-title {
+  color: var(--color-primary);
+}
+
+.dark .term-link--card:hover .term-card-title {
+  color: var(--color-primary-light);
+}
+
+.term-card-count {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dark .term-card-count {
+  background-color: color-mix(in srgb, var(--color-bg-subtle) 70%, transparent);
+}
+
 /* --- Header & Navigation ---
      Refined fixed header (IMPROVEMENTS.md item 14).
 */

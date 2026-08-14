@@ -131,21 +131,6 @@ Update the legal notices (imprint, privacy, licenses)
 
 ---
 
-## 🎨 Visual Design & Branding
-
-**Current State:** The site runs the stock Blowfish theme with default styling. The core concept ("system nodes, order, precision") is not yet expressed visually.
-
-### 13. **Refine Post Cards & List Pages**
-
-**Current State:** Posts use the default background hero (`heroStyle = "background"`, blurred full-bleed) with stock meta styling and no custom card treatment.  
-**Recommendation:**
-
-- Consistent image aspect ratio (e.g. 16:9), rounded corners, hover zoom/tint.
-- Cleaner meta (author/date/category), tags as pills.
-- Apply the same card treatment to archive, tags, and categories pages.
-
----
-
 ## 📚 Documentation
 
 ### 6. **Enhance Project Documentation**

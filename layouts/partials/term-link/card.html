@@ -1,0 +1,67 @@
+{{/* Refined term card for the tags/categories index pages (IMPROVEMENTS.md item 13).
+     Mirrors the post-card treatment from article-link/card.html: rounded corners,
+     hairline border, hover lift, and the term count as a pill. */}}
+
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.78" }}
+{{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
+{{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.78" }}{{ end }}
+{{ $p := .Page }}
+{{ with .Page.Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ $featured = resources.GetRemote . }}
+  {{ else }}
+    {{ $featured = $p.Resources.Get . }}
+    {{ if not $featured }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $featured }}
+  {{ $images := .Page.Resources.ByType "image" }}
+  {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+  {{ end }}
+{{ end }}
+
+<div class="min-w-full">
+  <div class="term-link--card relative overflow-hidden p-5">
+    {{ with $featuredURL }}
+      <div class="card-media mb-4" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
+        <img
+          src="{{ . }}"
+          alt="{{ $.Page.Title }}"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          class="not-prose absolute inset-0 w-full h-full object-cover card-media-img" />
+        <span class="card-media-tint" aria-hidden="true"></span>
+      </div>
+    {{ end }}
+    <div class="term-card-title-row">
+      <a
+        {{ with .Page.Params.externalUrl }}
+          href="{{ . }}" target="_blank" rel="external"
+        {{ else }}
+          href="{{ .Page.RelPermalink }}"
+        {{ end }}
+        class="not-prose before:absolute before:inset-0 term-card-title">
+        {{ .Page.Title | emojify }}
+      </a>
+      {{ if site.Params.taxonomy.showTermCount | default true }}
+        <span class="term-card-count relative">{{ .Count }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
