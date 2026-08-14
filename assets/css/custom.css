@@ -897,3 +897,361 @@ button {
   color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
+
+/* --- Post Pages ---
+     Featured-image cover, reading progress, TOC, related posts, and content
+     typography (code, tables, alerts, blockquotes) for single pages
+     (IMPROVEMENTS.md item 15).
+*/
+
+/* Reading progress bar: thin gradient line pinned above the fixed header. */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 0%;
+  height: 3px;
+  border-radius: 0 9999px 9999px 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-primary) 60%, transparent);
+  transition: width 0.1s ease-out, opacity 0.3s ease;
+}
+
+/* Featured-image cover: rounded, bordered, shadowed card above the title. */
+.article-cover {
+  position: relative;
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-subtle);
+  box-shadow: 0 14px 34px -16px rgba(2, 6, 23, 0.3);
+}
+
+.article-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dark .article-cover {
+  border-color: var(--color-border);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.65);
+}
+
+.article-cover figcaption {
+  padding: 0.75rem 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--color-fg-muted);
+  text-align: center;
+}
+
+/* Article header meta row: keep inline items breathing a little. */
+#single_header .article-meta .flex.flex-row.flex-wrap.items-center {
+  gap: 0.15rem;
+}
+
+/* Taxonomy / draft pills shared by badges everywhere (card + post pages). */
+.badge {
+  border-radius: 9999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background-color: color-mix(in srgb, var(--color-primary-light) 55%, transparent);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.dark .badge {
+  background-color: rgba(96, 165, 250, 0.14);
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+.badge:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.dark .badge:hover {
+  color: var(--color-bg);
+}
+
+/* --- Table of contents --- */
+
+.toc-heading {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-fg-dim);
+  margin-bottom: 0.75rem;
+  padding-inline-start: 0.25rem;
+}
+
+.toc-list {
+  border-inline-start: 2px solid var(--color-border);
+}
+
+#TableOfContents a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  margin-block: 0.125rem;
+  margin-inline-start: -1px;
+  border-inline-start: 2px solid transparent;
+  border-radius: 0.375rem;
+  color: var(--color-fg-muted);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+#TableOfContents a:hover {
+  color: var(--color-primary);
+}
+
+#TableOfContents a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+  border-inline-start-color: var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-primary-light) 35%, transparent);
+}
+
+.dark #TableOfContents a:hover,
+.dark #TableOfContents a.active {
+  color: var(--color-primary-light);
+}
+
+.dark #TableOfContents a.active {
+  background-color: rgba(96, 165, 250, 0.12);
+}
+
+/* --- Related posts --- */
+
+.related-posts {
+  margin-top: 2.5rem;
+}
+
+.related-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.related-heading::before {
+  content: "";
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.article-link--related {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.article-link--related:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -14px rgba(2, 6, 23, 0.3);
+  border-color: var(--color-primary);
+}
+
+.article-link--related .thumbnail_card_related img {
+  transition: transform 0.35s ease;
+}
+
+.article-link--related:hover .thumbnail_card_related img {
+  transform: scale(1.04);
+}
+
+/* --- Content prose refinements --- */
+
+/* Anchor targets clear the fixed header when jumping from the TOC. */
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  scroll-margin-top: 7rem;
+}
+
+/* Inline code: brand-tinted chip instead of the flat neutral prose pill. */
+.article-content :where(p, li, blockquote, td, th, figcaption) code:not([class]) {
+  background-color: color-mix(in srgb, var(--color-primary-light) 45%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+  color: var(--color-primary-dark);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.375rem;
+  font-size: 0.85em;
+}
+
+.dark .article-content :where(p, li, blockquote, td, th, figcaption) code:not([class]) {
+  background-color: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.28);
+  color: var(--color-primary-light);
+}
+
+/* Code blocks: hairline border + brand-tinted surface in both modes. */
+.article-content .highlight-wrapper {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-subtle);
+  box-shadow: 0 10px 30px -18px rgba(2, 6, 23, 0.3);
+}
+
+.dark .article-content .highlight-wrapper {
+  border-color: var(--color-border);
+}
+
+.article-content .highlight-wrapper .chroma,
+.article-content .highlight-wrapper pre.chroma {
+  background-color: transparent;
+}
+
+.article-content .highlight-wrapper .copy-button {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dark .article-content .highlight-wrapper .copy-button {
+  background-color: var(--color-bg-subtle);
+}
+
+.article-content .highlight-wrapper .copy-button:hover,
+.article-content .highlight-wrapper .copy-button:focus,
+.article-content .highlight-wrapper .copy-button:active {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* Tables: wrapped in .table-scroll (render hook) for horizontal scrolling. */
+.table-scroll {
+  width: 100%;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.625rem;
+  box-shadow: 0 10px 30px -18px rgba(2, 6, 23, 0.3);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--color-border-soft) var(--color-bg-subtle);
+}
+
+.table-scroll table {
+  width: 100%;
+  min-width: 38rem;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-scroll thead th {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table-scroll th,
+.table-scroll td {
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+}
+
+.table-scroll th:last-child,
+.table-scroll td:last-child {
+  border-right: none;
+}
+
+.table-scroll tbody tr:last-child th,
+.table-scroll tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-scroll tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--color-bg-subtle) 55%, transparent);
+}
+
+.table-scroll tbody tr:hover {
+  background-color: color-mix(in srgb, var(--color-primary-light) 25%, transparent);
+}
+
+.dark .table-scroll {
+  border-color: var(--color-border);
+}
+
+.dark .table-scroll thead th {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg);
+}
+
+/* Alerts: brand-tinted callouts with a leading accent bar. */
+.article-content .alert {
+  border: 1px solid var(--color-border);
+  border-inline-start: 3px solid var(--color-primary);
+  background-color: var(--color-bg-subtle);
+  box-shadow: 0 10px 30px -18px rgba(2, 6, 23, 0.3);
+}
+
+.dark .article-content .alert {
+  border-color: var(--color-border);
+  background-color: color-mix(in srgb, var(--color-bg-subtle) 75%, transparent);
+}
+
+.article-content .alert .icon {
+  color: var(--color-primary);
+}
+
+.dark .article-content .alert .icon {
+  color: var(--color-primary-light);
+}
+
+/* Blockquotes: accent bar + soft tint, quotes kept from the source text
+   (prose's auto-generated quotes are neutralized). */
+.article-content blockquote {
+  position: relative;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  padding: 0.875rem 1.25rem;
+  border-inline-start: 3px solid var(--color-primary);
+  border-radius: 0 0.625rem 0.625rem 0;
+  background-color: color-mix(in srgb, var(--color-primary-light) 24%, transparent);
+  color: var(--color-fg);
+  font-style: normal;
+  quotes: none;
+}
+
+.dark .article-content blockquote {
+  background-color: color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.article-content blockquote p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.article-content blockquote p::before,
+.article-content blockquote p::after {
+  content: none;
+}

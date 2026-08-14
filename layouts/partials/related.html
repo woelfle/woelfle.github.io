@@ -1,0 +1,16 @@
+{{/* Refined related-posts section.
+     Cards keep the theme's card-related.html markup; styling lives in
+     custom.css under "Post Pages". */}}
+{{ if .Params.showRelatedContent | default (.Site.Params.article.showRelatedContent | default false) }}
+  {{ $related := .Site.RegularPages.Related . | first .Site.Params.article.relatedContentLimit }}
+  {{ with $related }}
+    <section class="related-posts">
+      <h2 class="related-heading">Related reading</h2>
+      <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range . }}
+          {{ partial "article-link/card-related.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

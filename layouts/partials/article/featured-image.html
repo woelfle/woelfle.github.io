@@ -1,0 +1,59 @@
+{{/* Styled featured-image card for post pages.
+     Resolution mirrors the theme's hero/featured-image logic. Styling lives in
+     assets/css/custom.css under "Post Pages". Only rendered for posts so legal
+     and standalone pages are not given an automatic cover. */}}
+{{ if eq .Type "posts" }}
+  {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+
+  {{ $featured := "" }}
+  {{ $featuredURL := "" }}
+  {{ with .Params.featureimage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ if site.Params.hotlinkFeatureImage }}
+        {{ $featuredURL = . }}
+      {{ else }}
+        {{ $featured = resources.GetRemote . }}
+      {{ end }}
+    {{ else }}
+      {{ $featured = page.Resources.Get . }}
+      {{ if not $featured }}
+        {{ $featured = resources.Get . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not (or $featured $featuredURL) }}
+    {{ $images := .Resources.ByType "image" }}
+    {{ range slice "*feature*" "*cover*" "*thumbnail*" "*background*" }}
+      {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not (or $featured $featuredURL) }}
+    {{ $default := site.Store.Get "defaultFeaturedImage" }}
+    {{ if $default.url }}
+      {{ $featuredURL = $default.url }}
+    {{ else if $default.obj }}
+      {{ $featured = $default.obj }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not $featuredURL }}
+    {{ with $featured }}
+      {{ $featuredURL = .RelPermalink }}
+      {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+        {{ $featuredURL = (.Resize "1200x").RelPermalink }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ with $featuredURL }}
+    <figure class="article-cover nozoom">
+      <img
+        src="{{ . }}"
+        alt="{{ $.Title }}"
+        loading="lazy"
+        decoding="async" />
+    </figure>
+  {{ end }}
+{{ end }}
