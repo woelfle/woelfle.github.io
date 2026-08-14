@@ -135,42 +135,6 @@ Update the legal notices (imprint, privacy, licenses)
 
 **Current State:** The site runs the stock Blowfish theme with default styling. The core concept ("system nodes, order, precision") is not yet expressed visually.
 
-### 9. **Typography: Add Self-Hosted Fonts** - Done
-
-**Current State:** All text renders in a self-hosted system stack; code falls back to a generic monospace. No visual character.  
-**Recommendation:**
-
-- Self-host two typefaces via `@font-face` in `assets/css/custom.css` (privacy-first: no Google Fonts CDN):
-  - Display/headings: e.g. **Space Grotesk** (or "Sora")
-  - Body: e.g. **Inter**
-  - Code: e.g. **JetBrains Mono** (replaces the dangling "Fira Code" reference)
-- Define a type scale (sizes, weights, line-heights, letter-spacing) for headings, body, captions, and code.
-
-### 10. **Establish a Cohesive Color Palette** - Done
-
-**Current State:** Blowfish default palette — neutral grays (Tailwind) with a blue accent. No brand accent, no semantic colors, flat surfaces.  
-**Recommendation:**
-
-- Define a primary/accent + semantic color set for **light and dark** modes, applied via `assets/css/custom.css`.
-- Use the accent deliberately (links, headings accents, hover states, highlights) rather than as a lone link color.
-- Refine the dark palette beyond Tailwind neutrals to match the new brand.
-
-### 11. **Redesign Brand Assets (Logo, Avatar, Featured Images)** - Done
-
-**Current State:** Logo is a blue mandala SVG; avatar is a generic flat "person on a gradient" icon; featured images are `1200×630` SVGs that read as "gradient + centered text" placeholders.  
-**Recommendation:**
-
-- Redesign logo and avatar around one consistent "system" motif (nodes + edges) using the new palette.
-- Redesign the 5 category featured SVGs (`featured-{systems-thinking,architecture,engineering,performance,learning}.svg`) so they look designed and cohesive instead of like default OG placeholders.
-
-### 12. **Add a Home Page Hero** - Done
-
-**Current State:** The home page uses the stock Blowfish profile layout (avatar, name, short description) followed by a recent-posts list. No value proposition, no visual anchor, no hierarchy beyond the defaults.  
-**Recommendation:**
-
-- Replace the plain profile block with a proper hero: larger typography, subtle system-node background motif, value proposition, and a category/topic pill row.
-- Feature the latest post as a highlighted hero card; present the rest in a refined grid.
-
 ### 13. **Refine Post Cards & List Pages**
 
 **Current State:** Posts use the default background hero (`heroStyle = "background"`, blurred full-bleed) with stock meta styling and no custom card treatment.  
@@ -179,31 +143,6 @@ Update the legal notices (imprint, privacy, licenses)
 - Consistent image aspect ratio (e.g. 16:9), rounded corners, hover zoom/tint.
 - Cleaner meta (author/date/category), tags as pills.
 - Apply the same card treatment to archive, tags, and categories pages.
-
-### 14. **Refine Header & Navigation** - Done
-
-**Current State:** Fixed header with default Blowfish nav styling; stock active/hover states.  
-**Recommendation:**
-
-- Subtle border + blur (glass effect) on the fixed header.
-- Refined active link state (e.g. animated underline), better spacing, polished theme-toggle/search buttons.
-
-### 15. **Polish Post Pages**
-
-**Current State:** Blowfish default output: title, meta, hero image, smart TOC. Code, tables, alerts, and blockquotes are styled by Tailwind prose.  
-**Recommendation:**
-
-- Styled featured-image treatment (rounded, shadow, subtle border).
-- Reading-progress indicator; refined TOC, meta, and related-posts sections.
-- Consistent styling for code blocks, tables, alerts, and blockquotes in light and dark modes.
-
-### 16. **Footer & Micro-Interactions**
-
-**Current State:** Minimal footer; default focus states and transitions.  
-**Recommendation:**
-
-- Structured footer (about, quick links, legal, RSS).
-- Custom scrollbar/selection colors, refined `:focus-visible` states, smooth transitions and hover states site-wide.
 
 ---
 
