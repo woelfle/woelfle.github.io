@@ -119,11 +119,23 @@ This document outlines recommended improvements to align the Hugo site with Blow
 
 ---
 
+## Design System
+
+Evaluate the current CSS styles and think about a design system with design tokens to streamline it
+
+---
+
+## Legal notices
+
+Update the legal notices (imprint, privacy, licenses)
+
+---
+
 ## 🎨 Visual Design & Branding
 
 **Current State:** The site runs the stock Blowfish theme with default styling. The core concept ("system nodes, order, precision") is not yet expressed visually.
 
-### 9. **Typography: Add Self-Hosted Fonts**
+### 9. **Typography: Add Self-Hosted Fonts** - Done
 
 **Current State:** All text renders in a self-hosted system stack; code falls back to a generic monospace. No visual character.  
 **Recommendation:**
@@ -134,7 +146,7 @@ This document outlines recommended improvements to align the Hugo site with Blow
   - Code: e.g. **JetBrains Mono** (replaces the dangling "Fira Code" reference)
 - Define a type scale (sizes, weights, line-heights, letter-spacing) for headings, body, captions, and code.
 
-### 10. **Establish a Cohesive Color Palette**
+### 10. **Establish a Cohesive Color Palette** - Done
 
 **Current State:** Blowfish default palette — neutral grays (Tailwind) with a blue accent. No brand accent, no semantic colors, flat surfaces.  
 **Recommendation:**
@@ -143,7 +155,7 @@ This document outlines recommended improvements to align the Hugo site with Blow
 - Use the accent deliberately (links, headings accents, hover states, highlights) rather than as a lone link color.
 - Refine the dark palette beyond Tailwind neutrals to match the new brand.
 
-### 11. **Redesign Brand Assets (Logo, Avatar, Featured Images)**
+### 11. **Redesign Brand Assets (Logo, Avatar, Featured Images)** - Done
 
 **Current State:** Logo is a blue mandala SVG; avatar is a generic flat "person on a gradient" icon; featured images are `1200×630` SVGs that read as "gradient + centered text" placeholders.  
 **Recommendation:**
@@ -151,7 +163,7 @@ This document outlines recommended improvements to align the Hugo site with Blow
 - Redesign logo and avatar around one consistent "system" motif (nodes + edges) using the new palette.
 - Redesign the 5 category featured SVGs (`featured-{systems-thinking,architecture,engineering,performance,learning}.svg`) so they look designed and cohesive instead of like default OG placeholders.
 
-### 12. **Add a Home Page Hero**
+### 12. **Add a Home Page Hero** - Done
 
 **Current State:** The home page uses the stock Blowfish profile layout (avatar, name, short description) followed by a recent-posts list. No value proposition, no visual anchor, no hierarchy beyond the defaults.  
 **Recommendation:**
@@ -168,7 +180,7 @@ This document outlines recommended improvements to align the Hugo site with Blow
 - Cleaner meta (author/date/category), tags as pills.
 - Apply the same card treatment to archive, tags, and categories pages.
 
-### 14. **Refine Header & Navigation**
+### 14. **Refine Header & Navigation** - Done
 
 **Current State:** Fixed header with default Blowfish nav styling; stock active/hover states.  
 **Recommendation:**
