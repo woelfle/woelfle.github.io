@@ -90,6 +90,19 @@ code, pre {
   font-family: var(--font-code);
 }
 
+/* Mobile-friendly full height.
+   The Blowfish base template pins <body> to h-screen (100vh). On mobile the
+   vh unit includes the collapsing address bar, so content jumps and the footer
+   rides up / is clipped when the bar hides. Switching to auto height with a
+   dynamic-viewport minimum keeps the sticky-footer layout (flex column) while
+   eliminating the address-bar jump. 100dvh is supported in all modern mobile
+   browsers and falls back gracefully on older ones via the 100vh value. */
+body {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 /* --- Type Scale (modular: 1.25 ratio) --- */
 
 :root {
@@ -197,9 +210,13 @@ code, pre {
 
 /* --- Home Page Hero --- */
 
+/* overflow:hidden clips the absolutely-positioned decorative burst so it can
+   never force a horizontal scrollbar on viewports narrower than the 500px
+   decoration (fixes >60px of horizontal scroll on small phones). */
 .hero-section {
   position: relative;
   width: 100%;
+  overflow: hidden;
   padding: 4rem 1rem 5rem;
   margin-top: 1rem;
   background-image: url('/images/hero-bg.svg');
@@ -282,6 +299,19 @@ code, pre {
   .hero-bg-decoration {
     width: 500px;
     height: 500px;
+  }
+}
+
+/* Below 640px the 500px burst still overhangs the viewport; shrink it so the
+   gradient flourish stays within the frame instead of being clipped. */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .hero-bg-decoration {
+    width: 380px;
+    height: 380px;
   }
 }
 
@@ -541,7 +571,7 @@ code, pre {
   border-radius: 9999px;
   border: 1px solid color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
   background-color: color-mix(in srgb, var(--color-primary-light) 30%, transparent);
-  color: var(--color-primary-dark);
+  color: var(--color-fg);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;

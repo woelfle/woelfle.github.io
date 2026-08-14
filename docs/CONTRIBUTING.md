@@ -139,7 +139,8 @@ The markdownlint config relaxes the defaults for blog content:
 
 - `MD013` (line length) – **off**
 - `MD026` (heading trailing punctuation) – allowed except `. , ; : !`
-- `MD041` (first line must be a top-level heading) – **off**
+- `MD041` (first line must be a top-level heading) – **off** (Hugo front-matter is not a heading)
+- `MD001` (heading-increment) – **on**; enforces a proper `##` → `###` hierarchy. Post content must not use `#` (h1) — the title from front-matter is the sole h1. See `docs/CONTENT_GUIDE.md` for the full heading convention.
 
 yamllint allows lines up to 120 chars and accepts the `on:` trigger key used by GitHub Actions.
 

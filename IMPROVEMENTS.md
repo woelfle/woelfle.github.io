@@ -56,39 +56,6 @@ This document outlines recommended improvements to align the Hugo site with Blow
 
 ---
 
-## 📱 Mobile & Accessibility
-
-### 3. **Verify Mobile Responsiveness**
-
-**Current State:** Custom CSS includes media queries  
-**Recommendation:**
-
-- Test on actual devices/browsers:
-  - Chrome DevTools mobile view
-  - Safari on iOS
-  - Android browser
-- Focus on:
-  - Header layout (`params.header.layout` = `"fixed"` / `"basic"`)
-  - Code block scrolling
-  - Image sizing
-  - Navigation menu
-
-### 4. **Enhance Accessibility**
-
-**Current State:** Blowfish provides base accessibility  
-**Recommendation:**
-
-- Audit using WAVE or Axe DevTools
-- Ensure:
-  - All images have alt text
-  - Color contrast meets WCAG AA standards
-  - Keyboard navigation works
-  - Headings follow proper hierarchy
-  - Links are distinguishable from text
-  - Form elements have labels (if applicable)
-
----
-
 ## 🔐 Security & Privacy
 
 ### 5. **Verify Privacy Settings**
@@ -106,17 +73,6 @@ This document outlines recommended improvements to align the Hugo site with Blow
 - No tracking code or external services
 - Host content privately or self-host
 
-### 32. **Configure CSP Headers (if self-hosted)**
-
-**Recommendation:**
-
-- If deploying to own server, add Content Security Policy headers
-- Example nginx config:
-
-  ```nginx
-  add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'" always;
-  ```
-
 ---
 
 ## Design System
@@ -128,6 +84,12 @@ Evaluate the current CSS styles and think about a design system with design toke
 ## Legal notices
 
 Update the legal notices (imprint, privacy, licenses)
+
+---
+
+## Agent configuration
+
+Update AGENTS.md with the current setup and documentation structure
 
 ---
 

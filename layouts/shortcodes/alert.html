@@ -6,8 +6,11 @@
   {{ $.Scratch.Set "cardColor" (.Get "cardColor") }}
   {{ $.Scratch.Set "iconColor" (.Get "iconColor") }}
   {{ $.Scratch.Set "textColor" (.Get "textColor") }}
+  {{ $.Scratch.Set "role" (default "note" (.Get "role")) }}
+  {{ $.Scratch.Set "ariaLive" (.Get "ariaLive") }}
 {{ else }}
   {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get 0) ) }}
+  {{ $.Scratch.Set "role" "note" }}
 {{ end }}
 
 
@@ -17,6 +20,8 @@
   {{ else }}
     class="alert flex px-4 py-3 rounded-md shadow" style="background-color: {{ $.Scratch.Get "cardColor" }}"
   {{ end }}
+  role="{{ $.Scratch.Get "role" }}"
+  {{ with $.Scratch.Get "ariaLive" }}aria-live="{{ . }}"{{ end }}
   >
   <span
     {{ if not ($.Scratch.Get "iconColor") }}

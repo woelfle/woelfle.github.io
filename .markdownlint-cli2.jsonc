@@ -9,6 +9,15 @@
       "punctuation": ".,;:!。，；：！"
     },
     // Hugo content often starts with prose after the front matter block
-    "MD041": false
+    "MD041": false,
+    // Enforce heading hierarchy: no skipping levels (e.g. h1 -> h3).
+    // Hugo renders the front-matter title as h1, so post content should
+    // start with h2 (##) and descend incrementally.
+    "MD001": {
+      "front_matter_title": false
+    },
+    // Layout templates use Hugo/Go syntax, not pure Markdown
+    "MD037": false,
+    "MD033": false
   }
 }

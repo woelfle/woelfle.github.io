@@ -85,7 +85,7 @@
     <div class="card-media" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
         src="{{ . }}"
-        alt="{{ $.Title }}"
+         alt="{{ $page.Params.featureimageAlt | default $.Title }}"
         loading="lazy"
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover card-media-img" />

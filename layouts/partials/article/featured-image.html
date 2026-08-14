@@ -51,7 +51,7 @@
     <figure class="article-cover nozoom">
       <img
         src="{{ . }}"
-        alt="{{ $.Title }}"
+         alt="{{ $.Params.featureimageAlt | default $.Title }}"
         loading="lazy"
         decoding="async" />
     </figure>

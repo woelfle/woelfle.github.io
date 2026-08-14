@@ -1,0 +1,40 @@
+{{/* Link render override. Extends the theme's render-link.html:
+     1. Adds `noopener` to the rel attribute for external links (security
+        best practice — prevents the new tab from accessing window.opener).
+     2. Renders an external-link icon (aria-hidden) so sighted users see the
+        new-tab cue and screen readers get the title attribute. */}}
+{{- $u := urls.Parse .Destination -}}
+{{- $href := $u.String -}}
+{{- if strings.HasPrefix $u.String "#" -}}
+  {{- $href = printf "%s#%s" .PageInner.RelPermalink $u.Fragment -}}
+{{- else if and $href (not $u.IsAbs) -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- with or
+    ($.PageInner.GetPage $path)
+    ($.PageInner.Resources.Get $path)
+    (resources.Get $path)
+  -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $u.RawQuery -}}
+      {{- $href = printf "%s?%s" $href . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $href = printf "%s#%s" $href . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $forceNewTab := .Page.Params.externalLinkForceNewTab | default (.Page.Site.Params.article.externalLinkForceNewTab | default true) -}}
+{{- $isExternal := or (strings.HasPrefix .Destination "http:") (strings.HasPrefix .Destination "https:") -}}
+{{- $newTab := and $forceNewTab $isExternal -}}
+
+<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{- .Text | safeHTML -}}
+  {{- if $newTab }}
+    <svg class="inline-block h-3.5 w-3.5 shrink-0 ms-0.5 -mt-0.5 align-middle" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" width="14" height="14">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  {{- end }}
+</a>
