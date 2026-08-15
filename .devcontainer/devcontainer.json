@@ -10,7 +10,7 @@
        * the Devcontainer. Otherwise it is not possible to install plugins. The base image
        * this Devcontainer is built upon already has the ZscalerRootCertificate installed.
        */
-      "NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
+      // "NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
     },
     "customizations": {
         "vscode": {
