@@ -18,7 +18,7 @@ E-Mail: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## 2. Allgemeines zur Datenverarbeitung
 
-Diese Website ist ein privater, persönlicher Blog. Es werden **keine Cookies**
+Diese Website ist ein persönlicher Blog. Es werden **keine Cookies**
 für Tracking- oder Analysezwecke gesetzt und **keine externen
 Analysedienste** (wie Google Analytics, Matomo o. ä.) eingesetzt. Es werden
 keine personenbezogenen Daten durch den Betreiber aktiv erhoben, verarbeitet

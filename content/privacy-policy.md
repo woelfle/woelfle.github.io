@@ -18,7 +18,7 @@ E-Mail: [info@thomaswoelfle.com](mailto:info@thomaswoelfle.com)
 
 ## 2. General information on data processing
 
-This website is a private, personal blog. It does **not** set any cookies for
+This website is a personal blog. It does **not** set any cookies for
 tracking or analytics purposes and does **not** use any external analytics
 services (such as Google Analytics, Matomo or similar). The operator does not
 actively collect, process or store any personal data.

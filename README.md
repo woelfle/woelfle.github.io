@@ -1,10 +1,10 @@
 # Thinking in Systems
 
-> A System of Thoughts — a private software engineering blog by **Thomas Wölfle** exploring architecture, methodologies, and systems thinking.
+> A System of Thoughts — a personal software engineering blog by **Thomas Wölfle** exploring architecture, methodologies, and systems thinking.
 
 ## About This Project
 
-**Thinking in Systems** is a private blog and personal knowledge repository where the author documents insights, patterns, and lessons learned throughout a software engineering journey. Content focuses on seeing software as interconnected systems rather than isolated components — covering systems thinking, software architecture and design patterns, engineering practices, and continuous learning.
+**Thinking in Systems** is a personal blog and knowledge repository where the author documents insights, patterns, and lessons learned throughout a software engineering journey. Content focuses on seeing software as interconnected systems rather than isolated components — covering systems thinking, software architecture and design patterns, engineering practices, and continuous learning.
 
 The site is built with [Hugo](https://gohugo.io/), a fast and flexible static site generator, using the [Blowfish](https://github.com/nunocoracao/blowfish) theme (installed as a Hugo module). It is a **privacy-first** site: analytics, tracking, social links, comments, share buttons, and external CDNs are disabled, and all assets are self-hosted.
 

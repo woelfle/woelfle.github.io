@@ -5,7 +5,7 @@
 theme = "github.com/nunocoracao/blowfish/v2"
 baseURL = "https://thomaswoelfle.com"
 defaultContentLanguage = "en"
-enableRobotsTXT = true
+enableRobotsTXT = false # static/robots.txt is copied verbatim (blocks AI crawlers)
 summaryLength = 30
 hasCJKLanguage = false
 buildDrafts = false

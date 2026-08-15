@@ -1,14 +1,14 @@
 ---
 title: About
 date: 2026-01-26 10:00:00+00:00
-lastmod: 2026-01-26 10:00:00+00:00
+lastmod: 2026-08-15 00:00:00+00:00
 draft: false
 description: 'About Thomas Wölfle and the Thinking in Systems blog — software architecture, engineering practices, leadership, and systems thinking.'
 ---
 
 ## About This Blog
 
-**Thinking in Systems** is a private software engineering blog exploring architecture, methodologies, and systems thinking.
+**Thinking in Systems** is a personal software engineering blog exploring architecture, methodologies, and systems thinking.
 
 This blog serves as a personal knowledge repository where I document insights, patterns, and lessons learned throughout my software engineering journey.
 
@@ -37,7 +37,7 @@ This site is built with:
 
 - **[Hugo](https://gohugo.io/)** — A fast and flexible static site generator
 - **[Hugo Theme Blowfish](https://github.com/nunocoracao/blowfish)** — A modern Hugo theme (prototype branch)
-- **Hosted privately** — For personal use and internal sharing
+- **Hosted publicly** — Published as a personal blog at thomaswoelfle.com
 
 ---
 
