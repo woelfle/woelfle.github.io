@@ -23,6 +23,13 @@ The personas form a two-dimensional landscape:
 
 **The bridge:** The Systems Thinker sits between the two clusters. Not a hands-on engineer and not a manager, she reads the same conceptual layer as everyone else — systems, boundaries, feedback loops — and is the best test of whether a post's *core idea* survives without the code.
 
+## Colleague Safety
+
+The personas describe who your colleagues *are* professionally. They do not
+cover how the same people read you as an author they share an org with. That
+question is handled by a separate evaluation: the [Colleague Safety Gate](../publishing/colleague-guardrails.md),
+which runs alongside the persona perception review for every post.
+
 ## Where Persona Needs Conflict (Design Tension)
 
 ### 1. Code vs. no-code
