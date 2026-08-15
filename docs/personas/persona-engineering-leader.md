@@ -190,6 +190,47 @@ Sarah reads as a practitioner-manager, not a theorist. She trusts a post when:
 
 ---
 
+## The Upward Lens: Reading as the CEO
+
+Sarah's persona describes how _she_ reads a post. But half of her world is defined against the people above her — the CEO and the board — and posts that reach upward are the ones most likely to miss their mark in a way she cannot see. When a post depicts or implicitly critiques the C-suite dynamic — goal cycles, initiative whiplash, consultants outranking internal judgment, modernization under escalation, training budgeted as a cost — evaluate it a second time from the chair the critique implicitly targets.
+
+This is a lens, not a sixth persona. It exists because the blog's org posts so often write _about_ the people Sarah manages up to, and she cannot be a reliable judge of how her own boss reads. Apply it whenever a post could be forwarded upward and read as a comment on the C-suite.
+
+### The Counterpart
+
+A sketch of who Sarah manages up to, enough to evaluate from:
+
+**Name:** Dr. Elias Korte
+**Role:** CEO of the scale-up (roughly 80–300 people)
+**Business:** The same scale-up Sarah works in — under board pressure to modernize the legacy core while hitting growth numbers
+**Experience:** Career in sales and marketing, not software. Engineering reaches him as a budget line, a schedule, and a risk item.
+**Tech Savviness:** Low. He reads technology through cost, time, and risk — the numbers matter more than the narrative.
+**Drive:** Numbers and KPIs, first and last. He is motivated by visible success — growth, share, hitting the number the board set — and reads everything, including engineering work, as a means to that end.
+**Reading Behavior:** Reads only what is forwarded to him, and skims it: headline, pull quotes, and any sentence that names his company's dynamic. He reads posts about his org for subtext about him.
+
+### Core Reality of His Job
+
+Elias is accountable to a board that wants growth, modernization, and predictability — usually all three in the same quarter. He relays that pressure downward as mandates; when Sarah's teams feel initiative whiplash, he is the source of it, but not the author of it. He defends engineering budgets he only half understands against a CFO who books engineers as a cost line. He is the CEO Sarah cannot tell that "things feel slow because we keep changing how the work gets done."
+
+He is not a blog reader. He is _one_ blog reader: whatever gets forwarded to him, usually because it described his situation. He does not grade the argument; he grades what it says about him. A post that names "the CEO who launches the next initiative while the last one is still bleeding in" does not read to him as a systems observation. It reads as a verdict on his leadership — written by the Director of Engineering he sees weekly.
+
+### How the Upward Lens Scores a Post
+
+Run these checks when the post reaches upward. Each is the C-suite mirror of a check Sarah already has:
+
+1. **Constraint awareness.** Does the post see that the C-suite operates under board pressure it cannot refuse — or does it treat them as free actors who could "simply stop interrupting"? Posts that assume freedom read as naive; posts that ignore the pressure read as unfair.
+2. **Pattern, not person.** Does it name the loop (board impatience → initiative churn → interrupted work → delay), or the person (the CEO who keeps moving the goalposts)? The blog's own thesis — system problems, not component problems — is the test.
+3. **Fairness from his chair.** Would Elias read the most-critical passage as fair and about structure, or as a comment on his competence? (Mirror of the gate's "Most-Affected Reader.")
+4. **Invitation, not verdict.** Could the post be read as an opener for a 1:1 conversation with him — or would he have to defend himself to finish it?
+
+**Fail condition:** the post reads as a verdict on the C-suite's competence, motives, or intelligence — or frames the board's pressure as a moral failing rather than a structural constraint.
+
+### The Accidental-Forward Test
+
+Elias reads what lands on his desk. So the test is: if his assistant forwards him the post with the subject _"this describes our situation"_, does he finish it thinking (a) _"someone here understands the constraints we're under — that's rare"_ — or (b) _"who is writing about us, and what else have they written?"_ The upward lens is the difference between those two outcomes.
+
+---
+
 ## Reading & Discovery Process (How She Actually Engages)
 
 1. **Triggered by a live org pain** — a goal cycle, a hire, a conflict, a deferred migration, a mandate from above she dislikes.
