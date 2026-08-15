@@ -8,9 +8,6 @@ description: Datenschutzerklärung (DSGVO)
 
 ## 1. Verantwortlicher
 
-> **TODO:** Ersetze die Platzhalter durch deine tatsächlichen Daten, bevor die
-> Website veröffentlicht wird.
-
 ### Verantwortliche Person
 
 Thomas Wölfle</br>

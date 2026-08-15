@@ -1,5 +1,6 @@
 ---
 iso27001:classification: public
+draft: true
 ---
 
 Write about using the sidecar pattern not to attach a technical capability to a system but to attach a domain view to a COTS system. This helps to align the OLTP, OLAP and AI views.

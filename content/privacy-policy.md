@@ -8,9 +8,6 @@ description: Privacy policy (GDPR)
 
 ## 1. Controller
 
-> **TODO:** Replace the placeholders with your actual details before
-> publishing the website.
-
 ### Responsible person
 
 Thomas Wölfle</br>

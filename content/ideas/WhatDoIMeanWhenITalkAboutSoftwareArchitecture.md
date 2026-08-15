@@ -7,6 +7,7 @@ intended-audience:
   - Engineering Managers
   - Project Managers
 iso27001:classification: public
+draft: true
 ---
 
 # What do I mean, when I talk about Software Architecture

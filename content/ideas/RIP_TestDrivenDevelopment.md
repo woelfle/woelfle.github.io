@@ -3,6 +3,7 @@ rdf:type:
   - article
 title: RIP Test Driven Development
 iso27001:classification: public
+draft: true
 ---
 
 Test driven development is dead. Sorry for that Kent Beck, but it is. Writing Tests before writing the code is nuts. How should I know what to test before I have implemented it. How should I know what to measure before I have observed it ... You can't expect that programmers write Tests before they implement the 'real code' ;) This is what I have heard from so many developers. And they are right! And they miss the point. That's why we should bury TDD. It leads them into the wrong direction. It is not about the test at all. It is about expectations. What is the expectation that my code should fulfill? And here comes the sad part. Thinking about expectations is hard. It is not as much fun as coding. We all love to open up our IDEs and start coding. That is fun. But thinking about expectations. Thinking about structure ... that is not fun ... So no wonder that TDD has such a hard stand. As with all XP practices (double check this from XP) it is not easy and requires discipline. But in the end this is what makes the difference. Are you a programmer or an engineer? So what do do instead? Talk about 'Expectation Driven Development'. Make that a first principle in your engineering teams. If they master that skill then they will have mastered one of the core competences in our new AI driven software development times.
