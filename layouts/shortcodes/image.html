@@ -1,0 +1,33 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "Image" }}
+{{ $caption := .Get "caption" }}
+{{ $height := .Get "height" }}
+{{ $width := .Get "width" }}
+
+{{ $attrs := printf "src=%s alt=%s" $src $alt }}
+{{ if $height }}
+  {{ $attrs = printf "%s height=%s" $attrs $height }}
+{{ end }}
+{{ if $width }}
+  {{ $attrs = printf "%s width=%s" $attrs $width }}
+{{ end }}
+
+{{ if .Get "srcset" }}
+  {{ $attrs = printf "%s srcset=%s" $attrs .Get "srcset" }}
+{{ end }}
+
+{{ if .Get "sizes" }}
+  {{ $attrs = printf "%s sizes=%s" $attrs .Get "sizes" }}
+{{ end }}
+
+{{ if eq .Get "loading" "eager" }}
+  {{ $attrs = printf "%s loading=eager" $attrs }}
+{{ end }}
+
+{{ if eq .Get "figure" "true" }}
+<figure {{ $attrs }}>
+  {{ $caption | markdownify }}
+</figure>
+{{ else }}
+<img {{ $attrs }}>
+{{ end }}

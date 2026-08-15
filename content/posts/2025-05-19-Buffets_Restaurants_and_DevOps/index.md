@@ -8,7 +8,7 @@ description: 'Platform engineering explored through the lens of how we eat: cook
   of tools: it is a thoughtfully designed experience.'
 date: 2025-05-19
 lastmod: 2025-05-19
-draft: true
+draft: false
 tags:
 - PlatformEngineering
 - DevEx
@@ -19,6 +19,8 @@ tags:
 categories:
 - platform-engineering
 author: Thomas Wölfle
+featureimage: buffets_and_platform_engineering.png
+featureimagealt: A buffet as an analogy for platform engineering
 iso27001:classification: public
 ---
 
@@ -54,6 +56,13 @@ This article builds on that idea—extending the metaphor from fruit to full mea
 
 Engineering teams are like home chefs. They choose their ingredients, design their recipes, and cook everything from scratch—building their own CI/CD pipelines, managing infrastructure, and selecting observability tools.
 
+{{< figure
+  src="cook_your_own_meal.jpeg"
+  alt="Home chefs cooking their own meal, as an analogy for engineering teams building everything from scratch"
+  caption="Cooking your own meal: full autonomy, high effort."
+  class="post-figure-img aspect-square object-cover"
+>}}
+
 **Pros**:
 
 - Maximum flexibility and customization
@@ -68,6 +77,13 @@ Engineering teams are like home chefs. They choose their ingredients, design the
 ### 🍽️ Restaurant Service → Centralized IT/DevOps
 
 Here, teams are customers at a restaurant. They place an order—open a ticket, submit a request—and wait for the service team to deliver. The experience is curated and controlled, but not always fast or flexible.
+
+{{< figure
+  src="restaurant_service.jpeg"
+  alt="Dining at a restaurant, as an analogy for teams requesting services from a central IT team"
+  caption="Restaurant service: curated and controlled, but slow."
+  class="post-figure-img aspect-square object-cover"
+>}}
 
 **Pros**:
 
@@ -85,6 +101,13 @@ Here, teams are customers at a restaurant. They place an order—open a ticket, 
 ### 🥗 Buffet → Platform Engineering
 
 The buffet represents the platform engineering model. Teams serve themselves from a curated selection of tools, services, and workflows. No waiting, no reinventing the wheel.
+
+{{< figure
+  src="the_buffet.jpeg"
+  alt="Serving yourself at a buffet, as an analogy for teams using a curated platform"
+  caption="The buffet: self-service from a curated, opinionated selection."
+  class="post-figure-img aspect-square object-cover"
+>}}
 
 But there’s a catch: **you don’t get everything you want**. Buffets are **opinionated**. They make deliberate choices about what to offer—and what not to. This constraint is not a flaw—it’s a feature. It’s what allows buffets to scale and serve hundreds efficiently.
 
