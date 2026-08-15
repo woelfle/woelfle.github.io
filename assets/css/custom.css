@@ -1065,6 +1065,62 @@ div.flex.md\:hidden > div > label[for="mobile-menu-toggle"]:hover {
   color: var(--color-bg);
 }
 
+/* Bottom bar (copyright + attribution). Matches the grid's max-width and
+   padding so the copyright line reads as part of the footer, not loose text
+   underneath it. */
+.site-footer-bottom {
+  border-top: 1px solid var(--color-border);
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  color: var(--color-fg-dim);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .site-footer-bottom {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer-bottom {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer-bottom {
+    padding-inline: 3rem;
+  }
+}
+
+.site-footer-copyright,
+.site-footer-attribution {
+  margin: 0;
+}
+
+.site-footer-attribution a {
+  color: var(--color-fg-muted);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer-attribution a:hover {
+  color: var(--color-primary);
+}
+
+.dark .site-footer-attribution a:hover {
+  color: var(--color-primary-light);
+}
+
 /* --- Micro-Interactions ---
      Custom scrollbar, selection, focus, and hover polish (IMPROVEMENTS.md item 16).
 */

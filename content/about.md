@@ -3,8 +3,7 @@ title: About
 date: 2026-01-26 10:00:00+00:00
 lastmod: 2026-01-26 10:00:00+00:00
 draft: false
-description: Learn about Thomas Wölfle, a software engineer passionate about systems thinking, architecture
-  design, and building elegant solutions.
+description: 'About Thomas Wölfle and the Thinking in Systems blog — software architecture, engineering practices, leadership, and systems thinking.'
 ---
 
 ## About This Blog
@@ -26,7 +25,11 @@ I believe that the best software emerges from understanding systems holistically
 
 ## About Me
 
-I'm a software engineer passionate about building robust systems and sharing knowledge. This blog is my digital garden—a place to cultivate ideas and reflect on the craft of software engineering.
+I have spent more than 25 years in software, mostly with companies that build products — sold to customers or operated as SaaS. Along the way I have been a Software Engineer, a Consultant, a Software Architect, a Team Lead, a Head of Development, and now a Director of Engineering. My work has taken me through investment and asset management companies and into healthcare with clinical workplace systems. I started my career at a boutique consultancy and product company known for modern methods in software engineering and architecture.
+
+That starting point shaped how I see things. I look at software through the lens of systems thinking: the codebase is a system, the team is a system, the organization is a system. Most of the engineering problems I have wrestled with were not component problems — they were system problems wearing component disguises. This blog is my attempt to write down what I see.
+
+A few years ago I started keeping a Zettelkasten, and it taught me that thoughts are sentences and knowledge lives in the relationships between them. This blog is that web of thoughts, growing over time.
 
 ## Colophon
 
