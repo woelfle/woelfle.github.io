@@ -10,12 +10,11 @@ date: 2025-05-19
 lastmod: 2025-05-19
 draft: false
 tags:
-- "Platform Engineering"
-- "Software Engineering"
-- "Internal Developer Platforms"
-- "Developer Experience"
+- platform-engineering
+- software-engineering
+- developer-experience
 categories:
-- "Software Architecture"
+- engineering-practices
 author: Thomas Wölfle
 featureimage: buffets_and_platform_engineering.png
 featureimagealt: A buffet as an analogy for platform engineering

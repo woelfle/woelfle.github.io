@@ -13,9 +13,9 @@ serve:
 lint-md:
   npm run lint:md
 
-# Lint the controlled tag vocabulary (fails on undocumented/non-whitelisted tags)
-lint-tags:
-  npm run lint:tags
+# Lint the controlled taxonomy vocabulary (fails on undocumented/non-whitelisted tags and categories)
+lint-taxonomies:
+  npm run lint:taxonomies
 
 # Auto-fix fixable markdown lint issues
 fix-md:
@@ -37,13 +37,13 @@ lint-templates:
   hugo --templateMetrics
 
 # Run all linters
-lint: lint-md lint-tags lint-yml lint-templates
+lint: lint-md lint-taxonomies lint-yml lint-templates
 
 # Build and run all checks (mirrors the CI pipeline)
 check:
   npm run lint:md
   npm run lint:yml
-  npm run lint:tags
+  npm run lint:taxonomies
   hugo --minify
 
 # Run the Hugo test suite

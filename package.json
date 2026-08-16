@@ -8,7 +8,7 @@
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:yml": "yamllint .",
     "lint:summary": "bash scripts/check-summaries.sh",
-    "lint:tags": "bash scripts/check-tags.sh",
+    "lint:taxonomies": "bash scripts/check-taxonomies.sh",
     "test": "hugo test",
     "prepare": "husky"
   },

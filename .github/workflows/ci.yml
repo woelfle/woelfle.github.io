@@ -43,8 +43,8 @@ jobs:
       - name: Lint post summaries
         run: npm run lint:summary
 
-      - name: Lint Tags (controlled vocabulary)
-        run: npm run lint:tags
+      - name: Lint Taxonomies (controlled vocabulary)
+        run: npm run lint:taxonomies
 
       - name: Lint YAML
         run: |

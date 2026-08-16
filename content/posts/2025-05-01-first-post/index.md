@@ -8,9 +8,7 @@ date: 2025-05-01 09:00:00+00:00
 lastmod: 2025-05-01 09:00:00+00:00
 draft: false
 tags:
-- systems-thinking
-- zettelkasten
-- about
+  - zettelkasten
 categories:
 - systems-thinking
 author: Thomas Wölfle

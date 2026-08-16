@@ -8,9 +8,8 @@ date: 2026-08-14 09:00:00+00:00
 lastmod: 2026-08-14 09:00:00+00:00
 draft: true
 tags:
-- ai
-- systems-thinking
-- engineering
+  - ai
+  - engineering
 categories:
 - systems-thinking
 author: Thomas Wölfle
