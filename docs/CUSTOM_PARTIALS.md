@@ -18,7 +18,11 @@ layouts/partials/head.html            layouts/partials/head.html
 
 ## Current State
 
-This project currently ships **no custom partials**. Blowfish is fully self-hosted out of the box (KaTeX, search/Fuse.js, mermaid, chart, etc. are bundled in the theme's `assets/`), so no privacy overrides were needed — unlike the previous LoveIt setup.
+This project ships a small set of custom partials. Blowfish is otherwise fully self-hosted out of the box (KaTeX, search/Fuse.js, mermaid, chart, etc. are bundled in the theme's `assets/`), so no privacy overrides were needed — unlike the previous LoveIt setup.
+
+| Partial (in `layouts/`) | Purpose |
+| --- | --- |
+| `partials/author-compact.html` | Slim 40px avatar + name byline, rendered inline with the article-meta row (date · reading time) on single pages via `article-meta/basic.html`. Replaces Blowfish's full 96px author box; the full box was dropped since this is a single-author blog and the footer already carries the bio |
 
 ## Common Override Targets
 

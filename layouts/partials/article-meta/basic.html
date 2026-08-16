@@ -75,6 +75,15 @@
     {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
       <span class="ps-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
     {{ end }}
+
+    {{/* Compact author byline, inline with the meta row (single pages only) so
+         the header stays compact on mobile (see author-compact.html). */}}
+    {{ if and (eq $scope "single") (.Params.showAuthor | default (.Site.Params.article.showAuthor | default true)) }}
+      {{ if ($meta.Get "partials") }}
+        <span class="px-2 text-primary-500">&middot;</span>
+      {{ end }}
+      {{ partial "author-compact.html" . }}
+    {{ end }}
   </div>
 
   {{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}

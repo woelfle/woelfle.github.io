@@ -1,0 +1,37 @@
+{{/* Compact author byline for the article header (see IMPROVEMENTS UX: author prominence).
+     Rendered inline with the article-meta row (date · reading time) on single pages via
+     article-meta/basic.html. Replaces Blowfish's full 96px author box (author.html); the
+     full box was dropped since this is a single-author blog and the footer carries the bio.
+     Blowfish v2.105.0 — image logic mirrors partials/author.html. */}}
+<div class="flex items-center author author-compact">
+  {{ with site.Params.Author.image }}
+    {{ $authorImage := "" }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $authorImage = resources.GetRemote . }}
+    {{ else }}
+      {{ $authorImage = resources.Get . }}
+    {{ end }}
+    {{ if $authorImage }}
+      {{ $final := $authorImage }}
+      {{ if not (or (site.Params.disableImageOptimization | default false) (eq $authorImage.MediaType.SubType "svg")) }}
+        {{ $final = $authorImage.Fill "80x80" }}
+      {{ end }}
+      <img
+        class="!mt-0 !mb-0 h-10 w-10 rounded-full me-3"
+        width="40"
+        height="40"
+        alt="{{ site.Params.Author.name | default "Author" }}"
+        src="{{ $final.RelPermalink }}">
+    {{ end }}
+  {{ end }}
+  <div class="place-self-center">
+    {{ with site.Params.Author.name | markdownify }}
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        {{ i18n "author.byline_title" | markdownify }}
+      </div>
+      <div class="font-semibold leading-5 text-neutral-800 dark:text-neutral-300">
+        {{ . }}
+      </div>
+    {{ end }}
+  </div>
+</div>
