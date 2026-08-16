@@ -31,7 +31,7 @@ This is not a warning piece. I think AI is one of the most useful things to happ
 
 ## The evidence is quietly on the side of "it depends"
 
-This framing didn't come from a study. It came from decades in software engineering and systems thinking, trying to make sense of what I was seeing as AI arrived — inside the teams I work with, and outside in what people were reporting in blog posts and the like. As the picture came into focus, this is where it landed. And two pieces of recent research back it up.
+This framing didn't come from a study. It came from decades in software engineering and systems thinking, sharpened by the last two years as AI arrived — and by having the rare chance to evaluate, with real software, what actually works and what doesn't. I've taken this topic into talks for different audiences and different companies, and this article is the result of those evaluations, talks, and conversations. And two pieces of recent research back it up.
 
 In a 2025 randomized controlled trial, METR had experienced open-source developers work on issues in codebases they knew well, with and without AI tools. The developers predicted AI would make them about 24% faster. Measured, they were about 19% _slower_ [8]. The driving felt faster; the arrival came later.
 
@@ -91,13 +91,13 @@ And that's where accountability finally lands at the right altitude. What is ext
 
 ## Two teams, one root cause
 
-Two situations I recognize make it concrete.
+Two situations I've seen more than once, at different companies and in different years, make it concrete. Neither is about any one place I've worked — both are patterns that have repeated often enough to recognize on sight.
 
-The first is a legacy codebase we need to migrate that has almost no self-testing code. AI will happily accelerate the _output_ — translate modules, restructure, generate. But with no test harness, every generated change has to be validated by hand. In cybernetic terms the control loop is missing: you can't sense whether the output is correct, so you can't steer. This team is drifting toward chaos — lots of motion, no feedback.
+The first is a legacy codebase, waiting to be migrated, that has almost no self-testing code. AI will happily accelerate the _output_ — translate modules, restructure, generate. But with no test harness, every generated change has to be validated by hand. In cybernetic terms the control loop is missing: you can't sense whether the output is correct, so you can't steer. The team is drifting toward chaos — lots of motion, no feedback.
 
-The second is a distributed monolith with hand-offs everywhere: engineer to QA, team to team, and engineering to a separate Ops function because the teams don't run what they build. AI speeds up the coding station, and the work simply arrives at each red light faster and queues. That's Kingman under load — near-saturated stations, waiting time climbing non-linearly. This team is frozen by structure.
+The second is a distributed monolith with hand-offs everywhere: engineer to QA, team to team, and engineering to a separate Ops function because the teams don't run what they build. AI speeds up the coding station, and the work simply arrives at each red light faster and queues. That's Kingman under load — near-saturated stations, waiting time climbing non-linearly. The team is frozen by structure.
 
-One team blocked by a missing feedback loop, the other by unmanaged queues. Same root cause: the system wasn't prepared for acceleration. Two faces of it.
+One team blocked by a missing feedback loop, the other by unmanaged queues. Same root cause: the system wasn't prepared for acceleration. Two faces of it — and I've seen both more than once.
 
 ## If you recognize yourself: repair the system, with AI
 
