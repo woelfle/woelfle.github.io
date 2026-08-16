@@ -41,6 +41,8 @@
 - Use `gofmt` for Go files, `prettier --write .` for Markdown/CSS/JS.
 - Enforce 2‑space indentation in all config files (`yaml`, `toml`).
 - YAML front‑matter keys are lowercase, snake_case.
+- No inline CSS in Markdown; use `static/css/` and link via `<link>`.
+- All external links must have `rel="noopener noreferrer"` and open in a new tab (`target="_blank"`).
 
 ### Types & Interfaces
 
@@ -48,6 +50,9 @@
 - **Custom data**: Store in `data/` as YAML/JSON; load with `site.Data.<name>`.
 - **Template functions**: Use built‑in Hugo functions; avoid custom shortcodes unless necessary.
 - **Blowfish shortcodes**: Prefer theme-provided shortcodes (alert, katex, figure, gallery, mermaid, chart, badge, lead, icon) over custom ones. See: <https://blowfish.page/docs/shortcodes/>.
+- **Shortcodes**: When adding a new shortcode, keep the template minimal and document its parameters in comments.
+- **Variable initialization**: Do not use `{{ $var := "" }}` without an immediate assignment; always initialize with a value.
+- **Loop scoping**: Avoid using `.` inside loops unless you re‑define the variable (e.g., `{{ range $i, $item := .Params.tags }}`).
 
 ### Naming Conventions
 
@@ -69,23 +74,7 @@
 - **Hugo test**: Run `hugo test` to catch rendering errors.
 - **CI**: GitHub Actions runs `npm run lint:md` → `yamllint .` → `hugo --minify`. No tests defined yet; placeholder for future unit/integration tests.
 
-## 3. Cursor Rules & Copilot Instructions
-
-### Cursor Rules (`.cursor/rules/`)
-
-- **Rule**: `{{ .Params.* }}` must be followed by a safe access check (`if .Params.foo`).
-- **Rule**: No inline CSS in Markdown; use `static/css/` and link via `<link>`.
-- **Rule**: All external links must have `rel="noopener noreferrer"` and open in a new tab (`target="_blank").`
-
-### Copilot Guidelines (`.github/copilot-instructions.md`)
-
-- Prefer Hugo’s built‑in functions over custom shortcodes.
-- When adding a new shortcode, keep the template minimal and document its parameters in comments.
-- Do not use `{{ $var := "" }}` without an immediate assignment; always initialize with a value.
-- Avoid using `.` inside loops unless you re‑define the variable (e.g., `{{ range $i, $item := .Params.tags }}`).
-- Use `prettier` to format Markdown and YAML files.
-
-## 4. Working with This Project
+## 3. Working with This Project
 
 - **Add new post**: Run `hugo new posts/<slug>.md` (or use archetype `archetypes/default.md`).
 - **Front-matter**: All posts require `title`, `slug`, `description`, `date`, `draft`, `author`. Optional: `tags`, `categories`, `featureimage`, `showTableOfContents`, `showWordCount`, `showReadingTime`.
@@ -94,6 +83,20 @@
 - **Image handling**: Featured images reference paths under `assets/images/` via `resources.Get` or the `featureimage` front-matter field.
 - **Deploy workflow**: Write → lint (`npm run lint:md`) → commit → PR to `main`. CI runs lint + build. After merge, IONOS Deploy Now runs `./build.sh` and deploys.
 
+## 4. Documentation
+
+The guides in `docs/` are not auto-read; consult them when a task touches their area:
+
+| Guide | When to consult |
+| --- | --- |
+| `docs/CONTENT_GUIDE.md` | Writing or editing post content (structure, heading hierarchy, Markdown style, SEO, shortcodes) |
+| `docs/CONTRIBUTING.md` | Contributing workflow, front-matter template, lint rules, pre-commit hooks |
+| `docs/DEPLOYMENT.md` | Build, CI, and IONOS Deploy Now deployment/rollback |
+| `docs/CSS_CUSTOMIZATION.md` | Styling via `assets/css/custom.css`, theme palette, dark mode |
+| `docs/CUSTOM_PARTIALS.md` | Overriding Blowfish theme partials |
+| `docs/personas/` | Target reader personas for content writing |
+| `docs/publishing/` | Publishing guardrails (`colleague-guardrails.md`) |
+
 ---
 
-**Total lines:** ~180. Feel free to adjust paths or commands as the repository evolves.
+**Total lines:** ~100. Feel free to adjust paths or commands as the repository evolves.
