@@ -3,17 +3,21 @@
        1. list.html and term.html (archive, tags, categories) when cardView is enabled
        2. Home page featured/recent articles when cardView is enabled
      Features: 16:9 media with hover zoom + tint, cleaner meta (author/date/reading
-     time), category chip and tags as pills. Styling lives in assets/css/custom.css. */}}
+     time), category chip and tags as pills. Styling lives in assets/css/custom.css.
+     Context: a page, or dict "Page" $p "HideTags" true. When HideTags is true the
+     tag pills are omitted (used on home page cards to save space). */}}
 
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{ $page := .Page }}
+{{ $hideTags := false }}
+{{ if reflect.IsMap . }}{{ $hideTags = index . "HideTags" | default false }}{{ end }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.78" }}
 {{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
 {{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.78" }}{{ end }}
-{{ if not .Params.hideFeatureImage }}
+{{ if not $page.Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
     {{ $p := . }}
@@ -64,17 +68,17 @@
 
 {{/* Author name from post frontmatter, falling back to the site author. */}}
 {{ $authorName := "" }}
-{{ if .Params.author }}
-  {{ if reflect.IsSlice .Params.author }}
-    {{ $authorName = delimit .Params.author ", " }}
+{{ if $page.Params.author }}
+  {{ if reflect.IsSlice $page.Params.author }}
+    {{ $authorName = delimit $page.Params.author ", " }}
   {{ else }}
-    {{ $authorName = .Params.author }}
+    {{ $authorName = $page.Params.author }}
   {{ end }}
-{{ else if .Params.authors }}
-  {{ if reflect.IsSlice .Params.authors }}
-    {{ $authorName = delimit .Params.authors ", " }}
+{{ else if $page.Params.authors }}
+  {{ if reflect.IsSlice $page.Params.authors }}
+    {{ $authorName = delimit $page.Params.authors ", " }}
   {{ else }}
-    {{ $authorName = .Params.authors }}
+    {{ $authorName = $page.Params.authors }}
   {{ end }}
 {{ else }}
   {{ $authorName = site.Params.Author.name }}
@@ -85,14 +89,14 @@
     <div class="card-media" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
         src="{{ . }}"
-         alt="{{ $page.Params.featureimageAlt | default $.Title }}"
+         alt="{{ $page.Params.featureimageAlt | default $page.Title }}"
         loading="lazy"
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover card-media-img" />
       <span class="card-media-tint" aria-hidden="true"></span>
     </div>
   {{ end }}
-  {{ if and .Draft .Site.Params.article.showDraftLabel }}
+  {{ if and $page.Draft site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2 z-10">
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
@@ -107,8 +111,8 @@
         {{ end }}
         class="not-prose before:absolute before:inset-0 card-title-link">
         <h2 class="card-title text-lg">
-          {{ .Title | emojify }}
-          {{ if .Params.externalUrl }}
+          {{ $page.Title | emojify }}
+          {{ if $page.Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
               <span class="ltr:hidden">&#8598;</span>
@@ -122,21 +126,21 @@
       {{ with $authorName }}
         <span class="card-meta-item">{{ . }}</span>
       {{ end }}
-      {{ if .Params.showDate | default (site.Params.article.showDate | default true) }}
+      {{ if $page.Params.showDate | default (site.Params.article.showDate | default true) }}
         <span class="card-meta-item">
-          <time datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}">{{ partial "functions/date.html" .Date }}</time>
+          <time datetime="{{ $page.Date | time.Format "2006-01-02T15:04:05-07:00" }}">{{ partial "functions/date.html" $page.Date }}</time>
         </span>
       {{ end }}
-      {{ if and (.Params.showReadingTime | default (site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+      {{ if and ($page.Params.showReadingTime | default (site.Params.article.showReadingTime | default true)) (ne $page.ReadingTime 0) }}
         <span class="card-meta-item" title="{{ i18n "article.reading_time_title" }}">
-          {{- i18n "article.reading_time" .ReadingTime | markdownify | emojify -}}
+          {{- i18n "article.reading_time" $page.ReadingTime | markdownify | emojify -}}
         </span>
       {{ end }}
     </div>
 
-    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+    {{ if $page.Params.showSummary | default (site.Params.list.showSummary | default false) }}
       <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-3 card-summary">
-        {{ .Summary | plainify }}
+        {{ $page.Summary | plainify }}
       </div>
     {{ end }}
 
@@ -148,12 +152,14 @@
           {{ end }}
         </div>
       {{ end }}
-      {{ with $page.GetTerms "tags" }}
-        <div class="card-taxonomy card-taxonomy--tags">
-          {{ range . }}
-            <a class="card-tag relative" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-          {{ end }}
-        </div>
+      {{ if not $hideTags }}
+        {{ with $page.GetTerms "tags" }}
+          <div class="card-taxonomy card-taxonomy--tags">
+            {{ range . }}
+              <a class="card-tag relative" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            {{ end }}
+          </div>
+        {{ end }}
       {{ end }}
     </div>
   </div>

@@ -74,6 +74,21 @@
             </strong>
           {{ end }}
         </div>
+
+        {{/* Tags render here at the end of the article so the header stays
+             compact on mobile (see article-meta/basic.html). */}}
+        {{ if .Params.showTags | default (site.Params.article.showTags | default true) }}
+          {{ with .GetTerms "tags" }}
+            <div class="flex flex-row flex-wrap items-center mt-6">
+              {{ range . }}
+                <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
+                  {{ partial "badge.html" .LinkTitle }}
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+
         {{ if (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
           {{ template "SingleAuthor" . }}
         {{ end }}
