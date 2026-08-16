@@ -9,14 +9,15 @@
 | **Serve (npm)** | `npm run serve` | Equivalent to `hugo server -D`. Installs hook: `npm install` (husky/lint-staged). |
 | **Lint Markdown** | `npm run lint:md` | Runs markdownlint-cli2 against all `*.md` files. Config in `.markdownlint-cli2.jsonc`. |
 | **Lint YAML** | `npm run lint:yml` | Runs yamllint against all `*.yml`/`*.yaml` files. Config in `.yamllint`. |
+| **Lint Summaries** | `npm run lint:summary` | Runs `scripts/check-summaries.sh`; verifies every post is a bundle with a non-empty `summary.md`. |
 | **Lint Hugo Templates** | `hugo --templateMetrics` | Reports unused variables and template performance. |
-| **Full Lint + Build** | `npm run lint:md && npm run lint:yml && hugo --minify` | Run both linters and a production build. |
+| **Full Lint + Build** | `npm run lint:md && npm run lint:yml && npm run lint:summary && hugo --minify` | Run all linters and a production build. |
 | **Run Hugo Test (experimental)** | `hugo test` | Hugo’s experimental test mode. Currently no tests defined; placeholder for future unit/integration tests. |
 
 ### CI Pipeline
 
 - **GitHub Actions** (`.github/workflows/ci.yml`): runs on push to `main` and pull requests.
-- Pipeline stages: `npm run lint:md` → `yamllint .` → `hugo --minify`.
+- Pipeline stages: `npm run lint:md` → `npm run lint:summary` → `yamllint .` → `hugo --minify`.
 - CI validates only; deployment is handled by IONOS Deploy Now via `./build.sh` on every `main` push.
 
 ## 2. Code Style Guidelines
@@ -72,14 +73,15 @@
 - **Markdown lint**: Enforce paragraph spacing, heading hierarchy. Relaxed rules in `.markdownlint-cli2.jsonc` (MD013 off, MD026 allows `?.!,`, MD041 off, MD001 enforces h2→h3 hierarchy).
 - **YAML lint**: Ensure no tabs; correct indentation. Relaxed rules in `.yamllint` (line-length max 120, truthy check-keys off).
 - **Hugo test**: Run `hugo test` to catch rendering errors.
-- **CI**: GitHub Actions runs `npm run lint:md` → `yamllint .` → `hugo --minify`. No tests defined yet; placeholder for future unit/integration tests.
+- **CI**: GitHub Actions runs `npm run lint:md` → `npm run lint:summary` → `yamllint .` → `hugo --minify`. No tests defined yet; placeholder for future unit/integration tests.
 
 ## 3. Working with This Project
 
-- **Add new post**: Run `hugo new posts/<slug>.md` (or use archetype `archetypes/default.md`).
+- **Add new post**: Create a leaf bundle: `hugo new posts/<slug>/index.md` (archetype `archetypes/default.md`), then add a `summary.md` in the same bundle.
 - **Front-matter**: All posts require `title`, `slug`, `description`, `date`, `draft`, `author`. Optional: `tags`, `categories`, `featureimage`, `showTableOfContents`, `showWordCount`, `showReadingTime`.
 - **Content hierarchy**: Posts start with `##` (the site title is `h1` from front-matter). Do not use `#` (h1) in post content.
 - **Summary divider**: Use `<!--more-->` to control what appears on list pages and feeds.
+- **Curated summary**: Every post bundle must contain a non-empty `summary.md` (enforced by `npm run lint:summary`); it feeds the hero featured card. `summary.md` is independent of `<!--more-->`.
 - **Image handling**: Featured images reference paths under `assets/images/` via `resources.Get` or the `featureimage` front-matter field.
 - **Deploy workflow**: Write → lint (`npm run lint:md`) → commit → PR to `main`. CI runs lint + build. After merge, IONOS Deploy Now runs `./build.sh` and deploys.
 

@@ -22,7 +22,7 @@ featureimagealt: A buffet as an analogy for platform engineering
 iso27001:classification: public
 ---
 
-## 🧑‍🍳 What do platform engineering and buffets have in common?
+#### 🧑‍🍳 What do platform engineering and buffets have in common?
 
 More than you might think.
 

@@ -40,6 +40,9 @@ jobs:
       - name: Lint Markdown
         run: npm run lint:md
 
+      - name: Lint post summaries
+        run: npm run lint:summary
+
       - name: Lint YAML
         run: |
           pip3 install --user yamllint

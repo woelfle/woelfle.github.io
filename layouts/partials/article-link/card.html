@@ -4,14 +4,23 @@
        2. Home page featured/recent articles when cardView is enabled
      Features: 16:9 media with hover zoom + tint, cleaner meta (author/date/reading
      time), category chip and tags as pills. Styling lives in assets/css/custom.css.
-     Context: a page, or dict "Page" $p "HideTags" true. When HideTags is true the
-     tag pills are omitted (used on home page cards to save space). */}}
+     Context: a page, or dict "Page" $p "HideTags" true "ShowSummary" true.
+     When HideTags is true the tag pills are omitted (used on home page cards to
+     save space). When ShowSummary is true the summary is shown regardless of the
+     global list.showSummary setting and rendered unclamped with formatting intact
+     (used on the hero featured post); otherwise it is plainified and clamped to
+     three lines. Summaries are read from the post bundle's summary.md (required
+     by scripts/check-summaries.sh). */}}
 
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{ $page := .Page }}
 {{ $hideTags := false }}
-{{ if reflect.IsMap . }}{{ $hideTags = index . "HideTags" | default false }}{{ end }}
+{{ $showSummary := false }}
+{{ if reflect.IsMap . }}
+  {{ $hideTags = index . "HideTags" | default false }}
+  {{ $showSummary = index . "ShowSummary" | default false }}
+{{ end }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.78" }}
@@ -138,10 +147,25 @@
       {{ end }}
     </div>
 
-    {{ if $page.Params.showSummary | default (site.Params.list.showSummary | default false) }}
-      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-3 card-summary">
-        {{ $page.Summary | plainify }}
-      </div>
+    {{ if or $showSummary ($page.Params.showSummary | default (site.Params.list.showSummary | default false)) }}
+      {{/* Summary comes from a curated summary.md bundle resource (every post
+           bundle must contain one; enforced by scripts/check-summaries.sh).
+           Strip the "#" heading-anchor artifacts Blowfish injects into headings
+           (see render-heading.html), which survive plainify. */}}
+      {{ $summary := "" }}
+      {{ with $page.Resources.GetMatch "summary*" }}
+        {{ $summary = .Content }}
+      {{ end }}
+      {{ with $summary }}
+        {{ $summary = replaceRE `<a[^>]*href="#[^"]*"[^>]*>#</a>` "" $summary }}
+        <div class="article-link__summary prose dark:prose-invert max-w-fit mt-1 card-summary{{ if not $showSummary }} line-clamp-3{{ end }}">
+          {{- if $showSummary -}}
+            {{ $summary | safeHTML }}
+          {{- else -}}
+            {{ $summary | plainify }}
+          {{- end -}}
+        </div>
+      {{ end }}
     {{ end }}
 
     <div class="card-taxonomies">
