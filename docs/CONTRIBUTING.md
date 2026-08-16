@@ -8,6 +8,7 @@ This guide explains how to contribute to the **Thinking in Systems** blog, built
 - [Local Development Setup](#local-development-setup)
 - [Writing a New Post](#writing-a-new-post)
 - [Post Front-Matter Template](#post-front-matter-template)
+- [Controlled Tag Vocabulary](#controlled-tag-vocabulary)
 - [Writing Guidelines](#writing-guidelines)
 - [Lint Rules](#lint-rules)
 - [Testing Your Changes](#testing-your-changes)
@@ -100,7 +101,7 @@ showReadingTime: true
 | `lastmod` | No | Update when the content changes materially. |
 | `draft` | Yes | `true` hides the post from production. |
 | `author` | Yes | Set to the site author by default. |
-| `tags` | No | Free-form; lowercase. |
+| `tags` | No | Controlled vocabulary. Every tag must be documented as a term page at `content/tags/<slug>/_index.md`. See [Controlled Tag Vocabulary](#controlled-tag-vocabulary). |
 | `categories` | No | Lowercase; group posts into sections. |
 | `featureimage` | No | Path under `assets/images/`; shown as the post hero and card image. |
 | `showTableOfContents` | No | Enables the table of contents (sticky right TOC on desktop, collapsible on mobile). |
@@ -110,6 +111,40 @@ Use the summary divider to control what appears on list pages and in feeds:
 
 ```markdown
 <!--more-->
+```
+
+### Controlled Tag Vocabulary
+
+Tags are a **controlled vocabulary**, not a free-form list. Every tag used in any
+content file must have a documented "term page" at:
+
+```text
+content/tags/<slug>/_index.md
+```
+
+The `<slug>` is the tag name lowercased and converted to kebab-case (e.g.
+`systems-thinking`). A term page contains a `title`, `slug`, `description`, and a
+short prose explanation. That `description` is shown on the **Tags** index page,
+so each tag is described rather than just listed.
+
+This term page is also the **whitelist**: the CI check `npm run lint:tags`
+(`scripts/check-tags.sh`) extracts every tag referenced in any non-draft content file under
+`content/` and fails the build if any tag has no matching term page.
+
+To **introduce a new tag**:
+
+1. Create `content/tags/<slug>/_index.md` with a `title`, `slug`, `description`,
+   and a short body explaining the tag.
+2. Add the tag (`slug`) to the post's front-matter.
+
+To **retire a tag**, remove its term page *and* remove the tag from every post
+that used it; the CI check lists the offending tags and the files that reference
+them, so consolidation is always a guided, consciously-reviewed step.
+
+Run the check locally any time:
+
+```bash
+npm run lint:tags
 ```
 
 ---
@@ -134,6 +169,7 @@ Two linters run locally via pre-commit hooks and in CI:
 | --- | --- | --- | --- |
 | `markdownlint-cli2` | All `*.md` | `.markdownlint-cli2.jsonc` | `npm run lint:md` |
 | `yamllint` | All `*.yml` / `*.yaml` (front-matter, workflows) | `.yamllint` | `npm run lint:yml` |
+| `check-tags.sh` (controlled vocabulary) | All non-draft `tags:` in `content/` vs term pages in `content/tags/` | none | `npm run lint:tags` |
 
 The markdownlint config relaxes the defaults for blog content:
 
@@ -156,8 +192,8 @@ npm run lint:yml
 ## Testing Your Changes
 
 ```bash
-# Full lint (markdown + yaml)
-npm run lint:md && npm run lint:yml
+# Full lint (markdown + yaml + controlled tag vocabulary)
+npm run lint:md && npm run lint:yml && npm run lint:tags
 
 # Production build (catches template errors)
 hugo --minify

@@ -10,14 +10,15 @@
 | **Lint Markdown** | `npm run lint:md` | Runs markdownlint-cli2 against all `*.md` files. Config in `.markdownlint-cli2.jsonc`. |
 | **Lint YAML** | `npm run lint:yml` | Runs yamllint against all `*.yml`/`*.yaml` files. Config in `.yamllint`. |
 | **Lint Summaries** | `npm run lint:summary` | Runs `scripts/check-summaries.sh`; verifies every post is a bundle with a non-empty `summary.md`. |
+| **Lint Tags (controlled vocabulary)** | `npm run lint:tags` | Runs `scripts/check-tags.sh`; fails if a tag is used in any non-draft content under `content/` without a documented term page at `content/tags/<slug>/_index.md`. |
 | **Lint Hugo Templates** | `hugo --templateMetrics` | Reports unused variables and template performance. |
-| **Full Lint + Build** | `npm run lint:md && npm run lint:yml && npm run lint:summary && hugo --minify` | Run all linters and a production build. |
+| **Full Lint + Build** | `npm run lint:md && npm run lint:yml && npm run lint:summary && npm run lint:tags && hugo --minify` | Run all linters and a production build. |
 | **Run Hugo Test (experimental)** | `hugo test` | Hugo’s experimental test mode. Currently no tests defined; placeholder for future unit/integration tests. |
 
 ### CI Pipeline
 
 - **GitHub Actions** (`.github/workflows/ci.yml`): runs on push to `main` and pull requests.
-- Pipeline stages: `npm run lint:md` → `npm run lint:summary` → `yamllint .` → `hugo --minify`.
+- Pipeline stages: `npm run lint:md` → `npm run lint:summary` → `npm run lint:tags` → `yamllint .` → `hugo --minify`.
 - CI validates only; deployment is handled by IONOS Deploy Now via `./build.sh` on every `main` push.
 
 ## 2. Code Style Guidelines

@@ -258,7 +258,7 @@ Optional closing remarks, references, or further reading.
 | `lastmod` | No | Update when the content changes materially. |
 | `draft` | Yes | `true` hides the post from production. |
 | `author` | Yes | Set to the site author by default. |
-| `tags` | No | Free-form; lowercase. |
+| `tags` | No | Lowercase, kebab-case controlled vocabulary; every tag must be a documented term page under `content/tags/`. |
 | `categories` | No | Lowercase; group posts into sections. |
 | `featureimage` | No | Path under `assets/images/`; shown as the post hero and card image. |
 | `featureimageAlt` | No | Descriptive alt text for the featured image. |
