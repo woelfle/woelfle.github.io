@@ -1,26 +1,13 @@
-{{/* Refined post card (IMPROVEMENTS.md item 13).
-     Used by:
-       1. list.html and term.html (archive, tags, categories) when cardView is enabled
-       2. Home page featured/recent articles when cardView is enabled
-     Features: 16:9 media with hover zoom + tint, cleaner meta (author/date/reading
-     time), category chip and tags as pills. Styling lives in assets/css/custom.css.
-     Context: a page, or dict "Page" $p "HideTags" true "ShowSummary" true.
-     When HideTags is true the tag pills are omitted (used on home page cards to
-     save space). When ShowSummary is true the summary is shown regardless of the
-     global list.showSummary setting and rendered unclamped with formatting intact
-     (used on the hero featured post); otherwise it is plainified and clamped to
-     three lines. Summaries are read from the post bundle's summary.md (required
-     by scripts/check-summaries.sh). */}}
+{{/* Refined post card (IMPROVEMENTS.md item 13) — single implementation used
+     everywhere cards appear: the home page featured/recent cards (via the theme's
+     recent-articles/cardview.html), list.html, and term.html (archive, tags,
+     categories). Tag pills are always hidden; each card shows its summary behind
+     a native <details> "Show More" toggle. Summaries are read from the post
+     bundle's summary.md (required by scripts/check-summaries.sh). */}}
 
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{ $page := .Page }}
-{{ $hideTags := false }}
-{{ $showSummary := false }}
-{{ if reflect.IsMap . }}
-  {{ $hideTags = index . "HideTags" | default false }}
-  {{ $showSummary = index . "ShowSummary" | default false }}
-{{ end }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.78" }}
@@ -147,25 +134,18 @@
       {{ end }}
     </div>
 
-    {{ if or $showSummary ($page.Params.showSummary | default (site.Params.list.showSummary | default false)) }}
-      {{/* Summary comes from a curated summary.md bundle resource (every post
-           bundle must contain one; enforced by scripts/check-summaries.sh).
-           Strip the "#" heading-anchor artifacts Blowfish injects into headings
-           (see render-heading.html), which survive plainify. */}}
-      {{ $summary := "" }}
-      {{ with $page.Resources.GetMatch "summary*" }}
-        {{ $summary = .Content }}
-      {{ end }}
-      {{ with $summary }}
-        {{ $summary = replaceRE `<a[^>]*href="#[^"]*"[^>]*>#</a>` "" $summary }}
-        <div class="article-link__summary prose dark:prose-invert max-w-fit mt-1 card-summary{{ if not $showSummary }} line-clamp-3{{ end }}">
-          {{- if $showSummary -}}
-            {{ $summary | safeHTML }}
-          {{- else -}}
-            {{ $summary | plainify }}
-          {{- end -}}
+    {{ $summary := "" }}
+    {{ with $page.Resources.GetMatch "summary*" }}
+      {{ $summary = .Content }}
+    {{ end }}
+    {{ with $summary }}
+      {{ $summary = replaceRE `<a[^>]*href="#[^"]*"[^>]*>#</a>` "" $summary }}
+      <details class="card-summary-details">
+        <summary class="card-summary-toggle">{{ i18n "recent.show_more" }}</summary>
+        <div class="article-link__summary prose dark:prose-invert max-w-fit mt-2 card-summary">
+          {{ $summary | safeHTML }}
         </div>
-      {{ end }}
+      </details>
     {{ end }}
 
     <div class="card-taxonomies">
@@ -175,15 +155,6 @@
             <a class="card-category relative" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
           {{ end }}
         </div>
-      {{ end }}
-      {{ if not $hideTags }}
-        {{ with $page.GetTerms "tags" }}
-          <div class="card-taxonomy card-taxonomy--tags">
-            {{ range . }}
-              <a class="card-tag relative" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{ end }}
-          </div>
-        {{ end }}
       {{ end }}
     </div>
   </div>

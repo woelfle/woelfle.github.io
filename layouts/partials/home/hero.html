@@ -27,7 +27,7 @@
 
   {{ if $recentPosts }}
     <section class="hero-featured-post">
-      {{ partial "article-link/card.html" (dict "Page" (index $recentPosts 0) "HideTags" true "ShowSummary" true) }}
+      {{ partial "article-link/card.html" (index $recentPosts 0) }}
     </section>
   {{ end }}
 

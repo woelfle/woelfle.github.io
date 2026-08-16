@@ -580,6 +580,44 @@ body {
   line-height: 1.55;
 }
 
+/* Expandable summary (<details> "Show More" toggle) on recent-article cards.
+   The card's stretched title link (before:absolute before:inset-0) would
+   swallow clicks, so stack the toggle above it. */
+.card-summary-details {
+  position: relative;
+  z-index: 10;
+  margin-top: 0.75rem;
+}
+
+.card-summary-toggle {
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.card-summary-toggle::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 0.375rem;
+  font-weight: 600;
+}
+
+.card-summary-details[open] .card-summary-toggle::before {
+  content: "–";
+}
+
+.card-summary-toggle:hover {
+  color: var(--color-primary-light);
+}
+
+.card-summary-toggle::-webkit-details-marker {
+  display: none;
+}
+
 /* Taxonomy pills */
 .card-taxonomies {
   display: flex;
