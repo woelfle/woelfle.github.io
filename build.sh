@@ -20,4 +20,4 @@ if ! command -v hugo >/dev/null 2>&1 || ! hugo version | grep -q "${HUGO_VERSION
 fi
 
 hugo version
-hugo --minify
+hugo --minify --baseURL "${HUGO_BASEURL:-https://thomaswoelfle.com}"

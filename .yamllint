@@ -10,6 +10,10 @@ ignore:
   - resources/
   - .git/
   - .opencode-mem/
+  # Deploy Now-generated workflow files (contain IONOS boilerplate)
+  - .github/workflows/deploy-to-ionos.yaml
+  - .github/workflows/website-thomas.woelfle-build.yaml
+  - .github/workflows/website-thomas.woelfle-orchestration.yaml
 
 rules:
   # Allow longer lines (comments in workflow files, long URLs)
