@@ -1,30 +1,32 @@
 ---
-title: 'Sooner, Not Faster: The Speed Trap in AI-Assisted Engineering'
+title: "AI and Software Engineering: What Changes and What Doesn't"
 slug: ai-accelerates
-description: 'AI accelerates software output — code, reviews, migrations, configuration — faster than
-  before, but not delivery outcome. The gap between faster and sooner is where teams using AI run
-  aground, and the system decides whether speed becomes arrival or a crash.'
-date: 2026-08-14 09:00:00+00:00
-lastmod: 2026-08-14 09:00:00+00:00
-draft: true
+description:
+  "AI accelerates software output — code, reviews, migrations, configuration — but output is
+  not the same as delivery outcome. This article examines how systems thinking explains the gap,
+  and what engineering teams should point AI at first."
+date: 2026-08-17 21:00:00+00:00
+lastmod: 2026-08-17 21:00:00+00:00
+draft: false
 tags:
   - ai
-  - engineering
+  - software-engineering
 categories:
-- systems-thinking
+  - engineering-practices
 author: Thomas Wölfle
-featureimage: /images/featured-systems-thinking.svg
+featureimage: featureimage.svg
+featureimagealt:
+  "Comic strip in four panels showing a developer strapping a rocket to a beetle
+  labeled AI acceleration, driving on a road full of potholes labeled tech debt and red lights
+  labeled hand-offs, while another developer asks if they should fix the road first instead of
+  just bolting on a bigger engine"
 ---
-
-## Sooner, Not Faster: The Speed Trap in AI-Assisted Engineering
-
-<!--more-->
 
 Ask me what changes with AI in software engineering and my answer is one word: acceleration. Drop AI into how software gets built and everything speeds up — code, reviews, migrations, configuration, produced faster than before.
 
 But faster is not the same as sooner. Speeding things up is the seductive part, and it's the wrong thing to fall in love with. What you actually want isn't to _build_ faster — it's to _deliver sooner_. Those are not the same thing, and everyone who has ever gunned a fast car straight into a red light knows it in their bones. You can raise the top speed of every stretch of road and still get to the destination later, if the journey is one queue after another. Faster is local. Sooner is the whole trip.
 
-There's a precise, technical way to say it: AI reliably accelerates _output_ — the code, pull requests, migrations, config. It does almost nothing on its own for _outcome_ — validated value in the hands of a user. Output is how fast you're driving; outcome is when you actually arrive. AI has collapsed the cost of the first and left the second entirely to your system. The gap between the two is where teams struggling with AI get hurt: they watch output accelerate, assume they'll arrive sooner, and are blindsided when they don't.
+There's a precise, technical way to say it: AI reliably accelerates _output_ — the code, pull requests, migrations, configuration. It does almost nothing on its own for _outcome_ — validated value in the hands of a user. Output is how fast you're driving; outcome is when you actually arrive. AI has collapsed the cost of the first and left the second entirely to your system. The gap between the two is where teams struggling with AI get hurt: they watch output accelerate, assume they'll arrive sooner, and are blindsided when they don't.
 
 This is not a warning piece. I think AI is one of the most useful things to happen to our craft in a long time. But usefulness is conditional, and the condition is the system you point it at. So this is a preparation guide — because speed is neutral, and the system decides whether it turns into arrival or into a crash.
 
@@ -78,7 +80,7 @@ And validation is genuinely harder than it used to be, because reviewing code yo
 
 This is the place to make the whole thing physical, because AI is an _engine_ — a powerful one. The mistake is thinking the engine is the whole story. What you've actually been handed is a proper performance engine your car probably isn't built to use, and a real engine forces you to think about the rest of the car — because none of its parts exist to make it _fast_; they exist to make it _arrive_. Brakes are your ability to stop and roll back safely. Tires and grip are your test suite — the traction that lets you carry speed through a corner instead of into the wall. Telemetry is your observability, telling you where you are on the track before you find the wall.
 
-And then there's the road itself — the codebase you've inherited. Every other part of the car is a capability you can add; the road is the terrain you were handed, and its surface is your accumulated tech debt, architectural decay, the brittle foundations that make every change riskier than it should be. A smooth road lets you carry speed safely. A road full of potholes beats the car apart no matter how good the engine — and it caps your safe speed _everywhere_, on every stretch, which is exactly why a pristine engine over a bad road still can't arrive sooner. Better boundaries help, because no road is ever perfect, but they only buy you so much: past a point the road itself has to be repaired. And AI-acceleration over a bad road is where a powerful engine does the most damage.
+And then there's the road itself — the codebase you've inherited. Every other part of the car is a capability you can add; the road is the terrain you were handed, and its surface is your accumulated tech debt, architectural decay, the brittle foundations that make every change riskier than it should be. A smooth road lets you carry speed safely. A road full of potholes tears the car apart no matter how good the engine — and it caps your safe speed _everywhere_, on every stretch, which is exactly why a pristine engine over a bad road still can't arrive sooner. Better boundaries help, because no road is ever perfect, but they only buy you so much: past a point the road itself has to be repaired. And AI-acceleration over a bad road is where a powerful engine does the most damage.
 
 So the guardrails aren't the speed police. They're what convert raw speed into arrival — the only reason a fast car ever gets anywhere. A performance engine in a car with drum brakes and bald tires doesn't arrive sooner; it's a crash waiting for the first corner. And when that happens, don't blame the driver.
 
@@ -132,18 +134,13 @@ AI didn't change the rules of good engineering. It raised the stakes on followin
 
 ## Notes & sources
 
-Quotes and attributions:
-
 1. **Peter F. Drucker** — "There is nothing so useless as doing efficiently that which should not be done at all." Widely attributed to Drucker; it distills the efficiency-versus-effectiveness theme that runs through his management writing.
 2. **W. Ross Ashby** — "Only variety can destroy variety" (the Law of Requisite Variety), from _An Introduction to Cybernetics_ (Chapman & Hall, 1956), p. 207.
 3. **W. Edwards Deming** — "94% belongs to the system (responsibility of management), 6% special," from _Out of the Crisis_ (MIT Press, 1986), p. 315. The line "a bad system will beat a good person every time" is from a February 1993 Deming seminar in Phoenix, Arizona (recorded by the W. Edwards Deming Institute).
 4. **Donald G. Reinertsen** — that "invisible and unmanaged queues are the underlying root cause of poor product development performance" is the central argument of _The Principles of Product Development Flow_ (Celeritas, 2009).
-
-Further reading and supporting data:
-
-1. **Eliyahu M. Goldratt**, _The Goal_ (1984) — the Theory of Constraints.
-2. **Kingman's formula** (the VUT equation) — the queuing result that mean wait time rises toward infinity as a station nears full utilization.
-3. **DORA / Accelerate State of DevOps 2024** — the 2024 throughput and stability figures cited above.
-4. **METR (July 2025)** — the randomized controlled trial on AI and experienced open-source developers.
-5. **Michael C. Feathers**, _Working Effectively with Legacy Code_ (Prentice Hall, 2004) — the source of "characterization tests": tests that pin down what existing code currently does, so it can be changed safely.
-6. **DORA / State of AI-assisted Software Development 2025** (Google Cloud, September 2025) — the reversal of the 2024 throughput finding (AI now positively correlated with throughput) alongside the persistent negative relationship with stability, and DORA's framing of AI as an "amplifier" of a team's existing foundation.
+5. **Eliyahu M. Goldratt**, _The Goal_ (1984) — the Theory of Constraints.
+6. **Kingman's formula** (the VUT equation) — the queuing result that mean wait time rises toward infinity as a station nears full utilization.
+7. **DORA / Accelerate State of DevOps 2024** — the 2024 throughput and stability figures cited above.
+8. **METR (July 2025)** — the randomized controlled trial on AI and experienced open-source developers.
+9. **Michael C. Feathers**, _Working Effectively with Legacy Code_ (Prentice Hall, 2004) — the source of "characterization tests": tests that pin down what existing code currently does, so it can be changed safely.
+10. **DORA / State of AI-assisted Software Development 2025** (Google Cloud, September 2025) — the reversal of the 2024 throughput finding (AI now positively correlated with throughput) alongside the persistent negative relationship with stability, and DORA's framing of AI as an "amplifier" of a team's existing foundation.

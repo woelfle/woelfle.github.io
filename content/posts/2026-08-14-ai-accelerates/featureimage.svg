@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Comic Sans MS','Chalkboard SE','Comic Neue',cursive">
+  <defs>
+    <filter id="wob" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6"/>
+    </filter>
+    <filter id="wob2" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="19" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4"/>
+    </filter>
+    <filter id="pshadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="7" dy="9" stdDeviation="0" flood-color="#cfcabd"/>
+    </filter>
+    <clipPath id="clip-p1"><rect x="35" y="85" width="912" height="475"/></clipPath>
+    <clipPath id="clip-p2"><rect x="973" y="85" width="912" height="475"/></clipPath>
+    <clipPath id="clip-p3"><rect x="35" y="580" width="912" height="475"/></clipPath>
+    <clipPath id="clip-p4"><rect x="973" y="580" width="912" height="475"/></clipPath>
+  </defs>
+
+  <rect x="0" y="0" width="1920" height="1080" fill="#ffffff"/>
+
+  <g filter="url(#wob)">
+    <text x="960" y="62" text-anchor="middle" font-size="56" font-weight="bold" fill="#1a1a1a">AI Accelerates</text>
+  </g>
+
+  <g>
+    <g filter="url(#pshadow)"><rect x="35" y="85" width="912" height="475" fill="#fdfdfb"/></g>
+    <g filter="url(#wob)"><rect x="35" y="85" width="912" height="475" fill="none" stroke="#1a1a1a" stroke-width="5"/></g>
+    <g clip-path="url(#clip-p1)">
+      <g transform="translate(194,85) scale(0.848) translate(-34,-110)">
+        <g filter="url(#wob2)">
+          <path d="M250,150 q-70,0 -78,60 q-64,8 -58,66 q-60,20 -34,74 q-40,44 26,64 q10,54 84,44 q40,44 108,20
+                   q54,34 116,-2 q70,20 104,-30 q64,-2 58,-58 q46,-34 6,-78 q22,-58 -40,-74 q-6,-56 -74,-56
+                   q-40,-46 -112,-24 q-56,-30 -110,-6 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+        </g>
+        <g filter="url(#wob2)">
+          <ellipse cx="360" cy="330" rx="70" ry="34" fill="#8fc7ec" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M430,330 l60,0" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M480,314 l24,16 -24,16 Z" fill="#1a1a1a"/>
+          <path d="M300,318 l-46,0 M300,342 l-58,0 M312,300 l-40,0" stroke="#e0533a" stroke-width="5" stroke-linecap="round"/>
+          <text x="360" y="260" text-anchor="middle" font-weight="bold" fill="#1a1a1a">
+            <tspan font-size="40">AI </tspan><tspan font-size="30" fill="#3f9b52">= fast!</tspan>
+          </text>
+        </g>
+        <g filter="url(#wob2)">
+          <circle cx="150" cy="500" r="70" fill="#b07f52" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="150" cy="500" r="70" fill="#000" opacity="0.06"/>
+          <ellipse cx="176" cy="492" rx="10" ry="13" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="180" cy="494" r="4" fill="#1a1a1a"/>
+          <path d="M96,640 q-6,-70 54,-84 q60,14 54,84 Z" fill="#cdd6d2" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M188,584 q60,10 92,44" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+        </g>
+        <g filter="url(#wob2)">
+          <rect x="250" y="612" width="420" height="16" fill="#c9a06a" stroke="#1a1a1a" stroke-width="4"/>
+          <rect x="286" y="628" width="12" height="34" fill="#c9a06a" stroke="#1a1a1a" stroke-width="3"/>
+          <rect x="620" y="628" width="12" height="34" fill="#c9a06a" stroke="#1a1a1a" stroke-width="3"/>
+          <rect x="404" y="512" width="150" height="96" rx="6" fill="#dfe6e9" stroke="#1a1a1a" stroke-width="4"/>
+          <rect x="470" y="608" width="22" height="10" fill="#9aa" stroke="#1a1a1a" stroke-width="3"/>
+          <g font-size="10" font-family="monospace">
+            <text x="416" y="534" fill="#8e44ad">def run():</text>
+            <text x="416" y="548" fill="#e0533a">  ship(x)</text>
+            <text x="416" y="562" fill="#2980b9">  fast()</text>
+            <text x="416" y="576" fill="#3f9b52">  return ok</text>
+          </g>
+          <rect x="330" y="616" width="70" height="26" rx="6" fill="#cfd6da" stroke="#1a1a1a" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g>
+    <g filter="url(#pshadow)"><rect x="973" y="85" width="912" height="475" fill="#fdfdfb"/></g>
+    <g filter="url(#wob)"><rect x="973" y="85" width="912" height="475" fill="none" stroke="#1a1a1a" stroke-width="5"/></g>
+    <g clip-path="url(#clip-p2)">
+      <g transform="translate(1132,85) scale(0.848) translate(-766,-110)">
+        <g filter="url(#wob2)">
+          <path d="M980,150 q-70,0 -78,60 q-64,8 -58,66 q-60,20 -34,74 q-40,44 26,64 q10,54 84,44 q40,44 108,20
+                   q54,34 116,-2 q70,20 104,-30 q64,-2 58,-58 q46,-34 6,-78 q22,-58 -40,-74 q-6,-56 -74,-56
+                   q-40,-46 -112,-24 q-56,-30 -110,-6 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+        </g>
+        <text x="1065" y="240" text-anchor="middle" font-size="30" fill="#1a1a1a">like a jet engine on a car</text>
+        <g filter="url(#wob2)" transform="translate(840,273) translate(175,0) scale(-1,1) translate(-175,0) scale(0.66)">
+          <path d="M20,150 C20,96 66,68 150,66 C232,64 300,86 330,150 Z" fill="#5aa9e0" stroke="#1a1a1a" stroke-width="5"/>
+          <path d="M92,70 C112,40 238,40 268,70 Z" fill="#bfe0f5" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="98" cy="152" r="40" fill="#333" stroke="#1a1a1a" stroke-width="5"/>
+          <circle cx="98" cy="152" r="15" fill="#cfcfcf"/>
+          <circle cx="252" cy="152" r="40" fill="#333" stroke="#1a1a1a" stroke-width="5"/>
+          <circle cx="252" cy="152" r="15" fill="#cfcfcf"/>
+          <rect x="120" y="6" width="180" height="56" rx="28" fill="#cfd6da" stroke="#1a1a1a" stroke-width="5"/>
+          <ellipse cx="126" cy="34" rx="12" ry="28" fill="#5b636b" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M300,34 q54,-8 96,4 q-48,10 -96,-4" fill="#e0533a" stroke="#1a1a1a" stroke-width="3"/>
+          <rect x="150" y="58" width="8" height="14" fill="#7a5a2e"/>
+          <rect x="262" y="58" width="8" height="14" fill="#7a5a2e"/>
+        </g>
+        <g filter="url(#wob2)">
+          <line x1="920" y1="400" x2="1240" y2="400" stroke="#1a1a1a" stroke-width="5"/>
+          <path d="M960,400 l-14,26 l30,0 Z" fill="#8a8069" stroke="#1a1a1a" stroke-width="3"/>
+          <ellipse cx="1120" cy="404" rx="34" ry="10" fill="#8a8069" stroke="#1a1a1a" stroke-width="3"/>
+          <path d="M1240,396 l10,16 M1250,396 l-6,16" stroke="#1a1a1a" stroke-width="3"/>
+        </g>
+        <g filter="url(#wob2)">
+          <circle cx="900" cy="540" r="70" fill="#b07f52" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="900" cy="540" r="70" fill="#000" opacity="0.06"/>
+          <ellipse cx="926" cy="532" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="930" cy="534" r="4" fill="#1a1a1a"/>
+          <path d="M846,660 q-6,-70 54,-84 q60,14 54,84 Z" fill="#cdd6d2" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M905,612 q26,18 4,40" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="900" cy="652" r="12" fill="#b07f52" stroke="#1a1a1a" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g>
+    <g filter="url(#pshadow)"><rect x="35" y="580" width="912" height="475" fill="#fdfdfb"/></g>
+    <g filter="url(#wob)"><rect x="35" y="580" width="912" height="475" fill="none" stroke="#1a1a1a" stroke-width="5"/></g>
+    <g clip-path="url(#clip-p3)">
+      <g transform="translate(194,580) scale(0.848) translate(-34,-702)">
+        <g filter="url(#wob2)">
+          <path d="M250,742 q-70,0 -78,60 q-64,8 -58,66 q-60,20 -34,74 q-40,44 26,64 q10,54 84,44 q40,44 108,20
+                   q54,34 116,-2 q70,20 104,-30 q64,-2 58,-58 q46,-34 6,-78 q22,-58 -40,-74 q-6,-56 -74,-56
+                   q-40,-46 -112,-24 q-56,-30 -110,-6 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+        </g>
+        <g filter="url(#wob2)">
+          <line x1="150" y1="1010" x2="640" y2="1010" stroke="#1a1a1a" stroke-width="5"/>
+          <g transform="translate(470,861) scale(0.65)">
+            <rect x="-4" y="150" width="14" height="80" fill="#555"/>
+            <rect x="-28" y="20" width="60" height="130" rx="12" fill="#2b2b2b" stroke="#1a1a1a" stroke-width="4"/>
+            <circle cx="2" cy="52" r="18" fill="#e0533a"/>
+            <circle cx="2" cy="90" r="18" fill="#6b5a2a"/>
+            <circle cx="2" cy="128" r="18" fill="#3a5a2a"/>
+          </g>
+          <g transform="translate(150,888) translate(175,0) scale(-1,1) translate(-175,0) scale(0.66) rotate(-3)">
+            <path d="M20,150 C20,96 66,68 150,66 C232,64 300,86 330,150 Z" fill="#5aa9e0" stroke="#1a1a1a" stroke-width="5"/>
+            <path d="M92,70 C112,40 238,40 268,70 Z" fill="#bfe0f5" stroke="#1a1a1a" stroke-width="4"/>
+            <circle cx="98" cy="152" r="40" fill="#333" stroke="#1a1a1a" stroke-width="5"/>
+            <circle cx="98" cy="152" r="15" fill="#cfcfcf"/>
+            <circle cx="252" cy="152" r="40" fill="#333" stroke="#1a1a1a" stroke-width="5"/>
+            <circle cx="252" cy="152" r="15" fill="#cfcfcf"/>
+            <rect x="120" y="6" width="180" height="56" rx="28" fill="#cfd6da" stroke="#1a1a1a" stroke-width="5"/>
+            <ellipse cx="126" cy="34" rx="12" ry="28" fill="#5b636b" stroke="#1a1a1a" stroke-width="4"/>
+            <path d="M300,34 q54,-8 96,4 q-48,10 -96,-4" fill="#e0533a" stroke="#1a1a1a" stroke-width="3"/>
+          </g>
+          <text x="350" y="835" font-size="30" font-weight="bold" fill="#1a1a1a" transform="rotate(-8 350 835)">STOP!</text>
+          <path d="M250,860 l20,-16 M250,884 l24,4" stroke="#1a1a1a" stroke-width="4"/>
+        </g>
+        <g filter="url(#wob2)">
+          <circle cx="150" cy="1130" r="70" fill="#b07f52" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="150" cy="1130" r="70" fill="#000" opacity="0.06"/>
+          <ellipse cx="176" cy="1122" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="180" cy="1124" r="4" fill="#1a1a1a"/>
+          <path d="M96,1252 q-6,-70 54,-84 q60,14 54,84 Z" fill="#cdd6d2" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M188,1206 q40,20 30,52" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="214" cy="1262" r="10" fill="#b07f52" stroke="#1a1a1a" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g>
+    <g filter="url(#pshadow)"><rect x="973" y="580" width="912" height="475" fill="#fdfdfb"/></g>
+    <g filter="url(#wob)"><rect x="973" y="580" width="912" height="475" fill="none" stroke="#1a1a1a" stroke-width="5"/></g>
+    <g clip-path="url(#clip-p4)">
+      <g transform="translate(1132,580) scale(0.848) translate(-766,-702)">
+        <g filter="url(#wob2)">
+          <rect x="590" y="850" width="420" height="75" rx="20" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/>
+          <polygon points="730,925 750,925 770,970" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/>
+          <line x1="732" y1="925" x2="748" y2="925" stroke="#ffffff" stroke-width="5"/>
+          <text x="800" y="878" text-anchor="middle" font-size="27" fill="#1a1a1a">"Shouldn't we fix</text>
+          <text x="800" y="912" text-anchor="middle" font-size="27" fill="#1a1a1a">the road first?"</text>
+        </g>
+        <g filter="url(#wob2)">
+          <rect x="1040" y="845" width="460" height="75" rx="20" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/>
+          <polygon points="1430,920 1450,920 1470,965" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/>
+          <line x1="1432" y1="920" x2="1448" y2="920" stroke="#ffffff" stroke-width="5"/>
+          <text x="1270" y="873" text-anchor="middle" font-size="27" font-weight="bold" fill="#1a1a1a">"No time — we just bolted on</text>
+          <text x="1270" y="911" text-anchor="middle" font-size="27" font-weight="bold" fill="#1a1a1a">a bigger engine!"</text>
+        </g>
+        <g filter="url(#wob2)">
+          <circle cx="900" cy="1130" r="70" fill="#b07f52" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="900" cy="1130" r="70" fill="#000" opacity="0.06"/>
+          <ellipse cx="924" cy="1124" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="927" cy="1126" r="4" fill="#1a1a1a"/>
+          <ellipse cx="874" cy="1124" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="871" cy="1126" r="4" fill="#1a1a1a"/>
+          <path d="M886,1150 q14,8 28,0" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+          <path d="M846,1250 q-6,-70 54,-84 q60,14 54,84 Z" fill="#cdd6d2" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M962,1100 q10,14 0,22 q-10,-8 0,-22" fill="#8fc7ec" stroke="#1a1a1a" stroke-width="2"/>
+        </g>
+        <g filter="url(#wob2)">
+          <rect x="1000" y="1210" width="360" height="16" fill="#c9a06a" stroke="#1a1a1a" stroke-width="4"/>
+          <rect x="1030" y="1226" width="12" height="30" fill="#c9a06a" stroke="#1a1a1a" stroke-width="3"/>
+          <rect x="1320" y="1226" width="12" height="30" fill="#c9a06a" stroke="#1a1a1a" stroke-width="3"/>
+          <rect x="1120" y="1120" width="150" height="92" rx="6" fill="#dfe6e9" stroke="#1a1a1a" stroke-width="4"/>
+          <rect x="1182" y="1212" width="22" height="10" fill="#9aa" stroke="#1a1a1a" stroke-width="3"/>
+          <g font-size="10" font-family="monospace">
+            <text x="1132" y="1142" fill="#8e44ad">// TODO:</text>
+            <text x="1132" y="1156" fill="#e0533a">// fix road</text>
+            <text x="1132" y="1170" fill="#2980b9">deploy()</text>
+          </g>
+        </g>
+        <g filter="url(#wob2)">
+          <circle cx="1400" cy="1130" r="70" fill="#b07f52" stroke="#1a1a1a" stroke-width="4"/>
+          <circle cx="1400" cy="1130" r="70" fill="#000" opacity="0.06"/>
+          <ellipse cx="1377" cy="1128" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="1377" cy="1130" r="4" fill="#1a1a1a"/>
+          <ellipse cx="1423" cy="1128" rx="9" ry="12" fill="#fff" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="1423" cy="1130" r="4" fill="#1a1a1a"/>
+          <path d="M1386,1150 q14,8 28,0" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+          <path d="M1346,1250 q-6,-70 54,-84 q60,14 54,84 Z" fill="#cdd6d2" stroke="#1a1a1a" stroke-width="4"/>
+          <path d="M1462,1100 q10,14 0,22 q-10,-8 0,-22" fill="#8fc7ec" stroke="#1a1a1a" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+</svg>

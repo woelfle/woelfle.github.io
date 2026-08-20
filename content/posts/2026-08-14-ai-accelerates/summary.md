@@ -1,5 +1,3 @@
-#### Sooner, Not Faster: The Speed Trap in AI-Assisted Engineering
+One of the most interesting things I and many others have discovered about AI in Software Engineering is that it doesn't solve your engineering problems. It leverages and accelerates them. If you have a solid and mature engineering process, AI helps you become more productive. If you have a 'hackers paradise' environment, it amplifies your problems. AI makes you faster, not necessarily better — it amplifies what you already have.
 
-Drop AI into how software gets built and everything speeds up — code, reviews, migrations, configuration. But faster is not the same as sooner: AI reliably accelerates *output*, while *outcome* — validated value in the hands of a user — still depends entirely on the system you point it at. The gap between the two is where teams using AI get hurt.
-
-This is not a warning piece. It's a preparation guide — because speed is neutral, and the system decides whether it turns into arrival or into a crash.
+This article draws on systems thinking and recent research to explain why, and to offer five areas where AI applied to the system itself produces more reliable results than accelerating raw feature velocity.
