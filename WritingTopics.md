@@ -248,3 +248,19 @@ Write about how we leverage harness engineering in the Scorea project to a degre
 
 The desire to use [[DataAnalytics]] is a symptom for a problem but not necessarily its solution!
 When people talk about analytics cases in the context of business intelligence or the like then they are talking about a problem they wanna solve using [[DataAnalytics]]. But we have to look at the problem more precisely. Is it really an analytics problem? Or don't we see the wood because of all the trees?
+
+## Acceptance Criteria and AI
+
+Write about how acceptance criteria is one of the secret sauces on how to be more productive with AI
+
+## Capacity Planning in Software Engineering
+
+See [Capacity vs Outcome](content/ideas/capacity-vs-outcome-planning-conversation.md)
+
+## Context Data Management with Knowledge Graphs
+
+Write about the Aether.
+
+## Tokencost is a measure for mental activity needed to do a task
+
+Write about how tokencost can be seen as a measure for mental activity. For both, an AI and a human being. The better structured a product backlog, a knowledge base and a code base are the less tokens are needed, the less mental activity is needed to get a task done.
